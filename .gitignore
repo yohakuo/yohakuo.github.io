@@ -1,8 +1,0 @@
-db.json
-*.log
-node_modules/
-
-public/
-.deploy*/
-.obsidian
-.git
