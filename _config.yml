@@ -102,4 +102,4 @@ theme: butterfly
 deploy:
   type: 'git'
   repository: https://github.com/yohakuo/yohakuo.github.io.git
-  branch: html
+  branch: main
