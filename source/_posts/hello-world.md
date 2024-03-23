@@ -1,5 +1,8 @@
 ---
 title: Hello World
+date:
+hide: true
+archive: true
 ---
 
 终于!
