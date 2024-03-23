@@ -933,7 +933,7 @@ about:
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/yohakuo", tip: "GitHub" }
-    - { class: "iconfont icon-mail", link: "mailto:liuuuq@qq.com", tip: "Email" }
+    - { class: "iconfont icon-mail", link: mailto:liuuuq@qq.com, tip: "Email" }
     # - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
     # - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
 
