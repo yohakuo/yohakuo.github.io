@@ -3,7 +3,7 @@ title: Latex的安装和基本使用
 date: 
 updated: 
 tags:
-  - LaTeX
+  - 摘抄_LaTeX
 categories: 教程
 share: true
 ---
