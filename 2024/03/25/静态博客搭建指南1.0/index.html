@@ -16,21 +16,24 @@
   <meta name="author" content="liuliu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本篇是对 2024-03-18  到  2024-03-24 这一周生活的记录与思考。 博客实践搭建了一个静态博客，现在还存在一些问题  如何用 ob 轻松提交？ 本地预览时不时会失效，不知道是什么原因  于是尝试另外一个方案  根据这个尝试自动化搭建，又有新问题 工作流运行正常但是页面生成为空，是否和网页配置有关？或者说主题的问题？ 找不到办法，问老师，老师把这个抛给研究生了（突然负罪感++），">
+    <meta name="description" content="方案选择 Netlify   一个静态网页生成器，可以快速地构建和发布个人或团队的网站  hexo  Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页  GitHub Pages GitHub Pages 是由 GitHub 官方提供的一种免费的静态站点托管服务，让我们可以在 GitHub 仓库里">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2024-W12">
-<meta property="og:url" content="https://yohakuo.github.io/2024/03/24/2024-W12/index.html">
+<meta property="og:title" content="静态博客搭建初级指南1.0">
+<meta property="og:url" content="https://yohakuo.github.io/2024/03/25/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%971.0/index.html">
 <meta property="og:site_name" content="liuliusmagicworld">
-<meta property="og:description" content="本篇是对 2024-03-18  到  2024-03-24 这一周生活的记录与思考。 博客实践搭建了一个静态博客，现在还存在一些问题  如何用 ob 轻松提交？ 本地预览时不时会失效，不知道是什么原因  于是尝试另外一个方案  根据这个尝试自动化搭建，又有新问题 工作流运行正常但是页面生成为空，是否和网页配置有关？或者说主题的问题？ 找不到办法，问老师，老师把这个抛给研究生了（突然负罪感++），">
+<meta property="og:description" content="方案选择 Netlify   一个静态网页生成器，可以快速地构建和发布个人或团队的网站  hexo  Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页  GitHub Pages GitHub Pages 是由 GitHub 官方提供的一种免费的静态站点托管服务，让我们可以在 GitHub 仓库里">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-24T13:14:53.584Z">
-<meta property="article:modified_time" content="2024-03-24T13:14:53.584Z">
+<meta property="article:published_time" content="2024-03-25T11:53:36.029Z">
+<meta property="article:modified_time" content="2024-03-25T11:53:36.029Z">
 <meta property="article:author" content="liuliu">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>2024-W12 - liuliusmagicworld</title>
+  <title>静态博客搭建初级指南1.0 - liuliusmagicworld</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2024-W12"></span>
+            <span id="subtitle" data-typed-text="静态博客搭建初级指南1.0"></span>
           
         </div>
 
@@ -207,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-24 21:14" pubdate>
-          2024年3月24日 晚上
+        <time datetime="2024-03-25 19:53" pubdate>
+          2024年3月25日 晚上
         </time>
       </span>
     
@@ -219,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1k 字
         
       </span>
     
@@ -230,7 +233,7 @@
         
         
         
-          13 分钟
+          9 分钟
         
       </span>
     
@@ -267,96 +270,118 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2024-W12</h1>
+            <h1 id="seo-header">静态博客搭建初级指南1.0</h1>
             
             
               <div class="markdown-body">
                 
-                <p>本篇是对 <code>2024-03-18 </code> 到 <code> 2024-03-24</code> 这一周生活的记录与思考。</p>
-<h3 id="博客实践"><a href="#博客实践" class="headerlink" title="博客实践"></a>博客实践</h3><p>搭建了一个静态博客，现在还存在一些问题</p>
+                <h3 id="方案选择"><a href="#方案选择" class="headerlink" title="方案选择"></a>方案选择</h3><ul>
+<li><p>Netlify <br>  一个静态网页生成器，可以快速地构建和发布个人或团队的网站</p>
+</li>
+<li><p>hexo<br>  Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页</p>
+</li>
+<li><p><strong>GitHub Pages</strong><br> GitHub Pages 是由 GitHub 官方提供的一种免费的静态站点托管服务，让我们可以在 GitHub 仓库里托管和发布自己的静态网站页面</p>
+</li>
+<li><p><strong>Hexo + GitHub 文章发布原理</strong><br>  在本地撰写 Markdown 格式文章后，通过 Hexo 解析文档，渲染生成具有主题样式的 HTML 静态网页，再推送到 GitHub 上完成博文的发布。</p>
+</li>
+<li><p>Ruby<br>  一种面向对象、指令式、函数式、动态的通用编程语言</p>
+</li>
+<li><p>Gem<br>  <em>Gem</em> 是 <em>Ruby</em> 中的包，其中包含包信息，以及用于安装的文件</p>
+</li>
+<li><p>Gemfile<br>  一种描述 Ruby 程序的 gem 依赖关系的格式</p>
+</li>
+<li><p>最后采用了 hexo+github pages 的方案</p>
+</li>
+</ul>
+<h3 id="第一次尝试"><a href="#第一次尝试" class="headerlink" title="第一次尝试"></a>第一次尝试</h3><blockquote>
+<p>[!note]  熟悉了基本流程，但是觉得生成部署有点麻烦，后面发现有 github action 可以自动部署(2.0)，折腾了两天，暂时没问题了</p>
+</blockquote>
+<h4 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://techniquenotes.github.io/2024/02/20/Hexo/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">Hexo 博客搭建教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://techniquenotes.github.io/2024/02/20/Hexo/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/"> Hexo 博客搭建教程（二）</a></li>
+</ul>
+<h4 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h4><ul>
+<li><p>安装hexo</p>
 <ul>
-<li>如何用 ob 轻松提交？</li>
-<li>本地预览时不时会失效，不知道是什么原因</li>
+<li>创建一个文件夹 MyBlog，用来存放自己的博客文件，然后 cd 到这个文件夹下（或者在这个文件夹下直接右键 git bash 打开）。</li>
+<li>定位到该目录下，输入 <code>npm install -g hexo-cli </code>安装 Hexo。可能会有几个报错，无视它就行。</li>
+<li>安装完 <code>hexo -v</code> 验证安装成功没</li>
 </ul>
-<p>于是尝试另外一个方案</p>
+</li>
+<li><p>初始化</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://mxts.jiujiuer.xyz/2022/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">根据这个</a>尝试自动化搭建，又有新问题</li>
-<li>工作流运行正常但是页面生成为空，是否和网页配置有关？或者说主题的问题？</li>
-<li><del>找不到办法，问老师，老师把这个抛给研究生了（突然负罪感++）</del>，告诉老师解决了</li>
+<li>在主题根目录 <code>hexo init</code><ul>
+<li>初始化失败注意根目录的位置（在三层？）</li>
 </ul>
-<p>确实是主题的原因，最后找到了在 GitHub action 里面写子模块的办法，成功！</p>
-<p>虽然前前后后花了四天左右的事件折腾，但我收获了淡淡的、长久的喜悦。</p>
-<p>同时也无意中验证了费曼的某个技巧在我身上是可行的。</p>
-<blockquote>
-<p>[!cite]<br>只要开始了研究某个谜题，就绝对不可以停下来，必须解开谜题才能停止。</p>
-<p>…必须坚持到底，绝不半途而废，一定找到问题所在，否则绝不罢休！</p>
-</blockquote>
-<h3 id="新收藏的播客"><a href="#新收藏的播客" class="headerlink" title="新收藏的播客"></a>新收藏的播客</h3><ul>
-<li><p>岩中花述<br>  喜欢这个名字，很有力量和意义。</p>
-<p>  文艺访谈的感觉，我听到的是鲁豫老师对话阿詹，还有一期阿庞的。</p>
-<p>  阿詹那期有提到自己偶像的一个转变，从一个虚构的大女主律师到女大法官鲁斯·金斯伯格。</p>
-<p>  我以前也以为我不会有偶像，直到发现有这么多女大姥，好喜欢看她们的故事。</p>
 </li>
-<li><p>乌鸦不在场<br>  李雯姐推荐的一档讲述真实罪案的节目，第一次接触这个类型，挺有趣的。</p>
+<li>安装必备组件 <code>npm install</code><br>   这时指定目录会有几个文件夹</li>
+</ul>
 </li>
-<li><p>纵横四海<br>  很长的知识输出播客，最长的有四个小时（我听的），断断续续的听了两三期（走路的时候主播的声音也很适配），</p>
-<p>  个人感觉信噪比比较低，不太习惯分段听。</p>
+<li><p>预览</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs verilog">hexo g (hexo <span class="hljs-keyword">generate</span>)<br>hexo server(或者简写:hexo s）)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="连接-github-到本地"><a href="#连接-github-到本地" class="headerlink" title="连接 github 到本地"></a>连接 github 到本地</h4><ul>
+<li><p>在 MyBlog 中右键打开 git bash，第一次使用 git 后需要将用户名和邮箱进行初始化 </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.name</span> <span class="hljs-string">&quot;yohakuo&quot;</span><br>git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.email</span> <span class="hljs-string">&quot;2394791478@qq.com&quot;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>检查</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git config <span class="hljs-keyword">user</span>.name<br>git config <span class="hljs-keyword">user</span>.email<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>ssh<br> ssh，简单来讲，就是一个秘钥，其中，id_rsa 是你这台电脑的私人秘钥，不能给别人看的，id_rsa. pub 是公共秘钥，可以随便给别人看。把这个公钥放在 GitHub 上，这样当你链接 GitHub 自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过 git 上传你的文件到 GitHub 上。</p>
+</li>
+<li><p>创建 SSH</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">ssh-keygen -<span class="hljs-built_in">t</span> rsa -C <span class="hljs-string">&quot;2394791478@qq.com&quot;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>检验是否创建成功</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> -T git<span class="hljs-variable">@github</span>.com<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="将-hexo-部署到-github"><a href="#将-hexo-部署到-github" class="headerlink" title="将 hexo 部署到 github"></a>将 hexo 部署到 github</h4><p>这一步，我们就可以将 hexo 和 GitHub 关联起来，也就是将 hexo 生成的文章部署到 GitHub 上，打开博客根目录下的_config. yml 文件，这是博客的配置文件，在这里你可以修改与博客配置相关的各种信息。修改最后一行的配置：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"># Deployment <br>## Docs: https:<span class="hljs-comment">//hexo.io/docs/one-command-deployment </span><br>deploy:<br>  type: <span class="hljs-string">&#x27;git&#x27;</span><br>  repository: https:<span class="hljs-comment">//github.com/yohakuo/yohakuo.github.io.git</span><br>  branch: main<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>注意空格</p>
+</li>
+<li><p>repository 修改为你自己的 github 项目地址即可就是部署时，告诉工具，将生成网页通过 git 方式上传到你对应的链接仓库中。</p>
+</li>
+<li><p>先安装部署的命令</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure></li>
+<li><p>部署</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs verilog">hexo clean <span class="hljs-comment">//缩写成 hexo cl</span><br>hexo <span class="hljs-keyword">generate</span> <span class="hljs-comment">// 缩写 hexo g</span><br>hexo deploy <span class="hljs-comment">// hexo deploy</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="写文章、发布"><a href="#写文章、发布" class="headerlink" title="写文章、发布"></a>写文章、发布</h4><ul>
+<li><p>先安装拓展</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i hexo-deployer-git<br></code></pre></td></tr></table></figure></li>
+<li><p>新建博客</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">hexo <span class="hljs-keyword">new</span> <span class="hljs-type">post</span> <span class="hljs-string">&quot;name&quot;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>然后在 <code>source\ _posts </code> 目录可以看到. md 文件</p>
+</li>
+<li><p>实时预览和发布<br>  编写完 markdown 文件后，在根目录用 <code>hexo g</code> 生成静态网页，<code>hexo s</code> 本地预览<br>  如果没有问题可以 <code>hexo d</code> 上次到github</p>
 </li>
 </ul>
-<h3 id="阅读-思考"><a href="#阅读-思考" class="headerlink" title="阅读&amp;思考"></a>阅读&amp;思考</h3><blockquote>
-<p>读书既可以有功利性也可以没有。</p>
-<p>如果你目的导向明确，就像拿到一个的房子的图纸了，要做的事情就是建房子，那么就可以开始《刻意练习》的操作；</p>
-<p>如果你目标不明确，那更多是以兴趣为导向，就像在一片空地播种, 直到它生长成属于自己的独一无二的知识体系森林。</p>
-</blockquote>
-<p>-<br>    大一大二的时候，我很长一段时间都在迷茫，</p>
-<pre><code class="hljs">迫切地想要找到目标或者兴趣所在，想要选择一个方向可以 all in 深入学习，锻炼技能。然而，什么也没干。
+<h4 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h4><ul>
+<li>本地预览      <a target="_blank" rel="noopener" href="http://localhost:4000/404.html">http://localhost:4000/404.html</a></li>
+</ul>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="git-clone-失败"><a href="#git-clone-失败" class="headerlink" title="git clone 失败"></a>git clone 失败</h4><ul>
+<li>取消 http 代理<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs tcl">git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">unset</span> <span class="hljs-keyword">http</span>. proxy<br></code></pre></td></tr></table></figure></li>
+<li>取消 https 代理 <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">git config</span> <span class="hljs-literal">--</span><span class="hljs-comment">global</span> <span class="hljs-literal">--</span><span class="hljs-comment">unset https</span><span class="hljs-string">.</span> <span class="hljs-comment">proxy</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="error-key-does-not-contain-variable-name-user"><a href="#error-key-does-not-contain-variable-name-user" class="headerlink" title="error: key does not contain variable name: user."></a>error: key does not contain variable name: user.</h4><ul>
+<li>转为手动输入</li>
+</ul>
+<h4 id="css-渲染失败"><a href="#css-渲染失败" class="headerlink" title="css 渲染失败"></a>css 渲染失败</h4><ul>
+<li>文件名内有非法字符 # ，换目录，目录最好是 <code>x:/xx/xx</code> <ul>
+<li>新建目录 <code>x:/x</code> 也遇到了问题</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/MOxFIVE/hexo-theme-yelee/issues/245">ERROR Asset render failed: css&#x2F;style.css · Issue</a></li>
+</ul>
+<h4 id="打开网页是空白，警告：No-layout"><a href="#打开网页是空白，警告：No-layout" class="headerlink" title="打开网页是空白，警告：No layout"></a>打开网页是空白，警告：No layout</h4><ul>
+<li>可能是主题配置的问题</li>
+<li>存在两个主题的<code>.yml</code> 文件</li>
+</ul>
+<h4 id="hexo-s-访问失败，-hexo-d-报错"><a href="#hexo-s-访问失败，-hexo-d-报错" class="headerlink" title="hexo s 访问失败， hexo d 报错"></a>hexo s 访问失败， hexo d 报错</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs vim">localhost 已拒绝连接<br><br>fatal: <br>unable <span class="hljs-keyword">to</span> access  https://github.<span class="hljs-keyword">com</span>/yohakuo/yohakuo.github.io.git/<br>Could not <span class="hljs-built_in">resolve</span> host: github. <span class="hljs-keyword">com</span><br></code></pre></td></tr></table></figure>
 
-现在想来，我那个时候虽然有目的，但完全不具体，也很混乱。
-
-我完全可以把目标改成发现日常里感兴趣的东西然后去学习，比如 ob 的学习，那么自然而然，兴趣方向就多起来了。
-
-现在有很多兴趣在以前就有迹象，只是我一直没有注意和去实践它们。
-</code></pre>
-<blockquote>
-<p>所有的代码都是技术债。</p>
-<p>代码需要不断维护，如果技术债拖着不换，维护成本就会像滚雪球一样越滚越多，直到被放弃。</p>
-<p>代码越少，技术债越小。</p>
-<p>对软件开发的正确做法：1. 冗余的代码都要删除；2。只实现必须实现的功能，除非绝对必要，不引进新功能。</p>
-</blockquote>
-<p>-<br>    很多软件不愿意增加新功能或许是因为维护成本大于收益吧。</p>
-<pre><code class="hljs">关于工具的使用，最近有些困惑。
-
-我很容易为了折腾工具而忘记本来的目的。
-
-比如学习 ob，大概折腾到我觉得看得过去的时候，我就能专注使用，并且心情愉悦效率高。
-
-搭建博客我也考虑到维护和后面部署提交的麻烦，所以在前面折腾，短时间内 all in ，试图解决问题。
-
-如果结果顺利的话，那就皆大欢喜，我开开心心地使用。
-
-如果进展不顺利，该怎么办呢？我想过~~暂时放下看看？~~事实上我放不下，最后 work out，开心！
-</code></pre>
-<blockquote>
-<p>同一组人结合仍然是克服孤独感最常用的方法。</p>
-<p>在这种结合中，参加者为了使自己属于这一组人而失去了大部分个性。</p>
-<p>如果我与他人完全一样，我的感情、思想与他人一致，我的衣着、习惯和看法都与这一组人的楷模看齐，</p>
-<p>我就可得救，就不会再经历可怕的孤独。 </p>
-</blockquote>
-<p>-<br>    人为什么不愿意和群体不一样的另一个角度，除了害怕承受异议带来的后果，也无法拒绝长期获得认同共识来缓解孤独的甜头。</p>
-<pre><code class="hljs">说到这又想到总有人跟我抱怨另一个人做了某些ta 不想干的事情，
-
-但是迫于从众的压力，ta 只好选择和另一个人保持一致。
-
-我每次都在试图鼓励ta 们去做自己的选择，不过也没多大作用，对自己来说改变就挺难的更何况他人。
-
-我可以确定的是，我不会压抑心中的怒火，而是要为每一次的愤怒找到归处。
-
-无论它来自谁或者什么事情，都是在推动我直面问题。这便是在日常生活中实践女权主义，我本位地活。
-</code></pre>
-<blockquote>
-<p>[!cite]<br>上野: …在日常生活中实践女权主义并非一个宏大的政治议题。</p>
-<p>你能做的便是，反击那些令你不舒服的事，还有做你想做的任何事。不要向你所遇到的不公妥协。</p>
-</blockquote>
+<ul>
+<li>更改 DNS 为 Gogle 后还是无法本地预览，但发布成功了</li>
+</ul>
 
                 
               </div>
@@ -375,7 +400,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" class="category-chain-item">个人记录</a>
+  <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
   
   
 
@@ -387,6 +412,17 @@
     </div>
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/hexo/" class="print-no-link">#hexo</a>
+      
+        <a href="/tags/blog/" class="print-no-link">#blog</a>
+      
+        <a href="/tags/github/" class="print-no-link">#github</a>
+      
+    </div>
+  
 </div>
 
 
@@ -395,8 +431,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2024-W12</div>
-      <div>https://yohakuo.github.io/2024/03/24/2024-W12/</div>
+      <div>静态博客搭建初级指南1.0</div>
+      <div>https://yohakuo.github.io/2024/03/25/静态博客搭建指南1.0/</div>
     </div>
     <div class="license-meta">
       
@@ -408,7 +444,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月24日</div>
+          <div>2024年3月25日</div>
         </div>
       
       
@@ -440,12 +476,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/03/25/Latex%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="Latex的安装和基本使用">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Latex的安装和基本使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/24/Latex%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="Latex的安装和基本使用">
-                        <span class="hidden-mobile">Latex的安装和基本使用</span>
+                      <a href="/2024/03/25/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%972.0/" title="静态博客搭建初级指南2.0">
+                        <span class="hidden-mobile">静态博客搭建初级指南2.0</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
