@@ -1,18 +1,11 @@
 ---
-layout: 
 title: Latex如何插入图片
 date: 
 updated: 
 share: true
-comments: 
 tags:
   - 摘抄_LaTeX
 categories: 教程
-permalink: 
-excerpt: 
-lang: 
-published: 
-sticky: 
 ---
 ## 图片的插入
 ### 控制
