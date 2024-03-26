@@ -1,6 +1,6 @@
 ---
 title: Latex的安装和基本使用
-date: 
+date: 2024-03-26
 updated: 
 tags:
   - 摘抄_LaTeX
