@@ -16,22 +16,22 @@
   <meta name="author" content="liuliu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本篇是对 2024-03-18  到  2024-03-24 这一周生活的记录与思考。 博客实践搭建了一个静态博客，现在还存在一些问题  如何用 ob 轻松提交？ 本地预览时不时会失效，不知道是什么原因  于是尝试另外一个方案  根据这个尝试自动化搭建，又有新问题 工作流运行正常但是页面生成为空，是否和网页配置有关？或者说主题的问题？ 找不到办法，问老师，老师把这个抛给研究生了（突然负罪感++），">
+    <meta name="description" content="参考 在 GitHub Pages 上部署 Hexo | Hexo 轮子再造 | 使用 GitHub Actions 自动部署 Hexo 博客 - 上篇 | On my way to Oodi (oreo.life) GitHub博客搭建 - 神社的储物间 (jiujiuer.xyz)  结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。 基本操作 切换分支 1git chec">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2024-W12">
-<meta property="og:url" content="https://yohakuo.github.io/2024/03/23/2024-W12/index.html">
+<meta property="og:title" content="静态博客搭建指南2.0">
+<meta property="og:url" content="https://yohakuo.github.io/2024/03/22/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%972.0/index.html">
 <meta property="og:site_name" content="liuliusmagicworld">
-<meta property="og:description" content="本篇是对 2024-03-18  到  2024-03-24 这一周生活的记录与思考。 博客实践搭建了一个静态博客，现在还存在一些问题  如何用 ob 轻松提交？ 本地预览时不时会失效，不知道是什么原因  于是尝试另外一个方案  根据这个尝试自动化搭建，又有新问题 工作流运行正常但是页面生成为空，是否和网页配置有关？或者说主题的问题？ 找不到办法，问老师，老师把这个抛给研究生了（突然负罪感++），">
+<meta property="og:description" content="参考 在 GitHub Pages 上部署 Hexo | Hexo 轮子再造 | 使用 GitHub Actions 自动部署 Hexo 博客 - 上篇 | On my way to Oodi (oreo.life) GitHub博客搭建 - 神社的储物间 (jiujiuer.xyz)  结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。 基本操作 切换分支 1git chec">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-27T00:30:58.813Z">
+<meta property="article:published_time" content="2024-03-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-26T16:00:00.000Z">
 <meta property="article:author" content="liuliu">
-<meta property="article:tag" content="weekly">
+<meta property="article:tag" content="摘抄_blog">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>2024-W12 - liuliusmagicworld</title>
+  <title>静态博客搭建指南2.0 - liuliusmagicworld</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2024-W12"></span>
+            <span id="subtitle" data-typed-text="静态博客搭建指南2.0"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-24 00:00" pubdate>
-          2024年3月24日 凌晨
+        <time datetime="2024-03-23 00:00" pubdate>
+          2024年3月23日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          279 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          13 分钟
+          3 分钟
         
       </span>
     
@@ -268,90 +268,54 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2024-W12</h1>
+            <h1 id="seo-header">静态博客搭建指南2.0</h1>
             
             
               <div class="markdown-body">
                 
-                <p>本篇是对 <code>2024-03-18 </code> 到 <code> 2024-03-24</code> 这一周生活的记录与思考。</p>
-<h3 id="博客实践"><a href="#博客实践" class="headerlink" title="博客实践"></a>博客实践</h3><p>搭建了一个静态博客，现在还存在一些问题</p>
-<ul>
-<li>如何用 ob 轻松提交？</li>
-<li>本地预览时不时会失效，不知道是什么原因</li>
+                <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">在 GitHub Pages 上部署 Hexo | Hexo</a></li>
+<li><a target="_blank" rel="noopener" href="https://oreo.life/blog/2021-09-01-deploy-hexo-with-github-actions-1/">轮子再造 | 使用 GitHub Actions 自动部署 Hexo 博客 - 上篇 | On my way to Oodi (oreo.life)</a></li>
+<li><a target="_blank" rel="noopener" href="https://mxts.jiujiuer.xyz/2022/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">GitHub博客搭建 - 神社的储物间 (jiujiuer.xyz)</a></li>
 </ul>
-<p>于是尝试另外一个方案</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://mxts.jiujiuer.xyz/2022/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">根据这个</a>尝试自动化搭建，又有新问题</li>
-<li>工作流运行正常但是页面生成为空，是否和网页配置有关？或者说主题的问题？</li>
-<li><del>找不到办法，问老师，老师把这个抛给研究生了（突然负罪感++）</del>，告诉老师解决了</li>
+<p>结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ul>
+<li><p>切换分支</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">git checkout <span class="hljs-selector-tag">main</span><br></code></pre></td></tr></table></figure></li>
+<li><p>从远程仓库拉取最新的更改并合并到本地仓库</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">git pull origin <span class="hljs-selector-tag">main</span><br></code></pre></td></tr></table></figure></li>
+<li><p>保存更改并推送到 GitHub：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">git <span class="hljs-built_in">add</span> .  <br></code></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> commit -m <span class="hljs-string">&quot;main workflow configure&quot;</span>  <br></code></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> commit -m <span class="hljs-string">&quot;Vault backup&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">git <span class="hljs-built_in">push</span> -u <span class="hljs-built_in">origin</span> main<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>暂存更改（将它们暂存起来，然后在合并分支后再恢复）</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git stash</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coq">git stash <span class="hljs-built_in">apply</span><br></code></pre></td></tr></table></figure></li>
+<li><p>删除这些更改</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git stash drop</span><br></code></pre></td></tr></table></figure></li>
+<li><p>删除远程分支</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">git <span class="hljs-built_in">push</span> <span class="hljs-built_in">origin</span> --<span class="hljs-built_in">delete</span><br></code></pre></td></tr></table></figure></li>
+<li><p>关联分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -u origin/main<br></code></pre></td></tr></table></figure></li>
+<li><p>文件和文件夹的删除</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">git rm <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">git rm -r <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
-<p>确实是主题的原因，最后找到了在 GitHub action 里面写子模块的办法，成功！</p>
-<p>虽然前前后后花了四天左右的事件折腾，但我收获了淡淡的、长久的喜悦。</p>
-<p>同时也无意中验证了费曼的某个技巧在我身上是可行的。</p>
-<blockquote>
-<p>[!cite]<br>只要开始了研究某个谜题，就绝对不可以停下来，必须解开谜题才能停止。</p>
-<p>…必须坚持到底，绝不半途而废，一定找到问题所在，否则绝不罢休！</p>
-</blockquote>
-<h3 id="新收藏的播客"><a href="#新收藏的播客" class="headerlink" title="新收藏的播客"></a>新收藏的播客</h3><ul>
-<li><p>岩中花述<br>  喜欢这个名字，很有力量和意义。</p>
-<p>  文艺访谈的感觉，我听到的是鲁豫老师对话阿詹，还有一期阿庞的。</p>
-<p>  阿詹那期有提到自己偶像的一个转变，从一个虚构的大女主律师到女大法官鲁斯·金斯伯格。</p>
-<p>  我以前也以为我不会有偶像，直到发现有这么多女大姥，好喜欢看她们的故事。</p>
-</li>
-<li><p>乌鸦不在场<br>  李雯姐推荐的一档讲述真实罪案的节目，第一次接触这个类型，挺有趣的。</p>
-</li>
-<li><p>纵横四海<br>  很长的知识输出播客，最长的有四个小时（我听的），断断续续的听了两三期（走路的时候主播的声音也很适配），</p>
-<p>  个人感觉信噪比比较低，不太习惯分段听。</p>
-</li>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>文章配置 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">Front-matter | Hexo</a></li>
+<li>主题配置 <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2">配置指南 | Hexo Fluid 用户手册 (fluid-dev.com)</a></li>
 </ul>
-<h3 id="阅读-思考"><a href="#阅读-思考" class="headerlink" title="阅读&amp;思考"></a>阅读&amp;思考</h3><blockquote>
-<p>读书既可以有功利性也可以没有。</p>
-<p>如果你目的导向明确，就像拿到一个的房子的图纸了，要做的事情就是建房子，那么就可以开始《刻意练习》的操作；</p>
-<p>如果你目标不明确，那更多是以兴趣为导向，就像在一片空地播种, 直到它生长成属于自己的独一无二的知识体系森林。</p>
-</blockquote>
-<ul>
-<li><p>💭<br>  大一大二的时候，我很长一段时间都在迷茫，</p>
-<p>  迫切地想要找到目标或者兴趣所在，想要选择一个方向可以 all in 深入学习，锻炼技能。然而，什么也没干。</p>
-<p>  现在想来，我那个时候虽然有目的，但完全不具体，也很混乱。</p>
-<p>  我完全可以把目标改成发现日常里感兴趣的东西然后去学习，比如 ob 的学习，那么自然而然，兴趣方向就多起来了。</p>
-<p>  现在有很多兴趣在以前就有迹象，只是我一直没有注意和去实践它们。</p>
-</li>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h4 id="You-have-unmerged-paths"><a href="#You-have-unmerged-paths" class="headerlink" title="You have unmerged paths."></a>You have unmerged paths.</h4><ul>
+<li>查看下暂存区修改后的文件状态。<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git status</span><br></code></pre></td></tr></table></figure></li>
+<li>来到标红的文件进行修改，再次 push <code>**MERGING**</code> 就没有了</li>
 </ul>
-<blockquote>
-<p>所有的代码都是技术债。</p>
-<p>代码需要不断维护，如果技术债拖着不换，维护成本就会像滚雪球一样越滚越多，直到被放弃。</p>
-<p>代码越少，技术债越小。</p>
-<p>对软件开发的正确做法：1. 冗余的代码都要删除；2。只实现必须实现的功能，除非绝对必要，不引进新功能。</p>
-</blockquote>
-<ul>
-<li><p>💭<br>  很多软件不愿意增加新功能或许是因为维护成本大于收益吧。</p>
-<p>  关于工具的使用，最近有些困惑。</p>
-<p>  我很容易为了折腾工具而忘记本来的目的。</p>
-<p>  比如学习 ob，大概折腾到我觉得看得过去的时候，我就能专注使用，并且心情愉悦效率高。</p>
-<p>  搭建博客我也考虑到维护和后面部署提交的麻烦，所以在前面折腾，短时间内 all in ，试图解决问题。</p>
-<p>  如果结果顺利的话，那就皆大欢喜，我开开心心地使用。</p>
-<p>  如果进展不顺利，该怎么办呢？我想过<del>暂时放下看看？</del>事实上我放不下，最后 work out，开心！</p>
-</li>
+<h4 id="git-push-u-origin-–-fatal-unable-to-access"><a href="#git-push-u-origin-–-fatal-unable-to-access" class="headerlink" title="git push -u origin –&gt; fatal: unable to access"></a>git push -u origin –&gt; fatal: unable to access</h4><ul>
+<li>远程仓库和本地不一致，且远程有的文件本地没有</li>
+<li>查询并取消代理<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tcl">git config --<span class="hljs-keyword">global</span> <span class="hljs-keyword">http</span>.proxy<br> <br>git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">unset</span> <span class="hljs-keyword">http</span>.proxy<br></code></pre></td></tr></table></figure></li>
+<li>修改dns<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">git pull origin <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
-<blockquote>
-<p>同一组人结合仍然是克服孤独感最常用的方法。</p>
-<p>在这种结合中，参加者为了使自己属于这一组人而失去了大部分个性。</p>
-<p>如果我与他人完全一样，我的感情、思想与他人一致，我的衣着、习惯和看法都与这一组人的楷模看齐，</p>
-<p>我就可得救，就不会再经历可怕的孤独。 </p>
-</blockquote>
-<ul>
-<li><p>💭<br>  人为什么不愿意和群体不一样的另一个角度，除了害怕承受异议带来的后果，也无法拒绝长期获得认同共识来缓解孤独的甜头。</p>
-<p>  说到这又想到总有人跟我抱怨另一个人做了某些ta 不想干的事情，</p>
-<p>  但是迫于从众的压力，ta 只好选择和另一个人保持一致。</p>
-<p>  我每次都在试图鼓励ta 们去做自己的选择，不过也没多大作用，对自己来说改变就挺难的更何况他人。</p>
-<p>  我可以确定的是，我不会压抑心中的怒火，而是要为每一次的愤怒找到归处。</p>
-<p>  无论它来自谁或者什么事情，都是在推动我直面问题。这便是在日常生活中实践女权主义，我本位地活。</p>
-</li>
-</ul>
-<blockquote>
-<p>[!cite]<br>上野: …在日常生活中实践女权主义并非一个宏大的政治议题。</p>
-<p>你能做的便是，反击那些令你不舒服的事，还有做你想做的任何事。不要向你所遇到的不公妥协。</p>
-</blockquote>
 
                 
               </div>
@@ -370,7 +334,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" class="category-chain-item">个人记录</a>
+  <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
   
   
 
@@ -385,7 +349,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/weekly/" class="print-no-link">#weekly</a>
+        <a href="/tags/%E6%91%98%E6%8A%84-blog/" class="print-no-link">#摘抄_blog</a>
       
     </div>
   
@@ -397,8 +361,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2024-W12</div>
-      <div>https://yohakuo.github.io/2024/03/23/2024-W12/</div>
+      <div>静态博客搭建指南2.0</div>
+      <div>https://yohakuo.github.io/2024/03/22/静态博客搭建指南2.0/</div>
     </div>
     <div class="license-meta">
       
@@ -410,7 +374,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月24日</div>
+          <div>2024年3月23日</div>
         </div>
       
       
@@ -442,9 +406,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/25/Latex%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" title="Latex的安装和基本使用">
+                      <a href="/2024/03/23/2024-W12/" title="2024-W12">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Latex的安装和基本使用</span>
+                        <span class="hidden-mobile">2024-W12</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -452,8 +416,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/22/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%972.0/" title="静态博客搭建指南2.0">
-                        <span class="hidden-mobile">静态博客搭建指南2.0</span>
+                      <a href="/2024/03/17/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%971.0/" title="静态博客搭建指南1.0">
+                        <span class="hidden-mobile">静态博客搭建指南1.0</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
