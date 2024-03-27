@@ -1,7 +1,7 @@
 ---
 title: Latex如何插入图片
-date: 
-updated: 
+date: 2024-03-26
+updated: 2024-03-27
 share: true
 tags:
   - 摘抄_LaTeX
