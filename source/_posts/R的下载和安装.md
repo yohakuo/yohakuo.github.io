@@ -1,5 +1,4 @@
 ---
-layout: 
 title: R的下载和安装
 date: 2024-03-31
 updated: 
