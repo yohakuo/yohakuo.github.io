@@ -6,8 +6,6 @@ share: true
 tags:
   - 摘抄_R
 categories: 教程
-excerpt: 
-published: 
 ---
 ## 参考资料
 >R 语言编程：基于 tidyverse
