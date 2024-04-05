@@ -1,13 +1,11 @@
 ---
-title: Typst
+title: Typst初了解
 date: 2024-04-05
 updated: 
 share: true
-comments: 
-tags: 
+tags:
+  - 摘抄_Typst
 categories: 教程
-permalink: 
-excerpt: 
 ---
 # 安装
 - 非常简单，在 Vscode 下载两个拓展 `Typst LSP` 和`Typst Preview`
@@ -140,7 +138,6 @@ behavior of these natural structures.
 #lorem(15)
 ```
 
->1
 >1. a
 >1. b
 
