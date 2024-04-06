@@ -141,7 +141,7 @@ behavior of these natural structures.
 >1. a
 >1. b
 
-### Show 规则
+## Show 规则
 >附上项目的 logo
 ```
 #show "ArtosFlow": name => box[
