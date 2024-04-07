@@ -1,9 +1,9 @@
 ---
 title: Latex的安装和基本使用
-date: 2024-03-26
+date: 2024-03-24
 updated: 
 tags:
-  - 摘抄_LaTeX
+  - key_LaTeX
 categories: 教程
 share: true
 ---
