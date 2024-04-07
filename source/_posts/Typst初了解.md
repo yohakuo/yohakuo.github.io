@@ -4,7 +4,7 @@ date: 2024-04-05
 updated: 
 share: true
 tags:
-  - 摘抄_Typst
+  - key_Typst
 categories: 教程
 ---
 # 安装

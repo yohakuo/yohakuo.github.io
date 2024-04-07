@@ -4,7 +4,7 @@ date: 2024-03-26
 updated: 2024-03-27
 share: true
 tags:
-  - 摘抄_LaTeX
+  - key_LaTeX
 categories: 教程
 ---
 ## 图片的插入
