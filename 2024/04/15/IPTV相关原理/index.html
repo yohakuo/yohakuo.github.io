@@ -16,22 +16,31 @@
   <meta name="author" content="liuliu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本篇是对 2024-03-25  到  2024-03-31 这一周生活的记录与思考。 准确来说，今天是这个月的最后一天。顺便回顾一下：这个月最大的变化是有了很多感兴趣的东西，并且需要时间学习。这就导致我看高数视频的时间变少了，看视频真的很耗时间… 我甚至是倍数播放的，边看边做笔记。 接下来的这个月尝试轮流看视频和做题。 每日一句怎么感觉越往后越简单了？  朋友问我一天是不是有 48 小时，我说怎">
+    <meta name="description" content="官方视频https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1yN411y7yg&#x2F;?spm_id_from&#x3D;333.788&amp;vd_source&#x3D;d137a8f68ec67946b0fef9810258f095  IPTV IPTV 即交互式网络电视  是一种利用宽带有线电视网，集互联网、多媒体、通讯等多种技术于一体，向家庭用户提供包括数字电视在内的多种交互式服务的技术。 用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2024-W13">
-<meta property="og:url" content="https://yohakuo.github.io/2024/03/30/2024-W13/index.html">
+<meta property="og:title" content="IPTV相关原理">
+<meta property="og:url" content="https://yohakuo.github.io/2024/04/15/IPTV%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="liuliusmagicworld">
-<meta property="og:description" content="本篇是对 2024-03-25  到  2024-03-31 这一周生活的记录与思考。 准确来说，今天是这个月的最后一天。顺便回顾一下：这个月最大的变化是有了很多感兴趣的东西，并且需要时间学习。这就导致我看高数视频的时间变少了，看视频真的很耗时间… 我甚至是倍数播放的，边看边做笔记。 接下来的这个月尝试轮流看视频和做题。 每日一句怎么感觉越往后越简单了？  朋友问我一天是不是有 48 小时，我说怎">
+<meta property="og:description" content="官方视频https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1yN411y7yg&#x2F;?spm_id_from&#x3D;333.788&amp;vd_source&#x3D;d137a8f68ec67946b0fef9810258f095  IPTV IPTV 即交互式网络电视  是一种利用宽带有线电视网，集互联网、多媒体、通讯等多种技术于一体，向家庭用户提供包括数字电视在内的多种交互式服务的技术。 用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-30T16:00:00.000Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404160928247.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404160928249.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161008004.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161014143.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161024889.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161034067.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161042450.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161102825.png">
+<meta property="article:published_time" content="2024-04-15T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-04-16T03:09:51.441Z">
 <meta property="article:author" content="liuliu">
-<meta property="article:tag" content="weekly">
+<meta property="article:tag" content="learn_IPTV">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404160928247.png">
   
   
   
-  <title>2024-W13 - liuliusmagicworld</title>
+  <title>IPTV相关原理 - liuliusmagicworld</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2024-W13"></span>
+            <span id="subtitle" data-typed-text="IPTV相关原理"></span>
           
         </div>
 
@@ -208,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-31 00:00" pubdate>
-          2024年3月31日 凌晨
+        <time datetime="2024-04-16 00:00" pubdate>
+          2024年4月16日 凌晨
         </time>
       </span>
     
@@ -220,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          889 字
+          1.6k 字
         
       </span>
     
@@ -231,7 +240,7 @@
         
         
         
-          8 分钟
+          14 分钟
         
       </span>
     
@@ -268,43 +277,84 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2024-W13</h1>
+            <h1 id="seo-header">IPTV相关原理</h1>
             
             
               <div class="markdown-body">
                 
-                <p>本篇是对 <code>2024-03-25 </code> 到 <code> 2024-03-31</code> 这一周生活的记录与思考。</p>
-<p>准确来说，今天是这个月的最后一天。顺便回顾一下：这个月最大的变化是有了很多感兴趣的东西，并且需要时间学习。这就导致我看高数视频的时间变少了，看视频真的很耗时间… 我甚至是倍数播放的，边看边做笔记。</p>
-<p>接下来的这个月尝试轮流看视频和做题。</p>
-<p>每日一句怎么感觉越往后越简单了？</p>
-<hr>
-<p>朋友问我一天是不是有 48 小时，我说怎么了，她说我考研了还能看书、听博客、关注时事。</p>
-<p>自我反省一下，有时候是刷了一些不必要的信息。</p>
-<h2 id="Anatomie-d’une-chute（坠落的审判）"><a href="#Anatomie-d’une-chute（坠落的审判）" class="headerlink" title="Anatomie d’une chute（坠落的审判）"></a>Anatomie d’une chute（坠落的审判）</h2><blockquote>
-<p>很好看！塑造了一个强大理性的女主。</p>
-<p>有些人指责女主冷漠。难度正常人吵架不先考虑自己？这老公干了家务（主动干这个也是为了消解自己的内疚），然后发现自己感受不到价值之后，就开始对女主情感勒索，又是指责又是言语攻击，根本不是要好好谈的态度，并且多次把自己没法写作推给没有时间，然后还觉得是女主欠了他这些时间，越说越让人上火…</p>
-<p>要是女主再冷漠点，我也很喜欢她。实际上女主是不愿意去抹黑她老公的，除了在录影像那里说的，在法庭上她还低声反驳了她的律师，并且在陈述中也没有去攻击他。</p>
-<p>那个录音放出来让我觉得这个男的更加窝囊废。管他是自杀还是意外？这根本不是重点。</p>
-<p>一个事业成功，情绪稳定，思维流畅清晰的女人，在进入婚姻关系都会有面临这种意外审判的风险，而且赢的不容易。审判本身就是惩罚，胜利也没有奖励。</p>
+                <blockquote>
+<p>官方视频<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1yN411y7yg/?spm_id_from=333.788&vd_source=d137a8f68ec67946b0fef9810258f095">https://www.bilibili.com/video/BV1yN411y7yg/?spm_id_from=333.788&amp;vd_source=d137a8f68ec67946b0fef9810258f095</a></p>
 </blockquote>
-<h2 id="岩中花述对话阿庞"><a href="#岩中花述对话阿庞" class="headerlink" title="岩中花述对话阿庞"></a>岩中花述对话阿庞</h2><blockquote>
-<p>这一期的关键字【少年时期的身份认同】、【生育的考量】、【看不见的女性】、【生活选择的价值判断】<br>冻卵这件事，就是资本主义社会的「骗局」和「陷阱」</p>
+<h1 id="IPTV"><a href="#IPTV" class="headerlink" title="IPTV"></a>IPTV</h1><blockquote>
+<p>IPTV 即交互式网络电视</p>
 </blockquote>
-<ul>
-<li>💭 <blockquote>
-<p>阿庞在她 36 岁时，开始询问每一个有孩子的人生孩子是什么样的过程？现实是很多女性的事业因为生育受阻甚至放弃，沦为家庭主妇。</p>
-<p>举了一个实例，人们只看得到事业家庭两全的大爷，至于大妈，只能算家庭美满，【大爷的事业不会分给大妈】</p>
-<p>阿庞分享了自己冻卵的经历，并不觉得冻卵让她觉得有了生育的选择器，因为还有生，还有养。</p>
-<p>苹果耳机测试的女性数据不足，没有考虑长头发的人。</p>
-<p>我们敬佩那些克服生理差距达到巨大成功的女性，但我们也应该允许自己平凡普通地活着，不要被他人的标准影响。</p>
+<p>是一种利用宽带有线电视网，集互联网、多媒体、通讯等多种技术于一体，向家庭用户提供包括数字电视在内的多种交互式服务的技术。</p>
+<p>用户可通过计算机、IP 机顶盒+普通电视、移动终端三种方式体验 IPTV 服务。</p>
+<h2 id="IPTV-业务类型"><a href="#IPTV-业务类型" class="headerlink" title="IPTV 业务类型"></a>IPTV 业务类型</h2><ol>
+<li>电视类业务：广播电视、点播电视、个人视频录制等；</li>
+<li>通信类业务：主要基于 IP 的语音业务、即时通信服务、电视短信等；</li>
+<li>增值类业务：指电视购物、互动广告、在线游戏、股票行情等。</li>
+</ol>
+<h2 id="系统结构"><a href="#系统结构" class="headerlink" title="系统结构"></a>系统结构</h2><blockquote>
+<p>业务层相关网元设备的主要功能</p>
 </blockquote>
-</li>
-</ul>
-<h2 id="海马星球的最新一期"><a href="#海马星球的最新一期" class="headerlink" title="海马星球的最新一期"></a>海马星球的最新一期</h2><blockquote>
-<p>纳入式性行为不是性生活！</p>
-<p>chun 女膜是编造的概念，是技术落后的时代男人为了保护自己的财产继承的伪概念，真是恶毒。本身我们体内就不存在一个封闭的”膜”，不然怎么排出月经呢。</p>
-<p>HPV 病毒有几百种！而九价疫苗大概只预防十几种，防不胜防。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404160928247.png" srcset="/img/loading.gif" lazyload alt="450"></p>
+<p>CDN Node（Content Delivery Network Node）<br>推送媒体流给 STB</p>
+<p>STB（Set Top Box）<br>机顶盒，用户它体验 IPTV 服务</p>
+<p>EPG（Electronic Program Guide）<br>推送节目菜单</p>
+<p>MiddleWare<br>包括 EAS、SCP、CDN Manager、DB。</p>
+<p>EAS（Edge Access Service）负责与 STB 交互。</p>
+<p>SCP（Service Control Point） 帮助运营商掌握网络中各种业务对带宽的占用情况，业务配置、鉴权。</p>
+<p>CDN Manager（内容分发网络管理系统）负责调配 CDN Node，进行内容的高效分发和网络资源的有效管理。</p>
+<p>DB 负责存储用户认证授权信息，包括用户信息、内容信息、业务逻辑等。</p>
+<h2 id="业务流程"><a href="#业务流程" class="headerlink" title="业务流程"></a>业务流程</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404160928249.png" srcset="/img/loading.gif" lazyload alt="450"></p>
+<p>自下而上的过程。</p>
+<p>首先是机顶盒通过 BRAS（终端用户的网关，用户端要通过它去访问其他设备）申请获取 IP 地址。<br>然后在业务机房进行认证授权，注册用户名，有了这些信息后才能活得 ip 地址。<br>通过 MW 进行认证，鉴权，通过后给对应用户授权，调动源节目资源。<br>推送 EPG、CDN Node 的地址和用户产品包等。</p>
+<p>当这些认证通过后，用户端就可以获取节目菜单，并正常观看节目了。</p>
+<h1 id="组播原理"><a href="#组播原理" class="headerlink" title="组播原理"></a>组播原理</h1><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161008004.png" srcset="/img/loading.gif" lazyload alt="250"></p>
+<p>单播是点对点，广播是点到全部点。<br>组播介于单播和广播之间，属于点对多点通信方式。<br>当主机向一组主机发送信息存在于某个组的所有主机都可以接收到信息。</p>
+<h2 id="组播-IP-地址"><a href="#组播-IP-地址" class="headerlink" title="组播 IP 地址"></a>组播 IP 地址</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161014143.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<blockquote>
+<p>实验中主要用 224.0.0.1 ，即给所有主机和路由器发送组播数据流</p>
 </blockquote>
+<h3 id="OSPF-在组播中的作用"><a href="#OSPF-在组播中的作用" class="headerlink" title="OSPF 在组播中的作用"></a>OSPF 在组播中的作用</h3><blockquote>
+<p>路由器是网络中的一种设备，它能够根据数据包的目的地地址，选择最佳的路径将其转发到下一个网络节点，直到数据包到达最终目的地。</p>
+</blockquote>
+<p>OSPF（开放最短路径优先）是一种内部网关协议（IGP），用于在单一自治系统内部进行路由信息的分发。OSPF通过使用Dijkstra算法计算最短路径树，来选择数据包从源头到目的地的最佳路径。它是一种动态的、基于链路状态的路由协议，可以快速适应网络拓扑的变化。</p>
+<p>在组播环境中，OSPF可以通过其扩展功能来支持IP多播数据包的路由。这意味着OSPF能够识别多播流量，并为其选择高效的路由路径。</p>
+<h2 id="组播协议的三层架构"><a href="#组播协议的三层架构" class="headerlink" title="组播协议的三层架构"></a>组播协议的三层架构</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161024889.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<blockquote>
+<p>R1 可以做成组播汇聚点（RP），所有的源数据通过 RP 汇聚，再向下转发，RP 也相当于组播源</p>
+</blockquote>
+<p>MS（组播源）一般以单播形式发送数据流，然后到达下一层–组播网络。</p>
+<p>这一层是由路由器或者具有路由功能的三层设备组成的组播路由，运行组播路由协议（如 PIM 协议无关）</p>
+<p>到 R 4、R5、R6 这一部分，属于组成员管理的接入部分。<br>与主机相连的边缘路由器，运行的是 IGMP（内部网关管理协议），这个协议可以控制哪些用户加入该组播组里。</p>
+<h2 id="组播协议组成"><a href="#组播协议组成" class="headerlink" title="组播协议组成"></a>组播协议组成</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161034067.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<blockquote>
+<p>实验主要用到 IGMP（v3），PIM-SM（用户数小用稀疏协议，主机发送请求才发）</p>
+</blockquote>
+<h3 id="PIM-SM-转发"><a href="#PIM-SM-转发" class="headerlink" title="PIM-SM 转发"></a>PIM-SM 转发</h3><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161042450.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<blockquote>
+<p>在 DR 与主机相连的一侧，用 IGMP 管理。</p>
+</blockquote>
+<p> 主机要加入这个组，首先要发送加入请求，DR 向上游报告请求，到达 RP。<br> RP 通过请求后，组播数据流就可以从上往下转发，通过 DR 到达主机。</p>
+<h3 id="IGMP"><a href="#IGMP" class="headerlink" title="IGMP"></a>IGMP</h3><blockquote>
+<p>与组播源相连的路由器叫第一跳路由器。下一跳路由器（组播路由）与主机 (PC) 相连。</p>
+</blockquote>
+<p>IGMP 组播组管理协议，IGMP 协议运行于主机和与主机直接相连的组播路由器之间。</p>
+<p>主机通过 IGMP 协议告诉本地路由器希望加入并接受某个特定组播组的信息。</p>
+<p>路由器通过 IGMP 协议周期性地查询局域网内某个已知组的成员是否处于活动状态（即该网段是否仍有属于某个组播组的成员），实现所连网络组成员关系的收集与维护。</p>
+<blockquote>
+<p>路由器会发出一个查询数据包，当有主机要接受组播数据流的时候，那么终端会向路由器回复一个波，表示它还在这个组播组里并要接收组播数据流。</p>
+<p>如果一段时间后，组播路由器没有接收到回复，那么上游发来的数据流就不会向下转发。 </p>
+</blockquote>
+<h3 id="IGMP-Snooping"><a href="#IGMP-Snooping" class="headerlink" title="IGMP Snooping"></a>IGMP Snooping</h3><p>对于未使能 igmp-snooping 时，由于不知道哪些端口下存在接收者，因此交换机向 VLAN 内的所有端口（除入端口外）转发该播数据报文，此 VLAN 内的组播组成员和非组播组成员都能收到组播数据报文。</p>
+<p>IGMP-Snooping 是实现组播转发树上最后一跳路由器到接收者之间二层网络上的组播数据按需分发的协议，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161102825.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<p>IGMP snooping 的实现机理</p>
+<p>交换机通过侦听主机向路由器的 IGMP 成员报告消息的方式，形成组成员和交换机接口的对应关系；交换机根据该对应关系将收到组播数据包只转给具有组成员的接口。</p>
+<p>IGMP proxy与 IGMP Snooping 实现功能相同但机理相异</p>
+<p>IGMP snooping 只是通过侦听 IGMP 的消息来获取有关信息，而 GMP proxy则拦截了终端用户的 igmp 请求并进行相关处理后，再将它转发给上层路由器。<br>所以在 GMP snooping里面形成的 table 是组成员和交换机接口的对应关系，在 IGMP Proxy 里面形成的是组播路由表。</p>
 
                 
               </div>
@@ -323,7 +373,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" class="category-chain-item">个人记录</a>
+  <a href="/categories/%E4%BF%A1%E6%81%AF/" class="category-chain-item">信息</a>
   
   
 
@@ -338,7 +388,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/weekly/" class="print-no-link">#weekly</a>
+        <a href="/tags/learn-IPTV/" class="print-no-link">#learn_IPTV</a>
       
     </div>
   
@@ -350,8 +400,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2024-W13</div>
-      <div>https://yohakuo.github.io/2024/03/30/2024-W13/</div>
+      <div>IPTV相关原理</div>
+      <div>https://yohakuo.github.io/2024/04/15/IPTV相关原理/</div>
     </div>
     <div class="license-meta">
       
@@ -363,7 +413,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月31日</div>
+          <div>2024年4月16日</div>
         </div>
       
       
@@ -395,18 +445,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/04/Typst%E5%88%9D%E4%BA%86%E8%A7%A3/" title="Typst初了解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Typst初了解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/30/R%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/" title="R的下载和安装">
-                        <span class="hidden-mobile">R的下载和安装</span>
+                      <a href="/2024/04/14/%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/" title="通信工程">
+                        <span class="hidden-mobile">通信工程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
