@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161042450.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161102825.png">
 <meta property="article:published_time" content="2024-04-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-04-16T03:09:51.441Z">
+<meta property="article:modified_time" content="2024-04-16T03:19:49.728Z">
 <meta property="article:author" content="liuliu">
 <meta property="article:tag" content="learn_IPTV">
 <meta name="twitter:card" content="summary_large_image">
@@ -298,7 +298,7 @@
 <h2 id="系统结构"><a href="#系统结构" class="headerlink" title="系统结构"></a>系统结构</h2><blockquote>
 <p>业务层相关网元设备的主要功能</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404160928247.png" srcset="/img/loading.gif" lazyload alt="450"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404160928247.png" srcset="/img/loading.gif" lazyload alt="系统结构|450"></p>
 <p>CDN Node（Content Delivery Network Node）<br>推送媒体流给 STB</p>
 <p>STB（Set Top Box）<br>机顶盒，用户它体验 IPTV 服务</p>
 <p>EPG（Electronic Program Guide）<br>推送节目菜单</p>
@@ -307,13 +307,13 @@
 <p>SCP（Service Control Point） 帮助运营商掌握网络中各种业务对带宽的占用情况，业务配置、鉴权。</p>
 <p>CDN Manager（内容分发网络管理系统）负责调配 CDN Node，进行内容的高效分发和网络资源的有效管理。</p>
 <p>DB 负责存储用户认证授权信息，包括用户信息、内容信息、业务逻辑等。</p>
-<h2 id="业务流程"><a href="#业务流程" class="headerlink" title="业务流程"></a>业务流程</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404160928249.png" srcset="/img/loading.gif" lazyload alt="450"></p>
+<h2 id="业务流程"><a href="#业务流程" class="headerlink" title="业务流程"></a>业务流程</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404160928249.png" srcset="/img/loading.gif" lazyload alt="业务流程|450"></p>
 <p>自下而上的过程。</p>
 <p>首先是机顶盒通过 BRAS（终端用户的网关，用户端要通过它去访问其他设备）申请获取 IP 地址。<br>然后在业务机房进行认证授权，注册用户名，有了这些信息后才能活得 ip 地址。<br>通过 MW 进行认证，鉴权，通过后给对应用户授权，调动源节目资源。<br>推送 EPG、CDN Node 的地址和用户产品包等。</p>
 <p>当这些认证通过后，用户端就可以获取节目菜单，并正常观看节目了。</p>
-<h1 id="组播原理"><a href="#组播原理" class="headerlink" title="组播原理"></a>组播原理</h1><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161008004.png" srcset="/img/loading.gif" lazyload alt="250"></p>
+<h1 id="组播原理"><a href="#组播原理" class="headerlink" title="组播原理"></a>组播原理</h1><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161008004.png" srcset="/img/loading.gif" lazyload alt="组播原理|250"></p>
 <p>单播是点对点，广播是点到全部点。<br>组播介于单播和广播之间，属于点对多点通信方式。<br>当主机向一组主机发送信息存在于某个组的所有主机都可以接收到信息。</p>
-<h2 id="组播-IP-地址"><a href="#组播-IP-地址" class="headerlink" title="组播 IP 地址"></a>组播 IP 地址</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161014143.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<h2 id="组播-IP-地址"><a href="#组播-IP-地址" class="headerlink" title="组播 IP 地址"></a>组播 IP 地址</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161014143.png" srcset="/img/loading.gif" lazyload alt="组播IP|520"></p>
 <blockquote>
 <p>实验中主要用 224.0.0.1 ，即给所有主机和路由器发送组播数据流</p>
 </blockquote>
@@ -322,18 +322,18 @@
 </blockquote>
 <p>OSPF（开放最短路径优先）是一种内部网关协议（IGP），用于在单一自治系统内部进行路由信息的分发。OSPF通过使用Dijkstra算法计算最短路径树，来选择数据包从源头到目的地的最佳路径。它是一种动态的、基于链路状态的路由协议，可以快速适应网络拓扑的变化。</p>
 <p>在组播环境中，OSPF可以通过其扩展功能来支持IP多播数据包的路由。这意味着OSPF能够识别多播流量，并为其选择高效的路由路径。</p>
-<h2 id="组播协议的三层架构"><a href="#组播协议的三层架构" class="headerlink" title="组播协议的三层架构"></a>组播协议的三层架构</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161024889.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<h2 id="组播协议的三层架构"><a href="#组播协议的三层架构" class="headerlink" title="组播协议的三层架构"></a>组播协议的三层架构</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161024889.png" srcset="/img/loading.gif" lazyload alt="组播协议架构|520"></p>
 <blockquote>
 <p>R1 可以做成组播汇聚点（RP），所有的源数据通过 RP 汇聚，再向下转发，RP 也相当于组播源</p>
 </blockquote>
 <p>MS（组播源）一般以单播形式发送数据流，然后到达下一层–组播网络。</p>
 <p>这一层是由路由器或者具有路由功能的三层设备组成的组播路由，运行组播路由协议（如 PIM 协议无关）</p>
 <p>到 R 4、R5、R6 这一部分，属于组成员管理的接入部分。<br>与主机相连的边缘路由器，运行的是 IGMP（内部网关管理协议），这个协议可以控制哪些用户加入该组播组里。</p>
-<h2 id="组播协议组成"><a href="#组播协议组成" class="headerlink" title="组播协议组成"></a>组播协议组成</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161034067.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<h2 id="组播协议组成"><a href="#组播协议组成" class="headerlink" title="组播协议组成"></a>组播协议组成</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161034067.png" srcset="/img/loading.gif" lazyload alt="组播协议组成|520"></p>
 <blockquote>
 <p>实验主要用到 IGMP（v3），PIM-SM（用户数小用稀疏协议，主机发送请求才发）</p>
 </blockquote>
-<h3 id="PIM-SM-转发"><a href="#PIM-SM-转发" class="headerlink" title="PIM-SM 转发"></a>PIM-SM 转发</h3><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161042450.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<h3 id="PIM-SM-转发"><a href="#PIM-SM-转发" class="headerlink" title="PIM-SM 转发"></a>PIM-SM 转发</h3><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161042450.png" srcset="/img/loading.gif" lazyload alt="PIM-SM|520"></p>
 <blockquote>
 <p>在 DR 与主机相连的一侧，用 IGMP 管理。</p>
 </blockquote>
@@ -350,7 +350,7 @@
 </blockquote>
 <h3 id="IGMP-Snooping"><a href="#IGMP-Snooping" class="headerlink" title="IGMP Snooping"></a>IGMP Snooping</h3><p>对于未使能 igmp-snooping 时，由于不知道哪些端口下存在接收者，因此交换机向 VLAN 内的所有端口（除入端口外）转发该播数据报文，此 VLAN 内的组播组成员和非组播组成员都能收到组播数据报文。</p>
 <p>IGMP-Snooping 是实现组播转发树上最后一跳路由器到接收者之间二层网络上的组播数据按需分发的协议，如下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161102825.png" srcset="/img/loading.gif" lazyload alt="520"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404161102825.png" srcset="/img/loading.gif" lazyload alt="IGMP-Snooping|520"></p>
 <p>IGMP snooping 的实现机理</p>
 <p>交换机通过侦听主机向路由器的 IGMP 成员报告消息的方式，形成组成员和交换机接口的对应关系；交换机根据该对应关系将收到组播数据包只转给具有组成员的接口。</p>
 <p>IGMP proxy与 IGMP Snooping 实现功能相同但机理相异</p>
