@@ -31,21 +31,22 @@ categories: 教程
 %导言区域要添加以上两个包
 ```
 \begin{figure}[htbp]
-\centering  %居中
-\subfigure[ ]{   %第一张子图
-\begin{minipage}{7cm}
-\centering    %子图居中
-\includegraphics[scale=0.2]{fig/11.png}  
-\end{minipage}
-}
-\subfigure[ ]{ %第二张子图
-\begin{minipage}{7cm}
-\centering    %子图居中
-\includegraphics[scale=0.2]{fig/12.png}
-\end{minipage}
-}
-\caption{}    %大图名称
+    \centering  %居中
+    \subfigure[ ]{   %第一张子图
+        \begin{minipage}{7cm}
+        \centering    %子图居中
+        \includegraphics[scale=0.5]{fig/3.png}  
+        \end{minipage}
+    }
+    \subfigure[ ]{ %第二张子图
+        \begin{minipage}{7cm}
+        \centering    %子图居中
+        \includegraphics[scale=0.2]{fig/4.png}
+        \end{minipage}
+    }
+    \caption{}    %大图名称
 \end{figure}
+\FloatBarrier  #在图片后放置防止浮动
 ```
 ### 三图
 ```
