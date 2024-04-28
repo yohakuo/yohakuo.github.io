@@ -1,10 +1,9 @@
 ---
 title: R的下载和安装
 date: 2024-03-31
-updated: 
 share: true
 tags:
-  - key_R
+  - R
 categories: 教程
 ---
 ## 参考资料

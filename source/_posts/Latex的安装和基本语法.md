@@ -3,7 +3,7 @@ title: Latex的安装和基本使用
 date: 2024-03-24
 updated: 
 tags:
-  - key_LaTeX
+  - LaTeX
 categories: 教程
 share: true
 ---

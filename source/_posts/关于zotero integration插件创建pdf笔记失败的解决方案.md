@@ -3,7 +3,7 @@ title: 关于zotero integration插件创建pdf笔记失败的解决方案
 date: 2024-04-20
 share: true
 tags:
-  - key_Obsidian
+  - Obsidian
 categories: 教程
 archive: 
 ---
