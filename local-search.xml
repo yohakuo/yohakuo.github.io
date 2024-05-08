@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>authentication</title>
+    <link href="/2024/05/08/%E9%89%B4%E6%9D%83/"/>
+    <url>/2024/05/08/%E9%89%B4%E6%9D%83/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="https://www.sharetechnote.com/html/5G/5G_Authentication.html"><strong>参考</strong></a></p></blockquote><h2 id="注册简述"><strong>注册简述</strong></h2><ul><li><p>身份验证消息是将 UE 升级为 5 G RAN 和核心网时涉及的一组 NAS 消息<br>即一组涉及将UE身份验证到5G RAN和核心网络的NAS消息</p><p>RAN指的是接入网络（Radio Access Network）<br>NAS 指网络接入服务器（Network Access Server），是一种用于提供用户接入鉴权服务的网络设备。</p></li><li><p>主要涉及三条 NAS 消息：<br>身份验证请求（AuthenticationRequest）<br>身份验证响应（AuthenticationResponse）</p><p>身份验证请求是用于请求验证用户身份的消息，而身份验证响应则是用于回复验证结果的消息。</p></li><li><p>注册接受的重要信息<br>UE ID（GUTI）  ：用户设备标识（全局临时标识符）<br>注册结果<br>允许的网络切片列表：指用户设备可以访问的网络切片列表</p></li></ul><blockquote><p>5G/NR 中的注册过程类似于 LTE 中的附加过程，只是由于5G/NR 中核心网络结构的变化，在各种 NAS 消息中增加或重命名了许多新的信息元素。</p><p>鉴权不仅适用于 NAS 消息信令。核心网络中发生了许多事情，各种核心网络组件之间发生了许多交互。</p></blockquote><h2 id="信息序列">信息序列</h2><p><img src="https://fastly.jsdelivr.net/gh/yohakuo/CDN/img/202405081058782.png" alt="authentication.drawio.png|720#invert_B"></p><h3 id="情况A：正常鉴权">情况A：正常鉴权</h3><ol><li><strong>网络（AMF）-&gt; 用户设备（UE）：</strong> 网络向用户设备发送“鉴权请求”消息。</li><li><strong>用户设备（UE）-&gt; 网络（AMF）：</strong> 用户设备收到鉴权请求后，启动T3560定时器，然后处理鉴权数据并向网络发送“鉴权响应”消息。</li><li><strong>用户设备（UE）：</strong> 用户设备在发送鉴权响应后，停止T3560定时器。</li></ol><blockquote><p>&quot;NW&quot;是指“Network”的缩写，也就是网络；而&quot;AMF&quot;是指“Access and Mobility Management Function”的缩写，即接入和移动性管理功能。在5G网络架构中，AMF负责处理与用户设备（UE）的接入和移动性相关的核心网络功能，包括鉴权、安全控制、会话管理等。</p></blockquote><h3 id="情况B：鉴权被拒">情况B：鉴权被拒</h3><ol><li><strong>网络（AMF）-&gt; 用户设备（UE）：</strong> 网络向用户设备发送“鉴权请求”消息。</li><li><strong>用户设备（UE）-&gt; 网络（AMF）：</strong> 用户设备收到鉴权请求后，启动T3560定时器，然后处理鉴权数据并向网络发送“鉴权响应”消息。</li><li><strong>用户设备（UE）：</strong> 用户设备在发送鉴权响应后，停止T3560定时器。</li><li><strong>网络（AMF）-&gt; 用户设备（UE）：</strong> 如果网络不接受用户设备的鉴权响应，将向用户设备发送“鉴权拒绝”消息。</li></ol><h3 id="情况C：注册被拒">情况C：注册被拒</h3><ol><li><strong>网络（AMF）-&gt; 用户设备（UE）：</strong> 网络向用户设备发送“鉴权请求”消息。</li><li><strong>用户设备（UE）-&gt; 网络（AMF）：</strong> 用户设备收到鉴权请求后，启动T3560定时器，但由于某些原因，用户设备无法完成鉴权过程，它将向网络发送“鉴权失败”消息。</li><li><strong>用户设备（UE）：</strong> 用户设备在发送鉴权失败消息后，停止T3560定时器。</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>知识</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>通信网络</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>随机接入的4个步骤</title>
     <link href="/2024/05/08/%E9%9A%8F%E6%9C%BA%E6%8E%A5%E5%85%A5%E7%9A%844%E4%B8%AA%E6%AD%A5%E9%AA%A4/"/>
     <url>/2024/05/08/%E9%9A%8F%E6%9C%BA%E6%8E%A5%E5%85%A5%E7%9A%844%E4%B8%AA%E6%AD%A5%E9%AA%A4/</url>
