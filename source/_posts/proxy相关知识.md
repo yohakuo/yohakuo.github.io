@@ -5,7 +5,7 @@ updated:
 share: true
 tags:
   - read
-categories: 信息
+categories: 知识
 archive: 
 ---
 # 相关知识
