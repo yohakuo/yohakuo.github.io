@@ -5,7 +5,7 @@ share: true
 tags:
   - IPTV
   - 概念
-categories: 信息
+categories: 知识
 archive: 
 ---
 >官方视频
