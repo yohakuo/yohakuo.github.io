@@ -18,18 +18,20 @@
   <meta name="author" content="liuliu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="安装  非常简单，在 Vscode 下载两个拓展 Typst LSP 和Typst Preview 然后创建 .typ 文件即可开始 快捷键 ctrl+k v 进行预览  文档  非官方的中文教程 官方教程  数学  基本用法和 ob 中简化的 markdown 很相似   数学语法 符号部分 （比如箭头）  公式与周围的文本默认在同一行上。 如果想让它新起一行，要在在其开头和结尾插入一个空格 1">
+    <meta name="description" content="安装  非常简单，在 Vscode 下载两个拓展 Typst LSP 和Typst Preview 然后创建 .typ 文件即可开始 快捷键 ctrl+k v 进行预览  相关资源  非官方的中文教程 官方教程 在线编辑器 模板社区  如何制作一个模板 自定义函数 123#let amazed(term) &#x3D; box[✨ #term ✨]You are #amazed[beautiful]!">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Typst初了解">
 <meta property="og:url" content="https://yohakuo.github.io/2024/04/04/Typst%E5%88%9D%E4%BA%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="liuliusmagicworld">
-<meta property="og:description" content="安装  非常简单，在 Vscode 下载两个拓展 Typst LSP 和Typst Preview 然后创建 .typ 文件即可开始 快捷键 ctrl+k v 进行预览  文档  非官方的中文教程 官方教程  数学  基本用法和 ob 中简化的 markdown 很相似   数学语法 符号部分 （比如箭头）  公式与周围的文本默认在同一行上。 如果想让它新起一行，要在在其开头和结尾插入一个空格 1">
+<meta property="og:description" content="安装  非常简单，在 Vscode 下载两个拓展 Typst LSP 和Typst Preview 然后创建 .typ 文件即可开始 快捷键 ctrl+k v 进行预览  相关资源  非官方的中文教程 官方教程 在线编辑器 模板社区  如何制作一个模板 自定义函数 123#let amazed(term) &#x3D; box[✨ #term ✨]You are #amazed[beautiful]!">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typst-doc-cn.github.io/assets/docs/f55a5389282e58c6cefb7ae2329cc761.png">
 <meta property="article:published_time" content="2024-04-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-12-23T12:27:34.050Z">
+<meta property="article:modified_time" content="2024-12-25T07:30:30.555Z">
 <meta property="article:author" content="liuliu">
 <meta property="article:tag" content="Typst">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://typst-doc-cn.github.io/assets/docs/f55a5389282e58c6cefb7ae2329cc761.png">
   
   
   
@@ -227,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          793 字
+          877 字
         
       </span>
     
@@ -238,7 +240,7 @@
         
         
         
-          7 分钟
+          8 分钟
         
       </span>
     
@@ -286,32 +288,42 @@
 <li>然后创建 <code>.typ</code> 文件即可开始</li>
 <li>快捷键 <code>ctrl+k</code> <code>v</code> 进行预览</li>
 </ul>
-<h1>文档</h1>
+<h1>相关资源</h1>
 <ul>
 <li>非官方的中文<a target="_blank" rel="noopener" href="https://typst-doc-cn.github.io/docs/tutorial/">教程</a></li>
 <li>官方<a target="_blank" rel="noopener" href="https://typst.app/docs/">教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://typst.app/">在线编辑器</a></li>
+<li><a target="_blank" rel="noopener" href="https://typst.app/universe/search?kind=templates">模板社区</a></li>
 </ul>
-<h3 id="数学">数学</h3>
+<h1>如何制作一个模板</h1>
+<h2 id="自定义函数">自定义函数</h2>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-selector-id">#let</span> <span class="hljs-built_in">amazed</span>(term) = box<span class="hljs-selector-attr">[✨ #term ✨]</span><br><br>You are <span class="hljs-selector-id">#amazed</span><span class="hljs-selector-attr">[beautiful]</span>!<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>基本用法和 ob 中简化的 markdown 很相似</p>
+<p><img src="https://typst-doc-cn.github.io/assets/docs/f55a5389282e58c6cefb7ae2329cc761.png" srcset="/img/loading.gif" lazyload alt=""></p>
 </blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://typst-doc-cn.github.io/docs/reference/math/">数学语法</a></li>
-<li><a target="_blank" rel="noopener" href="https://typst-doc-cn.github.io/docs/reference/symbols/sym/">符号部分</a> （比如箭头）</li>
-</ul>
-<p>公式与周围的文本默认在同一行上。<br>
-如果想让它新起一行，要在在其开头和结尾插入一个空格</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-symbol">$</span> Q = rho A v + C <span class="hljs-symbol">$</span><br></code></pre></td></tr></table></figure>
-<p>数学模式将始终原样地显示单个字母。要隐式地表明这是单个字母之间的乘法，请在它们之间加入空格。<br>
- <br>
- 多个字母将被视作为符号、变量或函数名称。用 <code>&quot;&quot;</code> 包起来</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">Q</span> = rho A v + <span class="hljs-string">&quot;time offset&quot;</span><br></code></pre></td></tr></table></figure>
-<p></p>
-<h1>格式</h1>
+<p>函数名是 amazed，输入参数为 term，box 的作用是让 <code>term</code> 与它的火花不会换行符分开。</p>
+<p>也可以给自定义函数添加参数。<br>
+注意添加的颜色参数需要一个默认输入，以防使用时没有给参数。</p>
+<figure class="highlight leaf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs leaf"><span class="hljs-punctuation">#</span><span class="hljs-keyword">let</span> amazed(term, color: blue) = &#123;<br>  text(color, box[✨ <span class="hljs-punctuation">#</span><span class="hljs-keyword">term</span> ✨])<br>&#125;<br><br>You are <span class="hljs-punctuation">#</span><span class="hljs-keyword">amazed</span>[beautiful]!<br>I am <span class="hljs-punctuation">#</span><span class="hljs-keyword">amazed</span><span class="hljs-params">(<span class="hljs-variable">color</span>: <span class="hljs-variable">purple</span>)</span>[amazed]!<br></code></pre></td></tr></table></figure>
+<h2 id="Show-规则">Show 规则</h2>
 <blockquote>
-<p>一个 语法糖</p>
-<p>任何 <code>fn(...)[XXX][YYY][ZZZ]</code>，都会被自动转成 <code>fn(..., [XXX], [YYY], [ZZZ])</code></p>
+<p>Show 规则可以将自定义函数应用于整个文档。</p>
 </blockquote>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs vim">#show: amazed<br>I choose <span class="hljs-keyword">to</span> focus <span class="hljs-keyword">on</span> the good<br>in my life <span class="hljs-built_in">and</span> <span class="hljs-keyword">let</span> <span class="hljs-keyword">go</span> of any<br>negative thoughts <span class="hljs-built_in">or</span> beliefs.<br>In fact, I <span class="hljs-keyword">am</span> amazing!<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>附上项目的 logo</p>
+</blockquote>
+<figure class="highlight leaf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs leaf"><span class="hljs-punctuation">#</span><span class="hljs-keyword">show</span> &quot;ArtosFlow&quot;: name =&gt; box[<br>  <span class="hljs-punctuation">#</span><span class="hljs-keyword">box</span><span class="hljs-params">(<span class="hljs-keyword">image</span><span class="hljs-params">(</span></span><br><span class="hljs-params"><span class="hljs-params">    <span class="hljs-string">&quot;logo.svg&quot;</span>,</span></span><br><span class="hljs-params"><span class="hljs-params">    <span class="hljs-variable">height</span>: 0.7<span class="hljs-variable">em</span>,</span></span><br><span class="hljs-params"><span class="hljs-params">  )</span>)</span><br>  <span class="hljs-punctuation">#</span><span class="hljs-keyword">name</span><br>]<br><br>This report is embedded in the<br>ArtosFlow project. ArtosFlow is a<br>project of the Artos Institute.<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><code>show</code> 关键字，后面跟着我们希望以不同方式显示的文本字符串，以及一个冒号。</p>
+<p>然后，我们编写一个函数，该函数将应显示的内容作为参数输入，在这里，我们称该参数为 <code>name</code>。我们现在可以使用函数体中的 <code>name</code> 变量来输出名称 <code>ArtosFlow</code>。</p>
+<p>Show 规则在名称前面添加 Logo 图像，并将结果放入 <code>box</code> 中，以防止 Logo 和名称之间出现换行符。图像也放在一个 <code>box</code> 中，这样它就不会出现在自己的段落中。</p>
+</blockquote>
+<h2 id="嵌入的-Set-和-Show-规则">嵌入的 Set 和 Show 规则</h2>
+<p>要将一些 Set 和 Show 规则应用于我们的模板，我们可以在函数的内容块中使用 <code>set</code> 和 <code>show</code>，然后将文档插入到该内容块中。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-built_in">let</span> template(doc) = [</span><br><span class="hljs-meta prompt_">  #</span><span class="language-bash"><span class="hljs-built_in">set</span> text(font: <span class="hljs-string">&quot;Inria Serif&quot;</span>)</span><br><span class="hljs-meta prompt_">  #</span><span class="language-bash">show <span class="hljs-string">&quot;something cool&quot;</span>: [Typst]</span><br><span class="hljs-meta prompt_">  #</span><span class="language-bash">doc</span><br>]<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">show: template</span><br>I am learning something cool today.<br>It&#x27;s going great so far!<br></code></pre></td></tr></table></figure>
+<p>在 template 函数里嵌入 Set 和 Show 规则。<br>
+Show 规则将我们的整个文档传递给 <code>template</code> 函数， 因此模板中的 <code>text</code> Set 规则和字符串 Show 规则将应用于整个文档。</p>
 <h2 id="set-规则">set 规则</h2>
 <p>&gt;可以将样式属性应用于某类内容块的所有实例<br>
  <br>
@@ -353,21 +365,6 @@
 <li>b</li>
 </ol>
 </blockquote>
-<h2 id="Show-规则">Show 规则</h2>
-<blockquote>
-<p>附上项目的 logo</p>
-</blockquote>
-<figure class="highlight leaf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs leaf"><span class="hljs-punctuation">#</span><span class="hljs-keyword">show</span> &quot;ArtosFlow&quot;: name =&gt; box[<br>  <span class="hljs-punctuation">#</span><span class="hljs-keyword">box</span><span class="hljs-params">(<span class="hljs-keyword">image</span><span class="hljs-params">(</span></span><br><span class="hljs-params"><span class="hljs-params">    <span class="hljs-string">&quot;logo.svg&quot;</span>,</span></span><br><span class="hljs-params"><span class="hljs-params">    <span class="hljs-variable">height</span>: 0.7<span class="hljs-variable">em</span>,</span></span><br><span class="hljs-params"><span class="hljs-params">  )</span>)</span><br>  <span class="hljs-punctuation">#</span><span class="hljs-keyword">name</span><br>]<br><br>This report is embedded in the<br>ArtosFlow project. ArtosFlow is a<br>project of the Artos Institute.<br></code></pre></td></tr></table></figure>
-<blockquote>
-<p><code>show</code> 关键字，后面跟着我们希望以不同方式显示的文本字符串，以及一个冒号。<br>
-然后，我们编写一个函数，该函数将应显示的内容作为参数输入，在这里，我们称该参数为 <code>name</code>。我们现在可以使用函数体中的 <code>name</code> 变量来输出名称 <code>ArtosFlow</code>。</p>
-<p>Show 规则在名称前面添加 Logo 图像，并将结果放入 <code>box</code> 中，以防止 Logo 和名称之间出现换行符。 图像也放在一个 <code>box</code> 中，这样它就不会出现在自己的段落中。</p>
-</blockquote>
-<h1>在线处理</h1>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://typst.app/">在线编辑器</a></li>
-<li><a target="_blank" rel="noopener" href="https://typst.app/universe/search?kind=templates">模板社区</a></li>
-</ul>
 
                 
               </div>
