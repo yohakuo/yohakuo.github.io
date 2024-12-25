@@ -4,6 +4,7 @@ date: 2024-04-20
 share: true
 tags:
   - Obsidian
+  - method
 categories: 教程
 archive: 
 ---
