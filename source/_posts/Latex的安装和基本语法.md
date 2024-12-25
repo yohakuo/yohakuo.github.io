@@ -4,6 +4,7 @@ date: 2024-03-24
 updated: 
 tags:
   - LaTeX
+  - method
 categories: 教程
 share: true
 ---

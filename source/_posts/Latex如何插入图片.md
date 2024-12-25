@@ -5,6 +5,7 @@ updated: 2024-03-27
 share: true
 tags:
   - LaTeX
+  - method
 categories: 教程
 ---
 ## 图片的插入
