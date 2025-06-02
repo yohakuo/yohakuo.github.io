@@ -18,12 +18,12 @@
   <meta name="author" content="liuliu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="参考  在 GitHub Pages 上部署 Hexo | Hexo 轮子再造 | 使用 GitHub Actions 自动部署 Hexo 博客 - 上篇 | On my way to Oodi (oreo.life) GitHub博客搭建 - 神社的储物间 (jiujiuer.xyz)  结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。 基本操作  切换分支  1git c">
+    <meta name="description" content="参考  在 GitHub Pages 上部署 Hexo   使用 GitHub Actions 自动部署 Hexo 博客) GitHub博客搭建  结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。Obsidian 一键上传用到了 envelope 。 我的 workflow 文件 123456789101112131415161718192021222324252627282">
 <meta property="og:type" content="article">
 <meta property="og:title" content="静态博客搭建指南2.0">
 <meta property="og:url" content="https://yohakuo.github.io/2024/03/22/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%972.0/index.html">
 <meta property="og:site_name" content="liuliusmagicworld">
-<meta property="og:description" content="参考  在 GitHub Pages 上部署 Hexo | Hexo 轮子再造 | 使用 GitHub Actions 自动部署 Hexo 博客 - 上篇 | On my way to Oodi (oreo.life) GitHub博客搭建 - 神社的储物间 (jiujiuer.xyz)  结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。 基本操作  切换分支  1git c">
+<meta property="og:description" content="参考  在 GitHub Pages 上部署 Hexo   使用 GitHub Actions 自动部署 Hexo 博客) GitHub博客搭建  结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。Obsidian 一键上传用到了 envelope 。 我的 workflow 文件 123456789101112131415161718192021222324252627282">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-03-26T16:00:00.000Z">
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          279 字
+          454 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          3 分钟
+          4 分钟
         
       </span>
     
@@ -283,11 +283,13 @@
                 
                 <h2 id="参考">参考</h2>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">在 GitHub Pages 上部署 Hexo | Hexo</a></li>
-<li><a target="_blank" rel="noopener" href="https://oreo.life/blog/2021-09-01-deploy-hexo-with-github-actions-1/">轮子再造 | 使用 GitHub Actions 自动部署 Hexo 博客 - 上篇 | On my way to Oodi (oreo.life)</a></li>
-<li><a target="_blank" rel="noopener" href="https://mxts.jiujiuer.xyz/2022/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">GitHub博客搭建 - 神社的储物间 (jiujiuer.xyz)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">在 GitHub Pages 上部署 Hexo </a></li>
+<li><a target="_blank" rel="noopener" href="https://oreo.life/blog/2021-09-01-deploy-hexo-with-github-actions-1/"> 使用 GitHub Actions 自动部署 Hexo 博客)</a></li>
+<li><a target="_blank" rel="noopener" href="https://mxts.jiujiuer.xyz/2022/11/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">GitHub博客搭建</a></li>
 </ul>
-<p>结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。</p>
+<p>结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。Obsidian 一键上传用到了 <a target="_blank" rel="noopener" href="https://github.com/Enveloppe/obsidian-enveloppe">envelope</a> 。</p>
+<h3 id="我的-workflow-文件">我的 workflow 文件</h3>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Generate</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Blog</span><br><br><span class="hljs-attr">on:</span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span> <span class="hljs-comment"># default branch</span><br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">submodules:</span> <span class="hljs-literal">true</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-number">16.</span><span class="hljs-string">x</span>   <span class="hljs-comment">#配置node环境</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v2</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">node-version:</span> <span class="hljs-string">&#x27;20.11.1&#x27;</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">environment</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">         npm install -g hexo-cli</span><br><span class="hljs-string">         npm ci</span><br><span class="hljs-string"></span>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Generate</span> <span class="hljs-string">pages</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">          hexo generate</span><br><span class="hljs-string">          ls -R public/</span><br><span class="hljs-string"></span>      <span class="hljs-comment"># - name: Cache NPM dependencies  </span><br>      <span class="hljs-comment">#   uses: actions/cache@v2</span><br>      <span class="hljs-comment">#   with:</span><br>      <span class="hljs-comment">#     path: node_modules</span><br>      <span class="hljs-comment">#     key: $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br>      <span class="hljs-comment">#     restore-keys: |</span><br>      <span class="hljs-comment">#       $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br>      <span class="hljs-comment"># - name: Install Dependencies</span><br>      <span class="hljs-comment">#   run: npm install</span><br>      <span class="hljs-comment"># - name: Build</span><br>      <span class="hljs-comment">#   run: npm run build</span><br>      <span class="hljs-comment"># - name: Upload Pages artifact</span><br>      <span class="hljs-comment">#   uses: actions/upload-pages-artifact@v2</span><br>      <span class="hljs-comment">#   with:</span><br>      <span class="hljs-comment">#     path: ./public</span><br>      <br>  <span class="hljs-comment"># deploy:</span><br>  <span class="hljs-comment">#   needs: build</span><br>  <span class="hljs-comment">#   permissions:</span><br>  <span class="hljs-comment">#     pages: write</span><br>  <span class="hljs-comment">#     id-token: write</span><br>  <span class="hljs-comment">#   environment:</span><br>  <span class="hljs-comment">#     name: github-pages</span><br>  <span class="hljs-comment">#     url: $&#123;&#123; steps.deployment.outputs.page_url &#125;&#125;</span><br>  <span class="hljs-comment">#   runs-on: ubuntu-latest</span><br>  <span class="hljs-comment">#   steps:</span><br>  <span class="hljs-comment">#     - name: Deploy to GitHub Pages</span><br>  <span class="hljs-comment">#       id: deployment</span><br>  <span class="hljs-comment">#       uses: actions/deploy-pages@v2</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">JamesIves/github-pages-deploy-action@releases/v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">REPOSITORY_NAME:</span> <span class="hljs-string">yohakuo/yohakuo.github.io</span><br>          <span class="hljs-attr">BRANCH:</span> <span class="hljs-string">html</span><br>          <span class="hljs-attr">FOLDER:</span> <span class="hljs-string">public</span><br></code></pre></td></tr></table></figure>
 <h2 id="基本操作">基本操作</h2>
 <ul>
 <li>切换分支</li>
@@ -328,9 +330,10 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">git rm -r <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h2 id="主题">主题</h2>
 <ul>
-<li>文章配置 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">Front-matter | Hexo</a></li>
-<li>主题配置 <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2">配置指南 | Hexo Fluid 用户手册 (fluid-dev.com)</a></li>
+<li>文章配置 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter"> Hexo</a></li>
+<li>主题配置 <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2"> Hexo Fluid 用户手册 </a></li>
 </ul>
+<p>我记得当时配置这个主题出现了一点问题，最后是把它作为子模块工作流才能运行成&lt;submodules: true&gt;</p>
 <h2 id="解决方案">解决方案</h2>
 <h4 id="You-have-unmerged-paths">You have unmerged paths.</h4>
 <ul>
@@ -342,7 +345,7 @@
 </ul>
 <h4 id="git-push-u-origin-fatal-unable-to-access">git push -u origin --&gt; fatal: unable to access</h4>
 <ul>
-<li>远程仓库和本地不一致，且远程有的文件本地没有</li>
+<li>远程仓库和本地不一致，比如远程有的文件本地没有</li>
 <li>查询并取消代理</li>
 </ul>
 <figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tcl">git config --<span class="hljs-keyword">global</span> <span class="hljs-keyword">http</span>.proxy<br> <br>git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">unset</span> <span class="hljs-keyword">http</span>.proxy<br></code></pre></td></tr></table></figure>
