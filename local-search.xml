@@ -290,33 +290,6 @@
   
   
   <entry>
-    <title>关于zotero integration插件创建pdf笔记失败的解决方案</title>
-    <link href="/2024/04/19/%E5%85%B3%E4%BA%8Ezotero%20integration%E6%8F%92%E4%BB%B6%E5%88%9B%E5%BB%BApdf%E7%AC%94%E8%AE%B0%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <url>/2024/04/19/%E5%85%B3%E4%BA%8Ezotero%20integration%E6%8F%92%E4%BB%B6%E5%88%9B%E5%BB%BApdf%E7%AC%94%E8%AE%B0%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    
-    <content type="html"><![CDATA[<h2 id="报错如图">报错如图</h2><p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404201738259.png" alt="1.png|420"></p><p><a href="https://github.com/mgmeyers/obsidian-zotero-integration/issues/58">参考的解决方案</a></p><h2 id="确认-pdf-在-zotero-文库中可以显示">确认 pdf 在 zotero 文库中可以显示</h2><p>这里是为了确认 zotero 是否识别到该文件，排查是否存在在 zotero 外给文件重命名了</p><h2 id="修改文件标题">修改文件标题</h2><p>不要出现冒号、符号或撇号</p><h2 id="修改-pdf-的格式">修改 pdf 的格式</h2><p>用Acrobat reader 修改成通用的 pdf 格式，比如PDF-X</p><blockquote><p>问题的提出者用 Adobe PDF file 格式覆盖原文件也成功了。<br>我用的是 PDF-X</p></blockquote><p>Acrobat reader -&gt; 文件 - 另存为 -&gt; 保存类型选 “PDF/X”</p><p>最后创建成功！</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>教程</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>method</tag>
-      
-      <tag>Obsidian</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>通信工程</title>
     <link href="/2024/04/14/%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B-%E5%B0%B1%E4%B8%9A/"/>
     <url>/2024/04/14/%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B-%E5%B0%B1%E4%B8%9A/</url>
