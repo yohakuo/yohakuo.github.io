@@ -1,7 +1,7 @@
 # Site
-title: qqsmagicworld
+title: magic world
 subtitle: ''
-description: ''
+description: '睡个好觉'
 keywords:
 author: 66
 language: zh-CN
@@ -91,7 +91,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: fluid
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
