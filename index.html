@@ -193,7 +193,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/" class="post-title-link" itemprop="url"><% tp.file.title %></a>
+          <a href="/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/" class="post-title-link" itemprop="url">自动化工作流聚合信息初尝试（n8n,telegram）</a>
         </h2>
 
         <div class="post-meta-container">
@@ -205,7 +205,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-08-15 19:51:00 / 修改时间：21:27:51" itemprop="dateCreated datePublished" datetime="2025-08-15T19:51:00+08:00">2025-08-15</time>
+      <time title="创建时间：2025-08-15 19:51:00 / 修改时间：21:37:58" itemprop="dateCreated datePublished" datetime="2025-08-15T19:51:00+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -228,7 +228,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p><a target="_blank" rel="noopener" href="https://reorx.com/blog/sharing-my-footprints-automation/">参考</a></p>
-<p>本文在 <code>简单工作流的搭建</code> 部分从头开始下载了相关环境引擎，搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先来到<a href=".md#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8"> &gt; 快速启动</a> 下载必要引擎，然后可以直接跳到 <code>使用已有的工作流</code>。</p>
+<p>本文在 <code>简单工作流的搭建</code> 部分从头开始下载了相关环境引擎，搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先来到<a href="#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8">快速启动</a> 下载必要引擎，然后可以直接跳到 <code>使用已有的工作流</code>。</p>
 <p>n8n 版本： <code>1.106.3</code></p>
 <h2 id="快速启动">快速启动</h2>
 <p>下载 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a></p>
@@ -237,7 +237,6 @@
 <p>稳定版</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> <span class="literal">--name</span> n8n <span class="literal">-p</span> <span class="number">5678</span>:<span class="number">5678</span> <span class="literal">-e</span> <span class="string">&quot;HTTP_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-e</span> <span class="string">&quot;HTTPS_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-v</span> ~/.n8n:/home/node/.n8n <span class="literal">-v</span> ~/.n8n_database:/database n8nio/n8n</span><br></pre></td></tr></table></figure>
 <p><strong>然后初始化 n8n</strong> 。访问 <code>http://localhost:5678</code> 进行注册，需要邮箱验证。</p>
-<p>然后跳到 <a href=".md#%E5%88%9B%E5%BB%BA-telegram-bot-%E5%B9%B6%E8%BF%9E%E6%8E%A5%E5%88%B0-n8n">这里</a> 开始配置。</p>
 <h2 id="简单工作流的搭建">简单工作流的搭建</h2>
 <h3 id="创建-Telegram-Bot-并连接到-n8n">创建 Telegram Bot 并连接到 n8n</h3>
 <p><em>这个部分的群组可以不创建，我目前把这个群组作为 log。</em></p>
@@ -254,7 +253,7 @@
 <li>重要：将频道类型设置为<strong>私有</strong>。</li>
 <li>然后把刚刚创建的机器人<strong>添加到这个频道作为管理员，设置权限</strong>。</li>
 </ul>
-<p>完成到这里可以跳到<a href=".md#%E4%BD%BF%E7%94%A8%E5%B7%B2%E6%9C%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81"> &gt; 使用已有的工作流</a></p>
+<p>完成到这里可以跳到<a href="#%E4%BD%BF%E7%94%A8%E5%B7%B2%E6%9C%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81"> 使用已有的工作流</a></p>
 <p><strong>创建并获取群组的 Chat ID</strong>（选做）</p>
 <ul>
 <li>将你刚刚创建的机器人临时添加到一个普通的群组里，并且打开权限，然后在这个群组里随便发一条消息。</li>
@@ -419,7 +418,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 21:27:51" itemprop="dateModified" datetime="2025-08-15T21:27:51+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:37:58" itemprop="dateModified" datetime="2025-08-15T21:37:58+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -521,7 +520,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 21:27:51" itemprop="dateModified" datetime="2025-08-15T21:27:51+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:37:58" itemprop="dateModified" datetime="2025-08-15T21:37:58+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -624,7 +623,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 21:27:51" itemprop="dateModified" datetime="2025-08-15T21:27:51+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:37:58" itemprop="dateModified" datetime="2025-08-15T21:37:58+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -725,7 +724,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 21:27:51" itemprop="dateModified" datetime="2025-08-15T21:27:51+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:37:58" itemprop="dateModified" datetime="2025-08-15T21:37:58+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -835,7 +834,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 21:27:51" itemprop="dateModified" datetime="2025-08-15T21:27:51+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:37:58" itemprop="dateModified" datetime="2025-08-15T21:37:58+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -938,7 +937,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 21:27:51" itemprop="dateModified" datetime="2025-08-15T21:27:51+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:37:58" itemprop="dateModified" datetime="2025-08-15T21:37:58+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1052,7 +1051,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 21:27:51" itemprop="dateModified" datetime="2025-08-15T21:27:51+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:37:58" itemprop="dateModified" datetime="2025-08-15T21:37:58+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1160,7 +1159,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 21:27:51" itemprop="dateModified" datetime="2025-08-15T21:27:51+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:37:58" itemprop="dateModified" datetime="2025-08-15T21:37:58+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1264,7 +1263,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 21:27:51" itemprop="dateModified" datetime="2025-08-15T21:27:51+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:37:58" itemprop="dateModified" datetime="2025-08-15T21:37:58+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
