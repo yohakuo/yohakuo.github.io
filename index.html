@@ -101,7 +101,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">20</span></a></li>
   </ul>
 </nav>
 
@@ -138,7 +138,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -149,7 +149,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -166,6 +166,214 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="66">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="magic world">
+      <meta itemprop="description" content="睡个好觉">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | magic world">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-08-15 19:51:00 / 修改时间：21:21:15" itemprop="dateCreated datePublished" datetime="2025-08-15T19:51:00+08:00">2025-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://reorx.com/blog/sharing-my-footprints-automation/">参考</a></p>
+<p>本文在 <code>简单工作流的搭建</code> 部分从头开始下载了相关环境引擎，搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先来到 <a href=".md#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8"> &gt; 快速启动</a> 下载必要引擎，然后可以直接跳到 <code>使用已有的工作流</code>。</p>
+<p>n8n 版本： <code>1.106.3</code></p>
+<h2 id="快速启动">快速启动</h2>
+<p>下载 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a></p>
+<p>测试模式，不要关闭终端</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-it</span> <span class="literal">--rm</span> <span class="literal">--name</span> n8n <span class="literal">-p</span> <span class="number">5678</span>:<span class="number">5678</span> <span class="literal">-e</span> <span class="string">&quot;HTTP_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-e</span> <span class="string">&quot;HTTPS_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-v</span> ~/.n8n:/home/node/.n8n n8nio/n8n</span><br></pre></td></tr></table></figure>
+<p>稳定版</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> <span class="literal">--name</span> n8n <span class="literal">-p</span> <span class="number">5678</span>:<span class="number">5678</span> <span class="literal">-e</span> <span class="string">&quot;HTTP_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-e</span> <span class="string">&quot;HTTPS_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-v</span> ~/.n8n:/home/node/.n8n <span class="literal">-v</span> ~/.n8n_database:/database n8nio/n8n</span><br></pre></td></tr></table></figure>
+<p><strong>然后初始化 n8n</strong> 。访问 <code>http://localhost:5678</code> 进行注册，需要邮箱验证。</p>
+<p>然后跳到 <a href=".md#%E5%88%9B%E5%BB%BA-telegram-bot-%E5%B9%B6%E8%BF%9E%E6%8E%A5%E5%88%B0-n8n">这里</a> 开始配置。</p>
+<h2 id="简单工作流的搭建">简单工作流的搭建</h2>
+<h3 id="创建-Telegram-Bot-并连接到-n8n">创建 Telegram Bot 并连接到 n8n</h3>
+<p><em>这个部分的群组可以不创建，我目前把这个群组作为 log。</em></p>
+<p><strong>创建一个 Telegram Bot</strong></p>
+<ul>
+<li>打开 Telegram 客户端，在搜索框里搜索 <code>@BotFather</code> (注意核对官方认证的蓝色√图标)，然后点进去开始聊天。</li>
+<li>发送 <code>/newbot</code> 给 BotFather。</li>
+<li>给机器人起名字以及用户名 (username，后面查找机器人用)，这个必须以 <code>bot</code> 结尾。</li>
+<li>创建成功后，BotFather 会给你一长串<strong>API Token</strong>。<strong>请立即复制并保存好这个 Token</strong>。</li>
+</ul>
+<p><strong>创建一个用于接收信息的频道 (Channel)</strong></p>
+<ul>
+<li>在 Telegram 里，创建一个新的<strong>频道</strong>。给它起个名字。</li>
+<li>重要：将频道类型设置为<strong>私有</strong>。</li>
+<li>然后把刚刚创建的机器人<strong>添加到这个频道作为管理员，设置权限</strong>。</li>
+</ul>
+<p>完成到这里可以跳到<a href=".md#%E4%BD%BF%E7%94%A8%E5%B7%B2%E6%9C%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81"> &gt; 使用已有的工作流</a></p>
+<p><strong>创建并获取群组的 Chat ID</strong>（选做）</p>
+<ul>
+<li>将你刚刚创建的机器人临时添加到一个普通的群组里，并且打开权限，然后在这个群组里随便发一条消息。</li>
+<li>打开浏览器，访问以下网址 :<br>
+<code>https://api.telegram.org/bot&#123;YOUR_BOT_TOKEN&#125;/getUpdates</code></li>
+<li>你会看到一些 JSON 格式的文字。找到 <code>chat</code> 部分，里面有一个 <code>id</code>，它通常是一个以 <code>-100</code> 开头的数字，请复制并保存好它。</li>
+</ul>
+<p><strong>在 n8n 中配置 Telegram</strong>（选做）</p>
+<ul>
+<li>打开 n8n 界面 (<code>http://localhost:5678</code>)。</li>
+<li>点击 “Add workflow” 创建一个新工作流。</li>
+<li>点击屏幕中央的 <code>+</code> 号，在搜索框里输入 <code>Telegram</code>，然后选择在 <code>action</code> 里面找到 <code>send message</code>。</li>
+<li>在右侧的配置栏中：
+<ul>
+<li><strong>Credential for Telegram API</strong>: 点击 “Create New”。
+<ul>
+<li><strong>Credential Name</strong>: 随便起个名字。</li>
+<li><strong>Access Token</strong>: 粘贴你从 BotFather 那里得到的 <strong>API Token</strong>。</li>
+<li>点击 “Save”。</li>
+</ul>
+</li>
+<li><strong>Chat ID</strong>: 粘贴你刚刚获取的以 <code>-100</code> 开头的<strong>频道 Chat ID</strong>。</li>
+<li><strong>Text</strong>: 输入 <code>Hello from n8n!</code>。</li>
+</ul>
+</li>
+<li>点击节点下方的 <strong>“Execute node”</strong> 按钮。</li>
+</ul>
+<h3 id="添加第一个信息源-RSS（选做）">添加第一个信息源 - RSS（选做）</h3>
+<p>从最简单的 RSS 开始，订阅一个你喜欢的博客。<br>
+<strong>1. 找到 RSS 链接</strong><br>
+<strong>2. 在 n8n 中配置 RSS 工作流</strong></p>
+<ul>
+<li>点击 <code>+</code> 号，添加一个 <code>Schedule</code> 节点。在弹出的配置中，可以设置每小时 (Every Hour)、每天 (Every Day) 等。</li>
+<li>点击 <code>Schedule</code> 节点右侧的 <code>+</code> 号上，在弹出的搜索框里输入 <code>RSS</code>，选择 <code>RSS Read </code> 节点，配置 URL 即可。</li>
+</ul>
+<blockquote>
+<p>[!note]<br>
+这里可能会遇到网站有安全设置，可以试试这个 <a target="_blank" rel="noopener" href="https://rss.app/">RSS 转换</a>，登录之后把博客主页地址输入，生成 RSS</p>
+</blockquote>
+<ul>
+<li><code>RSS Read</code> 连接到我们之前创建的 <code>Telegram</code> 节点。</li>
+<li>然后需要修改 <code>Telegram</code> 节点的 <code>Text</code> 内容，让它发送 RSS 的标题和链接。
+<ul>
+<li>在 <code>Text</code> 输入框右边，点击 <strong>“Add Expression”</strong>。</li>
+<li>在表达式输入框里输入：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">标题：&#123;&#123; $json.title &#125;&#125;</span><br><span class="line"></span><br><span class="line">链接：&#123;&#123; $json.link &#125;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回主界面点击右下角的 <strong>“Execute workflow”</strong> 按钮来测试整个流程。运行成功你会在 telegram 群聊看到推送的 10 条新消息（默认情况）。</li>
+</ul>
+<p>这个基础简单的工作流如下图。功能是每 5 分钟自动检查指定网站是否有新文章发布，并将所有新文章的标题和链接，逐条发送到指定 Telegram 频道。如果重复执行会发现每次都会发送 10 条信息，如果在推送前进行比对可以在 RSS 后加一个 function 模块。<br>
+<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202508141104258.png" alt="image.png|520"></p>
+<p>可以重复这个流程来订阅其它 RSS ，但不要忘记以上步骤是在一个测试群聊里进行的，如果想要把信息送到频道，需要把上面配置的 <code>Chat ID</code> 修改为频道 id，这里使用一个简单的方法获得 id：</p>
+<ul>
+<li>在 Telegram 里，搜索并关注一个叫做 <strong><code>@userinfobot</code></strong> 的机器人，或点击<a target="_blank" rel="noopener" href="https://t.me/userinfobot">链接</a>。</li>
+<li>进入接收消息的那个频道，并<strong>转发</strong>任意一条消息，发送给刚刚那个 <code>@userinfobot</code>。</li>
+<li><code>@userinfobot</code> 会立刻回复你一条信息，找到 <strong>Id</strong> 后面跟着的那个以 <code>-100</code> 开头的数字，即你频道的<strong>唯一 ID</strong>。</li>
+</ul>
+<blockquote>
+<p>[!note]<br>
+有好奇心的朋友可能会用这个机器人来试一试之前那个群聊的 id，你会发现这个得到的 id 并不是-100 开头的那个 id 了。</p>
+<p>这是因为 Telegram 建群时默认的类型是普通群组（功能有限），而-100 开头的是拥有更强大的功能的超级群组。为了让 n8n 就能稳定地发送消息， Chat ID 需要用 <code>-100</code> 开头的。私人频道可以满足个人信息聚合的要求。如果想把信息发到一个群里和朋友分享，可以自行搜索手动将那个群升级。</p>
+</blockquote>
+<h2 id="使用已有的工作流">使用已有的工作流</h2>
+<p>当然，如果也可以直接使用别人的成果-- <a target="_blank" rel="noopener" href="https://github.com/reorx/n8n-workflows/tree/master/workflows">reorx的工作流合集</a>，博主有简单说明逻辑。</p>
+<p>以 RSS 的工作流为例，先进入<a target="_blank" rel="noopener" href="https://github.com/reorx/n8n-workflows/blob/master/workflows/blog%20rss%20to%20tg.json">仓库</a>，复制 json 文件。回到 n8n 后台新建工作流，直接粘贴。然后修改 RSS 的链接，以及 telegram 的 chatid 。最后点击执行工作流测试一下是否连通。如果没问题的话，会在频道收到一条最新的推文。</p>
+<p><strong>chatid 的获取</strong></p>
+<ul>
+<li>在 Telegram 里，搜索并关注一个叫做 <strong><code>@userinfobot</code></strong> 的机器人，或点击<a target="_blank" rel="noopener" href="https://t.me/userinfobot">链接</a>。</li>
+<li>进入接收消息的那个频道，并<strong>转发</strong>任意一条消息，发送给刚刚那个 <code>@userinfobot</code>。</li>
+<li><code>@userinfobot</code> 会立刻回复你一条信息，找到 <strong>Id</strong> 后面跟着的那个以 <code>-100</code> 开头的数字，即你频道的<strong>唯一 ID</strong>。</li>
+</ul>
+<h2 id="进阶玩法-订阅多个-RSS">进阶玩法-订阅多个 RSS</h2>
+<p><em>从头搭建一个工作流来处理多个 RSS 源。</em></p>
+<h4 id="Code-节点（订阅管理）"><code>Code</code> 节点（订阅管理）</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const myRssFeeds = [</span><br><span class="line">  &#123; name: &quot;douchi&quot;, url: &quot;https://rss.app/feeds/hZVUbnIx3yBAbKMU.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;yukieyun&quot;, url: &quot;https://yukieyun.net/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;thirdshire&quot;, url: &quot;https://thirdshire.com/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;yitaoli&quot;, url: &quot;https://yitaoli2023.github.io/yitaoli/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;bamboobone9&quot;, url: &quot;https://bamboobone9.com/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;pursuitus&quot;, url: &quot;https://blog.pursuitus.com/feed&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;wraith615&quot;, url: &quot;https://blog.wraith615.xyz/rss.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;gigigatgat&quot;, url: &quot;https://www.gigigatgat.ca/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;ignativssss&quot;, url: &quot;https://ignativssss.github.io//index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;asyncx&quot;, url: &quot;https://blog.asyncx.top/zh.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;birds&quot;, url: &quot;https://moresci.sale/@birds.rss&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;shyrz&quot;, url: &quot;https://shyrz.me/rss/&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;douchiBook&quot;, url: &quot;https://bamboobone9.com/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;ruanyifeng&quot;, url: &quot;https://feeds.feedburner.com/ruanyifeng&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;decohack&quot;, url: &quot;https://decohack.com/feed/&quot; &#125;</span><br><span class="line"> </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">return myRssFeeds.map(feed =&gt; (&#123;</span><br><span class="line">  json: &#123;</span><br><span class="line">    feedName: feed.name,</span><br><span class="line">    feedUrl: feed.url</span><br><span class="line">  &#125;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<h4 id="RSS-Read-节点"><code>RSS Read</code> 节点</h4>
+<p><code>Feed URL</code> ： <code>&#123;&#123; $json.feedUrl &#125;&#125;</code></p>
+<h4 id="Code-节点（剪切）"><code>Code</code> 节点（剪切）</h4>
+<p>只保留最新 3 条，不确定是否能提高效率。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const items = $input.all();</span><br><span class="line"></span><br><span class="line">items.sort((a, b) =&gt; &#123;</span><br><span class="line">  const dateA = new Date(a.json.pubDate || 0).getTime();</span><br><span class="line">  const dateB = new Date(b.json.pubDate || 0).getTime();</span><br><span class="line">  return dateB - dateA;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">return items.slice(0, 3);</span><br></pre></td></tr></table></figure>
+<h4 id="Edit-Fields-Set-节点"><code>Edit Fields (Set)</code> 节点</h4>
+<ul>
+<li>点击 <code>Add Value</code> (添加值)。</li>
+<li><strong><code>Name</code> (名称)</strong>: 输入 <code>feedName</code></li>
+<li><strong><code>Value</code> (值)</strong>: 输入下面的表达式。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123; $(&#x27;list&#x27;).item.json.feedName &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>并打开最下面的一个开关-- <code>Include Other Input Fields。</code></p>
+<p>在 <code>RSS Read</code> 抓取完文章后，<code>Set</code> 节点会把 <code>feedName</code> 附加到每一篇文章数据上。</p>
+<h4 id="Code-节点（精选最新）"><code>Code</code> 节点（精选最新）</h4>
+<p>在所有新文章里，每个来源只挑出最新的一篇。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">const items = $input.all();</span><br><span class="line">const latestByFeed = &#123;&#125;; // 用对象保存每个源的最新文章</span><br><span class="line"></span><br><span class="line">for (const item of items) &#123;</span><br><span class="line">  const feed = item.json.feedName || &#x27;unknown&#x27;;</span><br><span class="line">  const pubDate = item.json.pubDate ? new Date(item.json.pubDate).getTime() : 0;</span><br><span class="line"></span><br><span class="line">  if (!latestByFeed[feed]) &#123;</span><br><span class="line">    latestByFeed[feed] = item;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    const existingDate = latestByFeed[feed].json.pubDate ? new Date(latestByFeed[feed].json.pubDate).getTime() : 0;</span><br><span class="line">    if (pubDate &gt; existingDate) &#123;</span><br><span class="line">      latestByFeed[feed] = item;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 把对象里的结果转成数组返回</span><br><span class="line">return Object.values(latestByFeed);</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Remove-Duplicates-节点"><code>Remove Duplicates</code> 节点</h4>
+<p>防止文章重复。<br>
+<code>operation</code>：<code>Remove Items Processed in Previous Executions</code><br>
+<code>value</code> ： <code>&#123;&#123; $json.guid || $json.link &#125;&#125; </code></p>
+<h4 id="Send-a-text-message（Telegram）"><code>Send a text message</code>（Telegram）</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">📝&#123;&#123;$json[&quot;title&quot;]&#125;&#125; #blog </span><br><span class="line"></span><br><span class="line">&#123;&#123;$json[&quot;link&quot;]&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>解析模式为 <strong><code>HTML</code></strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -211,7 +419,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:21:15" itemprop="dateModified" datetime="2025-08-15T21:21:15+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -313,7 +521,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:21:15" itemprop="dateModified" datetime="2025-08-15T21:21:15+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -416,7 +624,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:21:15" itemprop="dateModified" datetime="2025-08-15T21:21:15+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -517,7 +725,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:21:15" itemprop="dateModified" datetime="2025-08-15T21:21:15+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -627,7 +835,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:21:15" itemprop="dateModified" datetime="2025-08-15T21:21:15+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -730,7 +938,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:21:15" itemprop="dateModified" datetime="2025-08-15T21:21:15+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -844,7 +1052,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:21:15" itemprop="dateModified" datetime="2025-08-15T21:21:15+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -952,7 +1160,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:21:15" itemprop="dateModified" datetime="2025-08-15T21:21:15+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1056,7 +1264,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
+      <time title="修改时间：2025-08-15 21:21:15" itemprop="dateModified" datetime="2025-08-15T21:21:15+08:00">2025-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1099,181 +1307,6 @@
 </blockquote>
 <ul>
 <li>⏱ 2025-06-13 21:06:41</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2024/04/14/%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/04/14/%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/" class="post-title-link" itemprop="url">通信工程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-04-15 00:00:00" itemprop="dateCreated datePublished" datetime="2024-04-15T00:00:00+08:00">2024-04-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-15 19:40:11" itemprop="dateModified" datetime="2025-08-15T19:40:11+08:00">2025-08-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%BF%A1%E6%81%AF/" itemprop="url" rel="index"><span itemprop="name">信息</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>摘抄自鲜枣课堂</p>
-</blockquote>
-<h1>基本信息</h1>
-<p>“通信工程”属于二级学科，归属于“信息与通信工程”一级学科之下。<br>
-通信工程的研究方向，就是通信。<br>
-通信的本质，就是信息的互通。也就是说，通信工程主要研究信号的产生、发送和接收，信息的传输、交换和处理。</p>
-<p>在国外（例如美国）的学科分类中，通信工程被认为是电子工程的重要分支。<br>
-电子工程，也就是大家经常听说的EE，和通信、电信、电子、光电、集成电路等相关。<br>
-和EE相对应的，就是CS,Computer Science（计算机科学）。</p>
-<blockquote>
-<p>CS的研究方向包括计算机系统、算法、人工智能、数据存储技术、软件工程、人机交互等。</p>
-</blockquote>
-<p>简单来说，EE偏硬件、偏底层实现，而CS偏软件、偏上层应用。</p>
-<h1>课程及对应方向</h1>
-<p>从方向来看，就是五大类：软件类、硬件类、无线类、网络类、光类。</p>
-<p>软件类：就是编程，写代码。重点课程是数据结构、软件工程概论、软件项目管理，还有C/C++、java、python等程序语言开发。</p>
-<p>硬件类：主要是数电、模电、高频电子线路、信号与系统、数字信号处理、嵌入式开发，单片机等。再往前就是微电子、半导体、集成电路。现在没什么纯硬件，都是软件驱动硬件，搞软硬结合。所以说，硬件专业=硬件+软件。</p>
-<p>无线类：这块其实是正宗的“通信工程”，专门研究通信中最大的瓶颈环节——无线空口（空中接口）。简单来说，无线空口就是研究如何通过无线电磁波更快更好地传输数据。它的重点课程是信号与系统、数字信号处理、电磁场与电磁波、通信原理、信息论与编码等。无线类的难度不亚于硬件类，都是掉头发的课程。</p>
-<p>网络类：网络工程，主要是研究路由交换，和路由器、交换机、防火墙等数通设备打交道比较多。除了数据网络之外，网络类实际上还包括了系统类知识，就是和操作系统、数据库打交道，进一步来说，就是搞云计算和大数据的方向。这块和软件类一样，偏IT应用，好处是不需要什么数电模电信号处理方面的知识。</p>
-<p>最后一类，就是光。国内有很多光电相关的专业，例如光电信息工程等。除了研究光学（镜片、透镜、激光）之外，就有很多从事光通信领域的研究，说白了，就是光纤通信。这块是通信传输网的重要领域。主要课程是物理光学、应用光学、信息光学、光电检测、激光原理等。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404152231187.jpg" alt=""></p>
-<p>项目管理、工程规范、项目概预算等，在实际工作中很实用，却在教学计划中被忽视。</p>
-<p>如果大家不想被带偏的话，在大一的时候就要自我评估一下，自己喜欢哪个方向，适合哪个方向，然后朝这个方向努力。除非考研，不然的话，该放弃的就要学会放弃。</p>
-<h1>就业</h1>
-<p>通信行业，简而言之，就是围绕用户通信需求，提供通信产品和服务的行业。<br>
-除了面向大众的公共通信服务（移动通信、宽带接入、固定电话、IPTV等）之外，<br>
-通信服务还包括很多面向行业企业的专网通信服务（例如电网通信、铁路通信、港口通信、应急通信等）。<br>
-以云计算、大数据、程序开发、人工智能为代表的信息技术（也就是大家更为熟知的IT）已经超过通信技术，变成了年轻人更为热衷的就业方向。</p>
-<h2 id="单位">单位</h2>
-<ul>
-<li>
-<p><strong>通信运营商</strong><br>
-像中国移动、中国电信、中国联通这样的，负责建设和运营电信通信网络，并提供通信服务的企业，就是基础电信服务运营商，也简称为运营商。</p>
-<p>中国广电（中国广播电视网络有限公司），也属于电信运营商，大家往往会忽视这一点。而中国铁塔反而不是运营商，它是基础设施服务提供商，专门为运营商提供铁塔、站房之类的基础设施服务。</p>
-</li>
-<li>
-<p><strong>通信设备商</strong><br>
-通信设备商，就是负责研发制造通信设备的厂商。像华为、中兴、爱立信、诺基亚，就是目前世界上最大的四家通信设备商。<br>
-上述四家设备商，产品线最多，种类最齐全，覆盖最广，所以也称为通信综合解决方案提供商。其它一些设备商，可能只专注于通信的某个领域，例如基站或传输设备等。</p>
-</li>
-<li>
-<p><strong>分包商、供应商、集成商、代理商</strong><br>
-通信设备的复杂度比较高，专业度也比较高，因此，安装、调试和维护的过程非常复杂，通常会以项目化的方式来运作。<br>
-这些项目如果仅靠设备商、运营商自己来做，是不可能的。所以，会有很多公司加入进来，出人出力，共同参与。这类公司，就是<strong>分包商（或者叫合作方）</strong>。</p>
-<p>有的公司是整包，就是独自承包一个项目的工程。有的公司是分包，就是承包其中一部分。还有的公司，是承包项目之后，将一部分交由其它公司去做，就叫做转包（有时候是不允许的）。<br>
-通信行业的产业链很庞大，从原材料到元器件，再到单板、设备，会有一系列的链条。上游对下游来说，就叫<strong>供应商</strong>。做产品集成，提供整体打包解决方案的，叫<strong>集成商</strong>。<br>
-再有就是<strong>代理商</strong>，大家应该都知道，就是负责产品代理销售的公司。</p>
-</li>
-</ul>
-<h2 id="产业链">产业链</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404152232299.png" alt=""></p>
-<h2 id="其他单位">其他单位</h2>
-<p>通信行业还包括政府部门（工信部、通管局）、研究院所（信通院、设计院、中电下属院所）、高校等</p>
-<h1>职称</h1>
-<h2 id="无线通信">无线通信</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404152233104.png" alt=""></p>
-<h3 id="移动终端产品">移动终端产品</h3>
-<p>包括手机、平板电脑（Pad）等消费电子产品，刚才说了，一般归为IT类.还有无线通讯模块，例如GPRS模块，物联网模块等，这些还是属于通信类。研发、制造、维修这类通讯终端的，都叫<code>终端工程师</code>。</p>
-<h3 id="无线接入网"><strong>无线接入网</strong></h3>
-<p>什么是接入网？负责把终端（例如手机）“接入”到通信网络里面来的，就是“接入网”。<br>
-什么东西能把手机连到通信网络里？ 对了，就是基站。负责基站安装调测的工程师，就是 <code>基站工程师</code>。</p>
-<p>如果需要把一个区域用无线信号覆盖好（不留死角，不留盲区），那么，基站的位置、数量、天线的朝向等都需要精密计算，这个工作有一群专门的人来负责，叫 <strong>“网络规划优化工程师”</strong>（简称 <code>网规网优工程师</code>）。</p>
-<h3 id="移动核心网">移动核心网</h3>
-<p>电信机房里面，那些负责通信数据的处理和交换的设备，就是<strong>核心网设备</strong>。负责开通维护核心网设备的人，就是 <strong>“核心网工程师”</strong>。</p>
-<h3 id="承载网">承载网</h3>
-<p>如下图所示，基站与核心网之间，核心网与核心网之间，都要传输数据。所有这之间的数据传输，都是通过<strong>承载网设备</strong>。负责承载网设备的人，叫 <strong>“承载网工程师”</strong>，也经常叫做 <strong>“传输工程师”</strong>。<br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404152233611.png" alt=""></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404152233673.png" alt=""></p>
-<h3 id="业务产品">业务产品</h3>
-<p>在核心网里面，还有很多功能性的产品，为了实现某一特定功能业务而存在，例如短信、彩铃、智能网（预付费电话用的）。这些产品就叫做<strong>业务产品</strong>。它们有时候算核心网产品，有时候单独就叫业务产品。<br>
-负责开通调测这些产品的人，叫做 <code>业务产品工程师</code>。</p>
-<h2 id="有线通信">有线通信</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202404152233730.png" alt=""></p>
-<h3 id="有线（固网）终端部分">有线（固网）终端部分</h3>
-<p>大家都知道的是固定电话。除此之外，还有行业终端（银行的ATM机、视频会议电话系统的视频电话机），还有某种具体业务的终端（IPTV的机顶盒）。<br>
-固网终端现在主要是指行业专用终端，大企业用，所以算通信多一点，不算IT。</p>
-<h3 id="接入网">接入网</h3>
-<p><strong>有线的接入网，主要是指从骨干网络到用户终端的所有设备。</strong></p>
-<h2 id="补充">补充</h2>
-<blockquote>
-<p>通信项目，尤其是海外通信项目，一般都是 Turn-Key项目（交钥匙项目）。设备商要从零开始，从一个空房子到最后完成所有工作，直接把建好的机房和网络交给客户运营商。所以，会涉及到基础建设（土建）。</p>
-</blockquote>
-<ul>
-<li><strong>工程督导</strong><br>
-就是负责通信工程的建设实施，指导和监督工程队按照设计图纸完成施工。有点类似于“高级监工”吧，工程施工的工作还是很辛苦的。</li>
-<li><strong>运维</strong><br>
-设备调试交付之后，处于运行阶段，就需要人进行维护，查看运行状态，及时处理隐患，解决问题。这类看似简单的工作，就是 <strong>“运维工程师”</strong> 来做。相比于企业级的运维，电信级运维责任更巨大，压力也就更大，工作非常辛苦。</li>
-<li><strong>能源工程师</strong><br>
-基站和机房的设备，都是用电的，所以要有电源。机房为了应对停电，还需要配备电池。负责电源电池设备的工程师</li>
 </ul>
 
       
