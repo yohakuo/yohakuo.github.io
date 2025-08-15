@@ -174,6 +174,7 @@ return items.slice(0, 3);
 
 #### `Code` 节点（精选最新）
 在所有新文章里，每个来源只挑出最新的一篇。
+{% raw %}
 ```
 const items = $input.all();
 const latestByFeed = {}; // 用对象保存每个源的最新文章
@@ -194,8 +195,8 @@ for (const item of items) {
 
 // 把对象里的结果转成数组返回
 return Object.values(latestByFeed);
-
 ```
+{% endraw %}
 #### `Remove Duplicates` 节点
 防止文章重复。
 `operation`：`Remove Items Processed in Previous Executions`
