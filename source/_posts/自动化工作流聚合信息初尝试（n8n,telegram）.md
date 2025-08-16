@@ -1,7 +1,7 @@
 ---
 title: 自动化工作流聚合信息初尝试（n8n,telegram）
 date: 2025-08-15T19:51:00
-updated: 
+updated: 2025-08-16
 share: "true"
 tags:
   - method
@@ -10,7 +10,7 @@ archive:
 ---
  [参考](https://reorx.com/blog/sharing-my-footprints-automation/)
 
-本文在 `简单工作流的搭建` 部分从头开始下载了相关环境引擎，搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先来到[快速启动](#快速启动) 下载必要引擎，然后可以直接跳到 `使用已有的工作流`。
+本文在 `简单工作流的搭建` 搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先到[快速启动](#快速启动) 下载必要引擎，然后可以直接跳到 `使用已有的工作流`。
 
 n8n 版本： `1.106.3`
 
@@ -197,6 +197,8 @@ return Object.values(latestByFeed);
 {% endraw %}
 ```
 
+*{% raw %} {% endraw %}手动需要删掉。*
+
 #### `Remove Duplicates` 节点
 防止文章重复。
 `operation`：`Remove Items Processed in Previous Executions`
@@ -209,5 +211,6 @@ return Object.values(latestByFeed);
 ```
 
 解析模式为 **`HTML`**
+
 
 
