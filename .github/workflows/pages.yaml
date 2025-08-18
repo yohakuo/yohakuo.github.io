@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Convert Obsidian Callouts to Hexo Notes 🔄
-        run: node scripts_ci/convert.js
+        run: node scripts_ci/calIout_convert.js
 
       - name: Generate Pages 🚀
         run: npx hexo generate
