@@ -1,7 +1,7 @@
 ---
-title: 
+title: 自动化工作流聚合信息初尝试（n8n,telegram）
 date: 2025-08-15T19:51:00
-updated: 
+updated: 2025-08-16
 share: "true"
 tags:
   - method
@@ -10,7 +10,7 @@ archive:
 ---
  [参考](https://reorx.com/blog/sharing-my-footprints-automation/)
 
-本文在 `简单工作流的搭建` 部分从头开始下载了相关环境引擎，搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先来到 [[#快速启动]] 下载必要引擎，然后可以直接跳到 `使用已有的工作流`。
+本文在 `简单工作流的搭建` 搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先到[快速启动](#快速启动) 下载必要引擎，然后可以直接跳到 `使用已有的工作流`。
 
 n8n 版本： `1.106.3`
 
@@ -27,10 +27,9 @@ docker run -it --rm --name n8n -p 5678:5678 -e "HTTP_PROXY=http://127.0.0.1:7890
 docker run -d --name n8n -p 5678:5678 -e "HTTP_PROXY=http://127.0.0.1:7890" -e "HTTPS_PROXY=http://127.0.0.1:7890" -v ~/.n8n:/home/node/.n8n -v ~/.n8n_database:/database n8nio/n8n
 ```
 
+如果想稳定代理的话应该考虑[在本地存储代理信息](#本地代理设置)，这样删容器代理不受影响。
 
 **然后初始化 n8n** 。访问 `http://localhost:5678` 进行注册，需要邮箱验证。
-
-然后跳到 [[#创建 Telegram Bot 并连接到 n8n|这里]] 开始配置。
 
 ## 简单工作流的搭建
 ### 创建 Telegram Bot 并连接到 n8n
@@ -47,7 +46,7 @@ docker run -d --name n8n -p 5678:5678 -e "HTTP_PROXY=http://127.0.0.1:7890" -e "
 - 重要：将频道类型设置为**私有**。
 - 然后把刚刚创建的机器人**添加到这个频道作为管理员，设置权限**。
 
-完成到这里可以跳到[[#使用已有的工作流]]
+完成到这里可以跳到[ 使用已有的工作流](#使用已有的工作流)
 
 **创建并获取群组的 Chat ID**（选做）
 - 将你刚刚创建的机器人临时添加到一个普通的群组里，并且打开权限，然后在这个群组里随便发一条消息。
@@ -198,6 +197,10 @@ for (const item of items) {
 return Object.values(latestByFeed);
 ```
 {% endraw %}
+```
+
+*{% raw %} {% endraw %}手动需要删掉。*
+
 #### `Remove Duplicates` 节点
 防止文章重复。
 `operation`：`Remove Items Processed in Previous Executions`
@@ -210,5 +213,54 @@ return Object.values(latestByFeed);
 ```
 
 解析模式为 **`HTML`**
+
+## 工作流问题
+> 第三方服务不能成功
+### 本地代理设置
+报错 `The service refused the connection - perhaps it is offline`
+
+检查容器代理情况
+```PowerShell
+docker inspect n8n | Select-String -Pattern "PROXY"
+```
+
+输出是走代理的，核心问题是 **`127.0.0.1:7890` 在容器里访问不到宿主机代理**，最后修改了一下启动命令可以成功。
+```PowerShell
+docker run -d --name n8n -p 5678:5678 -e "HTTP_PROXY=http://host.docker.internal:7890" -e "HTTPS_PROXY=http://host.docker.internal:7890" -v ~/.n8n:/home/node/.n8n -v ~/.n8n_database:/database n8nio/n8n
+```
+
+为了不再出这个问题，删了容器重新在本地直接存下配置，`"C:\n8n-data\docker-compose.yml"`
+```
+version: "3.8"
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    environment:
+      # 代理配置（写死）
+      HTTP_PROXY: http://host.docker.internal:7890
+      HTTPS_PROXY: http://host.docker.internal:7890
+      NO_PROXY: localhost,127.0.0.1
+    volumes:
+      # 数据卷（写死路径，防止丢配置）
+      - ./n8n_data:/home/node/.n8n
+      - ./n8n_database:/database
+    restart: unless-stopped
+```
+
+然后进入文件夹创建数据卷
+```
+docker compose up -d
+```
+
+- **启动**
+    `docker compose up -d`
+- **停止**
+    `docker compose down`
+- **查看日志**
+    `docker compose logs -f`
+
 
 
