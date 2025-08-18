@@ -1,39 +1,38 @@
 name: Generate and Deploy Hexo Blog
 
 on:
-push:
-  branches:
-    - main 
+  push:
+    branches:
+      - main
 
 jobs:
-build-and-deploy: # 合并了 build 和 deploy 步骤
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout 🛎️
-      uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        submodules: true
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: true
 
-    - name: Use Node.js 20.x 
-      uses: actions/setup-node@v3 # 使用 v3 版本
-      with:
-        node-version: '20.11.1'
-        cache: 'npm' 
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.11.1'
+          cache: 'npm'
 
-    - name: Install Dependencies 📦
-      run: npm ci 
+      - name: Install Dependencies 📦
+        run: npm ci
 
-    - name: Convert Obsidian Callouts to Hexo Notes 🔄
-      run: node scripts_ci/convert.js
+      - name: Convert Obsidian Callouts to Hexo Notes 🔄
+        run: node scripts_ci/convert.js
 
-    - name: Generate Pages 🚀
-      run: npx hexo generate 
+      - name: Generate Pages 🚀
+        run: npx hexo generate
 
-    - name: Deploy to "html" branch ✈️
-      uses: JamesIves/github-pages-deploy-action@v4 # 使用 v4 版本
-      with:
-        # REPOSITORY_NAME 不需要，默认就是当前仓库
-        BRANCH: html # The branch the action should deploy to.
-        FOLDER: public # The folder the action should deploy.
-        CLEAN: true # Automatically remove deleted files from the deploy branch
+      - name: Deploy to "html" branch ✈️
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          BRANCH: html
+          FOLDER: public
+          CLEAN: true
