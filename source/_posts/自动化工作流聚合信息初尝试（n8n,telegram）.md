@@ -6,11 +6,11 @@ share: "true"
 tags:
   - method
 categories: 教程
-archive: 
+archive:
 ---
  [参考](https://reorx.com/blog/sharing-my-footprints-automation/)
 
-本文在 `简单工作流的搭建` 部分从头开始下载了相关环境引擎，搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先来到 [ > 快速启动](.md#快速启动) 下载必要引擎，然后可以直接跳到 `使用已有的工作流`。
+本文在 `简单工作流的搭建` 部分从头开始下载了相关环境引擎，搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先来到 [[#快速启动]] 下载必要引擎，然后可以直接跳到 `使用已有的工作流`。
 
 n8n 版本： `1.106.3`
 
@@ -30,7 +30,7 @@ docker run -d --name n8n -p 5678:5678 -e "HTTP_PROXY=http://127.0.0.1:7890" -e "
 
 **然后初始化 n8n** 。访问 `http://localhost:5678` 进行注册，需要邮箱验证。
 
-然后跳到 [这里](.md#创建-telegram-bot-并连接到-n8n) 开始配置。
+然后跳到 [[#创建 Telegram Bot 并连接到 n8n|这里]] 开始配置。
 
 ## 简单工作流的搭建
 ### 创建 Telegram Bot 并连接到 n8n
@@ -47,7 +47,7 @@ docker run -d --name n8n -p 5678:5678 -e "HTTP_PROXY=http://127.0.0.1:7890" -e "
 - 重要：将频道类型设置为**私有**。
 - 然后把刚刚创建的机器人**添加到这个频道作为管理员，设置权限**。
 
-完成到这里可以跳到[ > 使用已有的工作流](.md#使用已有的工作流)
+完成到这里可以跳到[[#使用已有的工作流]]
 
 **创建并获取群组的 Chat ID**（选做）
 - 将你刚刚创建的机器人临时添加到一个普通的群组里，并且打开权限，然后在这个群组里随便发一条消息。
@@ -175,8 +175,8 @@ return items.slice(0, 3);
 #### `Code` 节点（精选最新）
 在所有新文章里，每个来源只挑出最新的一篇。
 
-```
 {% raw %}
+```
 const items = $input.all();
 const latestByFeed = {}; // 用对象保存每个源的最新文章
 
@@ -196,9 +196,8 @@ for (const item of items) {
 
 // 把对象里的结果转成数组返回
 return Object.values(latestByFeed);
-{% endraw %}
 ```
-
+{% endraw %}
 #### `Remove Duplicates` 节点
 防止文章重复。
 `operation`：`Remove Items Processed in Previous Executions`
