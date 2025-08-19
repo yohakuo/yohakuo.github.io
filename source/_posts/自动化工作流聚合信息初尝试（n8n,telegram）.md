@@ -1,12 +1,12 @@
 ---
 title: 自动化工作流聚合信息初尝试（n8n,telegram）
 date: 2025-08-15T19:51:00
-updated: 2025-08-16
+updated: 2025-08-18
 share: "true"
 tags:
   - method
 categories: 教程
-archive:
+archive: 
 ---
  [参考](https://reorx.com/blog/sharing-my-footprints-automation/)
 
@@ -174,8 +174,8 @@ return items.slice(0, 3);
 #### `Code` 节点（精选最新）
 在所有新文章里，每个来源只挑出最新的一篇。
 
-{% raw %}
 ```
+{% raw %}
 const items = $input.all();
 const latestByFeed = {}; // 用对象保存每个源的最新文章
 
@@ -195,11 +195,10 @@ for (const item of items) {
 
 // 把对象里的结果转成数组返回
 return Object.values(latestByFeed);
-```
 {% endraw %}
 ```
 
-*{% raw %} {% endraw %}手动需要删掉。*
+`{% raw %} {% endraw %}` *需要手动删掉。*
 
 #### `Remove Duplicates` 节点
 防止文章重复。
@@ -212,7 +211,7 @@ return Object.values(latestByFeed);
 {{$json["link"]}}
 ```
 
-解析模式为 **`HTML`**
+解析模式为 **`HTML`**。
 
 ## 工作流问题
 > 第三方服务不能成功
