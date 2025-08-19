@@ -198,11 +198,6 @@ return Object.values(latestByFeed);
 {% endraw %}
 ```
 
-{% codeblock "注意"%} 
-`{% raw %} {% endraw %}` *需要手动删掉。* 
-{% endcodeblock %}
-
-
 #### `Remove Duplicates` 节点
 防止文章重复。
 `operation`：`Remove Items Processed in Previous Executions`
