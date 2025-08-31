@@ -6,7 +6,7 @@ share: "true"
 tags:
   - method
 categories: 教程
-archive: 
+archive:
 ---
  [参考](https://reorx.com/blog/sharing-my-footprints-automation/)
 
@@ -147,7 +147,7 @@ return myRssFeeds.map(feed => ({
 #### `RSS Read` 节点
 `Feed URL` ： `{{ $json.feedUrl }}`
 #### `Code` 节点（剪切）
-只保留最新 3 条，不确定是否能提高效率。
+只保留最新 `3（n）` 条，不确定是否能提高效率。
 ```
 const items = $input.all();
 
@@ -228,7 +228,7 @@ docker run -d --name n8n -p 5678:5678 -e "HTTP_PROXY=http://host.docker.internal
 
 为了不再出这个问题，删了容器重新在本地直接存下配置，`"C:\n8n-data\docker-compose.yml"`
 ```
-version: "3.8"
+version: "3.8" 
 services:
   n8n:
     image: n8nio/n8n
@@ -258,6 +258,9 @@ docker compose up -d
     `docker compose down`
 - **查看日志**
     `docker compose logs -f`
-
+- **更新**
+	`docker-compose pull`
+	`docker-compose down`
+	`docker-compose up -d`
 
 
