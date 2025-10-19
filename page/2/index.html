@@ -101,7 +101,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">30</span></a></li>
   </ul>
 </nav>
 
@@ -138,7 +138,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -166,6 +166,250 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="66">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="magic world">
+      <meta itemprop="description" content="睡个好觉">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | magic world">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/" class="post-title-link" itemprop="url">自动化工作流聚合信息初尝试（n8n,telegram）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-15 19:51:00" itemprop="dateCreated datePublished" datetime="2025-08-15T19:51:00+08:00">2025-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-08-18 00:00:00" itemprop="dateModified" datetime="2025-08-18T00:00:00+08:00">2025-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://reorx.com/blog/sharing-my-footprints-automation/">参考</a></p>
+<p>本文在 <code>简单工作流的搭建</code> 搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先到<a href="#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8">快速启动</a> 下载必要引擎，然后可以直接跳到 <code>使用已有的工作流</code>。</p>
+<p>n8n 版本： <code>1.106.3</code></p>
+<h2 id="快速启动">快速启动</h2>
+<p>下载 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a></p>
+<p>测试模式，不要关闭终端</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-it</span> <span class="literal">--rm</span> <span class="literal">--name</span> n8n <span class="literal">-p</span> <span class="number">5678</span>:<span class="number">5678</span> <span class="literal">-e</span> <span class="string">&quot;HTTP_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-e</span> <span class="string">&quot;HTTPS_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-v</span> ~/.n8n:/home/node/.n8n n8nio/n8n</span><br></pre></td></tr></table></figure>
+<p>稳定版</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> <span class="literal">--name</span> n8n <span class="literal">-p</span> <span class="number">5678</span>:<span class="number">5678</span> <span class="literal">-e</span> <span class="string">&quot;HTTP_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-e</span> <span class="string">&quot;HTTPS_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-v</span> ~/.n8n:/home/node/.n8n <span class="literal">-v</span> ~/.n8n_database:/database n8nio/n8n</span><br></pre></td></tr></table></figure>
+<p>如果想稳定代理的话应该考虑<a href="#%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE">在本地存储代理信息</a>，这样删容器代理不受影响。</p>
+<p><strong>然后初始化 n8n</strong> 。访问 <code>http://localhost:5678</code> 进行注册，需要邮箱验证。</p>
+<h2 id="简单工作流的搭建">简单工作流的搭建</h2>
+<h3 id="创建-Telegram-Bot-并连接到-n8n">创建 Telegram Bot 并连接到 n8n</h3>
+<p><em>这个部分的群组可以不创建，我目前把这个群组作为 log。</em></p>
+<p><strong>创建一个 Telegram Bot</strong></p>
+<ul>
+<li>打开 Telegram 客户端，在搜索框里搜索 <code>@BotFather</code> (注意核对官方认证的蓝色√图标)，然后点进去开始聊天。</li>
+<li>发送 <code>/newbot</code> 给 BotFather。</li>
+<li>给机器人起名字以及用户名 (username，后面查找机器人用)，这个必须以 <code>bot</code> 结尾。</li>
+<li>创建成功后，BotFather 会给你一长串<strong>API Token</strong>。<strong>请立即复制并保存好这个 Token</strong>。</li>
+</ul>
+<p><strong>创建一个用于接收信息的频道 (Channel)</strong></p>
+<ul>
+<li>在 Telegram 里，创建一个新的<strong>频道</strong>。给它起个名字。</li>
+<li>重要：将频道类型设置为<strong>私有</strong>。</li>
+<li>然后把刚刚创建的机器人<strong>添加到这个频道作为管理员，设置权限</strong>。</li>
+</ul>
+<p>完成到这里可以跳到<a href="#%E4%BD%BF%E7%94%A8%E5%B7%B2%E6%9C%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81"> 使用已有的工作流</a></p>
+<p><strong>创建并获取群组的 Chat ID</strong>（选做）</p>
+<ul>
+<li>将你刚刚创建的机器人临时添加到一个普通的群组里，并且打开权限，然后在这个群组里随便发一条消息。</li>
+<li>打开浏览器，访问以下网址 :<br>
+<code>https://api.telegram.org/bot&#123;YOUR_BOT_TOKEN&#125;/getUpdates</code></li>
+<li>你会看到一些 JSON 格式的文字。找到 <code>chat</code> 部分，里面有一个 <code>id</code>，它通常是一个以 <code>-100</code> 开头的数字，请复制并保存好它。</li>
+</ul>
+<p><strong>在 n8n 中配置 Telegram</strong>（选做）</p>
+<ul>
+<li>打开 n8n 界面 (<code>http://localhost:5678</code>)。</li>
+<li>点击 “Add workflow” 创建一个新工作流。</li>
+<li>点击屏幕中央的 <code>+</code> 号，在搜索框里输入 <code>Telegram</code>，然后选择在 <code>action</code> 里面找到 <code>send message</code>。</li>
+<li>在右侧的配置栏中：
+<ul>
+<li><strong>Credential for Telegram API</strong>: 点击 “Create New”。
+<ul>
+<li><strong>Credential Name</strong>: 随便起个名字。</li>
+<li><strong>Access Token</strong>: 粘贴你从 BotFather 那里得到的 <strong>API Token</strong>。</li>
+<li>点击 “Save”。</li>
+</ul>
+</li>
+<li><strong>Chat ID</strong>: 粘贴你刚刚获取的以 <code>-100</code> 开头的<strong>频道 Chat ID</strong>。</li>
+<li><strong>Text</strong>: 输入 <code>Hello from n8n!</code>。</li>
+</ul>
+</li>
+<li>点击节点下方的 <strong>“Execute node”</strong> 按钮。</li>
+</ul>
+<h3 id="添加第一个信息源-RSS（选做）">添加第一个信息源 - RSS（选做）</h3>
+<p>从最简单的 RSS 开始，订阅一个你喜欢的博客。<br>
+<strong>1. 找到 RSS 链接</strong><br>
+<strong>2. 在 n8n 中配置 RSS 工作流</strong></p>
+<ul>
+<li>点击 <code>+</code> 号，添加一个 <code>Schedule</code> 节点。在弹出的配置中，可以设置每小时 (Every Hour)、每天 (Every Day) 等。</li>
+<li>点击 <code>Schedule</code> 节点右侧的 <code>+</code> 号上，在弹出的搜索框里输入 <code>RSS</code>，选择 <code>RSS Read </code> 节点，配置 URL 即可。</li>
+</ul>
+<details class="note "><summary><p>note</p>
+</summary>
+<p>这里可能会遇到网站有安全设置，可以试试这个 <a target="_blank" rel="noopener" href="https://rss.app/">RSS 转换</a>，登录之后把博客主页地址输入，生成 RSS</p>
+
+</details>
+<ul>
+<li><code>RSS Read</code> 连接到我们之前创建的 <code>Telegram</code> 节点。</li>
+<li>然后需要修改 <code>Telegram</code> 节点的 <code>Text</code> 内容，让它发送 RSS 的标题和链接。
+<ul>
+<li>在 <code>Text</code> 输入框右边，点击 <strong>“Add Expression”</strong>。</li>
+<li>在表达式输入框里输入：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">标题：&#123;&#123; $json.title &#125;&#125;</span><br><span class="line"></span><br><span class="line">链接：&#123;&#123; $json.link &#125;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回主界面点击右下角的 <strong>“Execute workflow”</strong> 按钮来测试整个流程。运行成功你会在 telegram 群聊看到推送的 10 条新消息（默认情况）。</li>
+</ul>
+<p>这个基础简单的工作流如下图。功能是每 5 分钟自动检查指定网站是否有新文章发布，并将所有新文章的标题和链接，逐条发送到指定 Telegram 频道。如果重复执行会发现每次都会发送 10 条信息，如果在推送前进行比对可以在 RSS 后加一个 function 模块。<br>
+<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202508141104258.png" alt="image.png|520"></p>
+<p>可以重复这个流程来订阅其它 RSS ，但不要忘记以上步骤是在一个测试群聊里进行的，如果想要把信息送到频道，需要把上面配置的 <code>Chat ID</code> 修改为频道 id，这里使用一个简单的方法获得 id：</p>
+<ul>
+<li>在 Telegram 里，搜索并关注一个叫做 <strong><code>@userinfobot</code></strong> 的机器人，或点击<a target="_blank" rel="noopener" href="https://t.me/userinfobot">链接</a>。</li>
+<li>进入接收消息的那个频道，并<strong>转发</strong>任意一条消息，发送给刚刚那个 <code>@userinfobot</code>。</li>
+<li><code>@userinfobot</code> 会立刻回复你一条信息，找到 <strong>Id</strong> 后面跟着的那个以 <code>-100</code> 开头的数字，即你频道的<strong>唯一 ID</strong>。</li>
+</ul>
+<details class="note "><summary><p>note</p>
+</summary>
+<p>有好奇心的朋友可能会用这个机器人来试一试之前那个群聊的 id，你会发现这个得到的 id 并不是-100 开头的那个 id 了。</p>
+
+</details>
+<blockquote>
+<p>这是因为 Telegram 建群时默认的类型是普通群组（功能有限），而-100 开头的是拥有更强大的功能的超级群组。为了让 n8n 就能稳定地发送消息， Chat ID 需要用 <code>-100</code> 开头的。私人频道可以满足个人信息聚合的要求。如果想把信息发到一个群里和朋友分享，可以自行搜索手动将那个群升级。</p>
+</blockquote>
+<h2 id="使用已有的工作流">使用已有的工作流</h2>
+<p>当然，如果也可以直接使用别人的成果-- <a target="_blank" rel="noopener" href="https://github.com/reorx/n8n-workflows/tree/master/workflows">reorx的工作流合集</a>，博主有简单说明逻辑。</p>
+<p>以 RSS 的工作流为例，先进入<a target="_blank" rel="noopener" href="https://github.com/reorx/n8n-workflows/blob/master/workflows/blog%20rss%20to%20tg.json">仓库</a>，复制 json 文件。回到 n8n 后台新建工作流，直接粘贴。然后修改 RSS 的链接，以及 telegram 的 chatid 。最后点击执行工作流测试一下是否连通。如果没问题的话，会在频道收到一条最新的推文。</p>
+<p><strong>chatid 的获取</strong></p>
+<ul>
+<li>在 Telegram 里，搜索并关注一个叫做 <strong><code>@userinfobot</code></strong> 的机器人，或点击<a target="_blank" rel="noopener" href="https://t.me/userinfobot">链接</a>。</li>
+<li>进入接收消息的那个频道，并<strong>转发</strong>任意一条消息，发送给刚刚那个 <code>@userinfobot</code>。</li>
+<li><code>@userinfobot</code> 会立刻回复你一条信息，找到 <strong>Id</strong> 后面跟着的那个以 <code>-100</code> 开头的数字，即你频道的<strong>唯一 ID</strong>。</li>
+</ul>
+<h2 id="进阶玩法-订阅多个-RSS">进阶玩法-订阅多个 RSS</h2>
+<p><em>从头搭建一个工作流来处理多个 RSS 源。</em></p>
+<h4 id="Code-节点（订阅管理）"><code>Code</code> 节点（订阅管理）</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const myRssFeeds = [</span><br><span class="line">  &#123; name: &quot;douchi&quot;, url: &quot;https://rss.app/feeds/hZVUbnIx3yBAbKMU.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;yukieyun&quot;, url: &quot;https://yukieyun.net/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;thirdshire&quot;, url: &quot;https://thirdshire.com/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;yitaoli&quot;, url: &quot;https://yitaoli2023.github.io/yitaoli/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;bamboobone9&quot;, url: &quot;https://bamboobone9.com/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;pursuitus&quot;, url: &quot;https://blog.pursuitus.com/feed&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;wraith615&quot;, url: &quot;https://blog.wraith615.xyz/rss.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;gigigatgat&quot;, url: &quot;https://www.gigigatgat.ca/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;ignativssss&quot;, url: &quot;https://ignativssss.github.io//index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;asyncx&quot;, url: &quot;https://blog.asyncx.top/zh.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;birds&quot;, url: &quot;https://moresci.sale/@birds.rss&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;shyrz&quot;, url: &quot;https://shyrz.me/rss/&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;douchiBook&quot;, url: &quot;https://bamboobone9.com/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;ruanyifeng&quot;, url: &quot;https://feeds.feedburner.com/ruanyifeng&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;decohack&quot;, url: &quot;https://decohack.com/feed/&quot; &#125;</span><br><span class="line"> </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">return myRssFeeds.map(feed =&gt; (&#123;</span><br><span class="line">  json: &#123;</span><br><span class="line">    feedName: feed.name,</span><br><span class="line">    feedUrl: feed.url</span><br><span class="line">  &#125;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<h4 id="RSS-Read-节点"><code>RSS Read</code> 节点</h4>
+<p><code>Feed URL</code> ： <code>&#123;&#123; $json.feedUrl &#125;&#125;</code></p>
+<h4 id="Code-节点（剪切）"><code>Code</code> 节点（剪切）</h4>
+<p>只保留最新 <code>3（n）</code> 条，不确定是否能提高效率。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const items = $input.all();</span><br><span class="line"></span><br><span class="line">items.sort((a, b) =&gt; &#123;</span><br><span class="line">  const dateA = new Date(a.json.pubDate || 0).getTime();</span><br><span class="line">  const dateB = new Date(b.json.pubDate || 0).getTime();</span><br><span class="line">  return dateB - dateA;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">return items.slice(0, 3);</span><br></pre></td></tr></table></figure>
+<h4 id="Edit-Fields-Set-节点"><code>Edit Fields (Set)</code> 节点</h4>
+<ul>
+<li>点击 <code>Add Value</code> (添加值)。</li>
+<li><strong><code>Name</code> (名称)</strong>: 输入 <code>feedName</code></li>
+<li><strong><code>Value</code> (值)</strong>: 输入下面的表达式。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123; $(&#x27;list&#x27;).item.json.feedName &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>并打开最下面的一个开关-- <code>Include Other Input Fields。</code></p>
+<p>在 <code>RSS Read</code> 抓取完文章后，<code>Set</code> 节点会把 <code>feedName</code> 附加到每一篇文章数据上。</p>
+<h4 id="Code-节点（精选最新）"><code>Code</code> 节点（精选最新）</h4>
+<p>在所有新文章里，每个来源只挑出最新的一篇。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">const items = $input.all();</span><br><span class="line">const latestByFeed = &#123;&#125;; // 用对象保存每个源的最新文章</span><br><span class="line"></span><br><span class="line">for (const item of items) &#123;</span><br><span class="line">  const feed = item.json.feedName || &#x27;unknown&#x27;;</span><br><span class="line">  const pubDate = item.json.pubDate ? new Date(item.json.pubDate).getTime() : 0;</span><br><span class="line"></span><br><span class="line">  if (!latestByFeed[feed]) &#123;</span><br><span class="line">    latestByFeed[feed] = item;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    const existingDate = latestByFeed[feed].json.pubDate ? new Date(latestByFeed[feed].json.pubDate).getTime() : 0;</span><br><span class="line">    if (pubDate &gt; existingDate) &#123;</span><br><span class="line">      latestByFeed[feed] = item;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 把对象里的结果转成数组返回</span><br><span class="line">return Object.values(latestByFeed);</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Remove-Duplicates-节点"><code>Remove Duplicates</code> 节点</h4>
+<p>防止文章重复。<br>
+<code>operation</code>：<code>Remove Items Processed in Previous Executions</code><br>
+<code>value</code> ： <code>&#123;&#123; $json.guid || $json.link &#125;&#125; </code></p>
+<h4 id="Send-a-text-message（Telegram）"><code>Send a text message</code>（Telegram）</h4>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">📝&#123;&#123;$json[&quot;title&quot;]&#125;&#125; #blog </span><br><span class="line"></span><br><span class="line">&#123;&#123;$json[&quot;link&quot;]&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>解析模式为 <strong><code>HTML</code></strong>。</p>
+<h2 id="工作流问题">工作流问题</h2>
+<blockquote>
+<p>第三方服务不能成功</p>
+</blockquote>
+<h3 id="本地代理设置">本地代理设置</h3>
+<p>报错 <code>The service refused the connection - perhaps it is offline</code></p>
+<p>检查容器代理情况</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker inspect n8n | <span class="built_in">Select-String</span> <span class="literal">-Pattern</span> <span class="string">&quot;PROXY&quot;</span></span><br></pre></td></tr></table></figure>
+<p>输出是走代理的，核心问题是 <strong><code>127.0.0.1:7890</code> 在容器里访问不到宿主机代理</strong>，最后修改了一下启动命令可以成功。</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> <span class="literal">--name</span> n8n <span class="literal">-p</span> <span class="number">5678</span>:<span class="number">5678</span> <span class="literal">-e</span> <span class="string">&quot;HTTP_PROXY=http://host.docker.internal:7890&quot;</span> <span class="literal">-e</span> <span class="string">&quot;HTTPS_PROXY=http://host.docker.internal:7890&quot;</span> <span class="literal">-v</span> ~/.n8n:/home/node/.n8n <span class="literal">-v</span> ~/.n8n_database:/database n8nio/n8n</span><br></pre></td></tr></table></figure>
+<p>为了不再出这个问题，删了容器重新在本地直接存下配置，<code>&quot;C:\n8n-data\docker-compose.yml&quot;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.8&quot; </span><br><span class="line">services:</span><br><span class="line">  n8n:</span><br><span class="line">    image: n8nio/n8n</span><br><span class="line">    container_name: n8n</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;5678:5678&quot;</span><br><span class="line">    environment:</span><br><span class="line">      # 代理配置（写死）</span><br><span class="line">      HTTP_PROXY: http://host.docker.internal:7890</span><br><span class="line">      HTTPS_PROXY: http://host.docker.internal:7890</span><br><span class="line">      NO_PROXY: localhost,127.0.0.1</span><br><span class="line">    volumes:</span><br><span class="line">      # 数据卷（写死路径，防止丢配置）</span><br><span class="line">      - ./n8n_data:/home/node/.n8n</span><br><span class="line">      - ./n8n_database:/database</span><br><span class="line">    restart: unless-stopped</span><br></pre></td></tr></table></figure>
+<p>然后进入文件夹创建数据卷</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>启动</strong><br>
+<code>docker compose up -d</code></li>
+<li><strong>停止</strong><br>
+<code>docker compose down</code></li>
+<li><strong>查看日志</strong><br>
+<code>docker compose logs -f</code></li>
+<li><strong>更新</strong><br>
+<code>docker-compose pull</code><br>
+<code>docker-compose down</code><br>
+<code>docker-compose up -d</code></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -211,7 +455,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
+      <time title="修改时间：2025-10-19 22:16:32" itemprop="dateModified" datetime="2025-10-19T22:16:32+08:00">2025-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -313,7 +557,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
+      <time title="修改时间：2025-10-19 22:16:32" itemprop="dateModified" datetime="2025-10-19T22:16:32+08:00">2025-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -416,7 +660,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
+      <time title="修改时间：2025-10-19 22:16:32" itemprop="dateModified" datetime="2025-10-19T22:16:32+08:00">2025-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -517,7 +761,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
+      <time title="修改时间：2025-10-19 22:16:32" itemprop="dateModified" datetime="2025-10-19T22:16:32+08:00">2025-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -627,7 +871,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
+      <time title="修改时间：2025-10-19 22:16:32" itemprop="dateModified" datetime="2025-10-19T22:16:32+08:00">2025-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -730,7 +974,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
+      <time title="修改时间：2025-10-19 22:16:32" itemprop="dateModified" datetime="2025-10-19T22:16:32+08:00">2025-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -844,7 +1088,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
+      <time title="修改时间：2025-10-19 22:16:32" itemprop="dateModified" datetime="2025-10-19T22:16:32+08:00">2025-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -952,7 +1196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
+      <time title="修改时间：2025-10-19 22:16:32" itemprop="dateModified" datetime="2025-10-19T22:16:32+08:00">2025-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1056,7 +1300,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
+      <time title="修改时间：2025-10-19 22:16:32" itemprop="dateModified" datetime="2025-10-19T22:16:32+08:00">2025-10-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1100,115 +1344,6 @@
 <ul>
 <li>⏱ 2025-06-13 21:06:41</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/05/11/2025-W19/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/05/11/2025-W19/" class="post-title-link" itemprop="url">2025-W19</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-05-11 22:08:00" itemprop="dateCreated datePublished" datetime="2025-05-11T22:08:00+08:00">2025-05-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-10-12 21:51:18" itemprop="dateModified" datetime="2025-10-12T21:51:18+08:00">2025-10-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-05-05 </code> 到 <code> 2025-05-11</code> 这一周生活的记录与思考。</p>
-<p>这周的主要事件就是答辩+拍毕业照。答辩前还是很紧张的，结果一开始到场的就两个老师。我们组的氛围很松散，在答辩前一天才开始发各种通知，答辩简单来说是老师们给我们提建议，没遇到那种被拷打的情况。</p>
-<h2 id="毕业照">毕业照</h2>
-<p>答辩后的第二天就要拍毕业照了，不知道为什么在这方面效率这么高。我前一天还在焦虑会不会要二辩，实在是没有拍照的心情，也还感觉不到任何毕业的实感。</p>
-<p>在拍毕业照确定以前，我就跟一个室友约好一起拍照。因为本人对拍照这种活动毫无兴趣，找个积极性高的搭子能带动我一点。</p>
-<p>临时学的编发，还不错，得到了室友的好评。<br>
-<img src="https://fastly.jsdelivr.net/gh/yohakuo/CDN/img/202505112137113.jpg" alt="编发|420"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/yohakuo/CDN/img/202505112139134.jpg" alt="小花|420"></p>
-<p>拍了集体大合照后，就到了自由时间，可以和一些同学合影留作纪念，很随缘地和遇到的熟人和合影。室友的对象要来，刚好到了饭点，我就和她分开回了宿舍。因为没有征得她们同意就不放照片了。</p>
-<p>把我拍的一些照片发给我的朋友 Y 君，才想起来没告诉她我今天拍毕业照的事，也许是因为潜意识里决定她现在挺忙，还要期末考试。<br>
-她：我也想看你穿学士服<br>
-我：怕你没时间嘛<br>
-她：我就是上刀山下火海也有时间啊<br>
-她：我不想错过你的每一个重要时刻<br>
-我：那你下午来！</p>
-<p>当时真的感动地哭了。我的好朋友真的特别特别好，让我找到了一些意义感，纪念这样的时刻是重要的。</p>
-<p><img src="https://fastly.jsdelivr.net/gh/yohakuo/CDN/img/202505112140356.jpg" alt="美美的Y君|420"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/yohakuo/CDN/img/202505112141462.jpg" alt="笑嘻嘻|420"></p>
-<p>录着视频不知道说什么，前面还挺开心的两人，后面就开始哭。Y 君说真的好快，前几天我们一起自习的时候好像还在高三。我很幸运，四年过去了我们并没有走散。我爱我的好朋友！<br>
-<img src="https://fastly.jsdelivr.net/gh/yohakuo/CDN/img/202505112144761.png" alt="傻乐|420"></p>
-<p>晚上另一个朋友 W 君结束了社畜的一天，来看望我~W 一直很忙，即使我们寒假都在不远的地方，可也一直没见上一面。这次也算是久别重逢啦，可惜学校把下午就把衣服回收了。</p>
-<p>想到她也来过我们学校了，就带着她去附近的公园散步啦，好朋友见面就是大聊特聊！<br>
-<img src="https://fastly.jsdelivr.net/gh/yohakuo/CDN/img/202505112202460.jpg" alt="给W比心|420"></p>
-<p><img src="https://fastly.jsdelivr.net/gh/yohakuo/CDN/img/202505112204083.jpg" alt="给W托脸|420"></p>
-<p>W 君应该是我们中最快进入职场的人了，她的职业是我十分敬畏的–老师，而且后面要教的高中数学。天知道我的数学早就还给我的中学老师了，而这个女人还能去教高中数学。希望她的工作生活一切顺利，遇到温暖友善的同事，上进有趣的学生~</p>
 
       
     </div>
