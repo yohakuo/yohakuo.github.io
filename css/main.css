@@ -1379,7 +1379,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #c2aff4;
+    background: #696c65;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2882,4 +2882,30 @@ header.header {
   .comments {
     padding: 10px 12px;
   }
+}
+/* --- 优化文章内的图片显示 --- */
+/* 选中文章主体内的所有图片 */
+.post-body img {
+    /* * 核心：让图片最大宽度不超过其容器的 75%
+   * 你可以把 75% 修改成 80% 或 600px 
+   * (注意：如果用 600px，小图片可能会被拉伸)
+   */
+    max-width: 75%;
+
+    /* 让图片水平居中 */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* 添加一点垂直间距 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    /* (可选) 增加一点美化，让图片“浮”起来 */
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+    /* (可选) 如果图片被拉伸，可以试试这个
+  width: auto; 
+  */
 }
