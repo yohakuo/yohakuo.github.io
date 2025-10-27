@@ -895,3 +895,10 @@ vendors:
 css: css
 js: js
 images: images
+
+# ---------------------------------------------------------------
+# Custom File paths
+# 用来指定加载自定义的 CSS 和 JS 文件
+# ---------------------------------------------------------------
+custom_file_path:
+  style: source/_data/styles.css
