@@ -4,8 +4,8 @@ date: 2025-08-15T19:51:00
 updated: 2025-08-18
 share: "true"
 tags:
-  - method
-categories: 教程
+  - Method
+categories: Knowledge
 archive:
 ---
  [参考](https://reorx.com/blog/sharing-my-footprints-automation/)
