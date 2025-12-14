@@ -1,1388 +1,944 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/6.0.17/fancybox/fancybox.css" integrity="sha256-yE0aDX61mjiw8FoDuGetFttFoGJMeWsU/iYEFOfpMhA=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"yohakuo.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.24.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
-
-    <meta name="description" content="睡个好觉">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#285943">
+  <meta name="author" content="新喀鸦006">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="写下，为了记住">
 <meta property="og:type" content="website">
-<meta property="og:title" content="magic world">
+<meta property="og:title" content="在原始森林">
 <meta property="og:url" content="https://yohakuo.github.io/index.html">
-<meta property="og:site_name" content="magic world">
-<meta property="og:description" content="睡个好觉">
+<meta property="og:site_name" content="在原始森林">
+<meta property="og:description" content="写下，为了记住">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="66">
-<meta name="twitter:card" content="summary">
+<meta property="article:author" content="新喀鸦006">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>在原始森林</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<link rel="canonical" href="https://yohakuo.github.io/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
 
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>magic world</title>
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yohakuo.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
-
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/6.0.17/fancybox/fancybox.umd.js" integrity="sha256-32A/chfN6JgQkwK/QFZY8siVcOZj3LUt1vSKIcDvshM=" crossorigin="anonymous" defer></script>
-<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
-
-  
-
-
-
-  <script src="/js/third-party/fancybox.js" defer></script>
-
-
-
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
+<body>
+  
 
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">magic world</h1>
-      <i class="logo-line"></i>
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>某根树枝上</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a></li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/images/fore.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle"></span>
+          
+        </div>
 
-
-</header>
         
-  
-  <aside class="sidebar">
+      </div>
 
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">66</p>
-  <div class="site-description" itemprop="description">睡个好觉</div>
+      
+    </div>
+  </div>
 </div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">37</span>
-          <span class="site-state-item-name">日志</span>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/11/30/2025-W48/" target="_self">
+          月末|大概也是期末
         </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/11/30/2025-W48/" target="_self">
+        <div>
+          本篇是对 2025-11-24  到  2025-11-30 这一周生活部分事件的记录。 写周记后时间像开了倍速，一个月最多四篇，一年也才五十多篇。虽然颗粒度大了些，但记录总比没有强上几分，它们是我的锚点。 日子经常过得一成不变，而天气难以捉摸，也算添了几分变化。上周一夜入冬，穿保暖的羽绒服，等我以为轻薄的衣服可以压箱底，这周又晴空万里仿佛是在暖秋，二十多度阳光刺的我睁不开眼。这学期的课结的差不多
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-30 19:28" pubdate>
+              2025-11-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" class="category-chain-item">个人记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/weekly/">#weekly</a>
+            
+          </div>
+        
       </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">分类</span></a>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/11/23/2025-W47/" target="_self">
+          小雪|疼痛
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/11/23/2025-W47/" target="_self">
+        <div>
+          本篇是对 2025-11-17  到  2025-11-23 这一周生活部分事件的记录。 快速总结💭  这周天气阴晴不定，一夜入冬，没太注意便着凉&lt;(＿　＿)&gt; 一周周数着日子，大概还有六周课，上完了时间就能自由些吗？真自由了又能如我所愿地学习吗？总有点不好的预感，目前的学习进度并不顺利。学期开始之前我还想着有时间可以多打比赛，找到自己的课题写写小论文之类。前者有点进度，参加了一个比
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-23 19:23" pubdate>
+              2025-11-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" class="category-chain-item">个人记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/weekly/">#weekly</a>
+            
+          </div>
+        
       </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span></a>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/11/09/2025-W45/" target="_self">
+          立冬|寻找鸟球
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/11/09/2025-W45/" target="_self">
+        <div>
+          本篇是对 2025-11-03  到  2025-11-09 这一周生活部分事件的记录。封面是一只膨胀的乌鸫。 快速总结💭  学习了 JSON Schema 是什么，一般如何定义。 好讨厌学习通这个平台… 为什么不能直接下载课件？其它鸡肋的功能倒是爱折腾，不小心更到新版本问客服还不让我退回。目前凑合用一个脚本下载课件，大致的原理可能是：通过网页的响应找到 pdf 的下载链接。缓慢地复习数学中。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-11-09 20:39" pubdate>
+              2025-11-09
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" class="category-chain-item">个人记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/weekly/">#weekly</a>
+            
+          </div>
+        
       </div>
-  </nav>
-</div>
+    </article>
+  </div>
 
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/10/26/2025-W43/" target="_self">
+          霜降|找到一处自留地
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/10/26/2025-W43/" target="_self">
+        <div>
+          本篇是对 2025-10-20  到  2025-10-26 这一周生活部分事件的记录。 快速总结💭  第一次去学校图书馆借书，检索系统做得很烂。图书馆一楼只有两台检索的机器，而且仅触屏搜索，时不时自动返回首页，刚刚搜到还没记下位置就白搜了。在某书找了一下，还有一个办法是手机连校园网在浏览器找官网，网速很慢，但比机器要省心一点。库存不是特别足，很多不感兴趣的新书（关键字 AI），感兴趣的一搜一个
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-10-26 17:48" pubdate>
+              2025-10-26
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" class="category-chain-item">个人记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/weekly/">#weekly</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/09/28/2025-W39/" target="_self">
+          丰收节|数模流水账
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/09/28/2025-W39/" target="_self">
+        <div>
+          本篇是对 2025-09-22  到  2025-09-28 这一周生活部分事件的记录。 快速总结💭  这周遇到不少在外面饭店抽烟的烟人… 很影响吃饭体验。 周二还是周三做了一个梦，梦到了我奶奶在医院里… 自行车被人移动还总是被动了变速档位，过了几天就开始响，去车行修的时候发现是螺丝松了，好想自己学会修车。目前遇到的都是螺丝的问题，就是不知道怎么调算调好。 宿舍里面潮湿的难受，怎么睡都不舒服，每
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-09-28 12:40" pubdate>
+              2025-09-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" class="category-chain-item">个人记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/weekly/">#weekly</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/09/14/2025-W37/" target="_self">
+          开学前的一周|玩水初尝试
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/09/14/2025-W37/" target="_self">
+        <div>
+          本篇是对 2025-09-08  到  2025-09-14 这一周生活部分事件的记录。 快速总结💭  终于在 zotero 试用了坚果云的同步，嗯，免费的很香 保持上四休三的工作效率，在周四前在组里干活，看了这篇文章受启发，于是重构了我的代码结构，用上了工具 探索了游泳馆，水挺好玩的 骑车被学校的门禁暗算，夹的我痛了一天  关于游泳一事 也是一时兴起，先是买好装备，问了学校报班的价格，然后在
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-09-14 21:38" pubdate>
+              2025-09-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" class="category-chain-item">个人记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/weekly/">#weekly</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/" target="_self">
+          自动化工作流聚合信息初尝试（n8n,telegram）
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/" target="_self">
+        <div>
+          参考 本文在 简单工作流的搭建 搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先到快速启动 下载必要引擎，然后可以直接跳到 使用已有的工作流。 n8n 版本： 1.106.3 快速启动 下载 Docker Desktop 测试模式，不要关闭终端 1docker run -it --rm --name n8n -p 5678:5678 -e &quot;HTTP_PROXY=http://12
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-08-15 19:51" pubdate>
+              2025-08-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Knowledge/" class="category-chain-item">Knowledge</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Method/">#Method</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/04/14/%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/" target="_self">
+          通信工程
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/14/%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/" target="_self">
+        <div>
+          摘抄自鲜枣课堂  基本信息 “通信工程”属于二级学科，归属于“信息与通信工程”一级学科之下。 通信工程的研究方向，就是通信。 通信的本质，就是信息的互通。也就是说，通信工程主要研究信号的产生、发送和接收，信息的传输、交换和处理。 在国外（例如美国）的学科分类中，通信工程被认为是电子工程的重要分支。 电子工程，也就是大家经常听说的EE，和通信、电信、电子、光电、集成电路等相关。 和EE相对应的，就
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-04-15 00:00" pubdate>
+              2024-04-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%BF%A1%E6%81%AF/" class="category-chain-item">信息</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/read/">#read</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/03/22/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%952/" target="_self">
+          静态博客搭建记录2
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/22/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%952/" target="_self">
+        <div>
+          笔记主要包含实现自动部署的工作流。 参考  在 GitHub Pages 上部署 Hexo   使用 GitHub Actions 自动部署 Hexo 博客) GitHub博客搭建  结合了第二、三个博文中的 workflow 文件，最终实现自动化部署。Obsidian 一键上传用到了 envelope 。 我的 workflow 文件 123456789101112131415161718192
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-03-23 00:00" pubdate>
+              2024-03-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Knowledge/" class="category-chain-item">Knowledge</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Method/">#Method</a>
+            
+              <a href="/tags/Blog/">#Blog</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2024/03/17/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%951/" target="_self">
+          静态博客搭建记录1
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/03/17/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%951/" target="_self">
+        <div>
+          方案选择   Netlify  一个静态网页生成器，可以快速地构建和发布个人或团队的网站   hexo Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页   GitHub Pages GitHub Pages 是由 GitHub 官方提供的一种免费的静态站点托管服务，让我们可以在 GitHub 仓
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-03-18 00:00" pubdate>
+              2024-03-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Knowledge/" class="category-chain-item">Knowledge</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Method/">#Method</a>
+            
+              <a href="/tags/Blog/">#Blog</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner index posts-expand">
-
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/12/07/%E5%A4%A7%E9%9B%AA%E5%89%8D%E8%A7%82%E9%B8%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/12/07/%E5%A4%A7%E9%9B%AA%E5%89%8D%E8%A7%82%E9%B8%9F/" class="post-title-link" itemprop="url">大雪|后官湖古法观鸟</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2025-12-07 15:18:00 / 修改时间：19:44:24" itemprop="dateCreated datePublished" datetime="2025-12-07T15:18:00+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071622711.jpg" alt="69b91052010d84120d4f5984727e6c2d.jpg|420"></p>
-<p>本文总计 <strong>2.21k</strong> 字，阅读约需要 <strong>6</strong> 分钟</p>
-<hr>
-<p>鸟友送的小鸟豆镇楼！这周的前半段过得紧张刺激（指突击考试），后半段就完全自由，玩和躺了几天，周末的时光好短暂。</p>
-<p><strong>本周摘要</strong></p>
-<ul>
-<li>和好朋友见面啦——但时间很短暂，她只在我考前和考试当天有空。我和她吃了饭，逛了半个学校，顺路捡了一些树叶做书签，后面她说陪我复习但实在无心学习 （现在看是完全正确选择）</li>
-<li>一直忘记吐… 知道一加13的便签弄丢了我的笔记，不知道是不是因为开了自动同步，垃圾软件！！有风险的功能不如没有</li>
-<li>这周组会最大的收获是——知道了放假时间</li>
-<li>近几周都没有打游戏的动力，买了新的策略游戏，但玩了一会就疲惫，这个天气就适合躺在被窝</li>
-<li>第一次跑很远去观鸟，去之前还为没有记录发愁，去了以后发现想得太多。对于新鸟人来说，遍地可加新，没见着候鸟也不算白跑</li>
-<li>有了几个新的 idea，下周或许可以开始行动</li>
-</ul>
-<hr>
-<h2 id="后官湖观鸟">后官湖观鸟</h2>
-<p>收获：某种鸥（可能是红嘴鸥）、白鹡鸰、黑水鸡、小䴙鹈、某种柳莺、某种伯劳（感觉是棕背伯劳）、灰喜鹊、鹊鸲、凤头䴙鹈、白骨顶。</p>
-<p>我从园区的正面进，选择了右边的小路，来的一个可以看到大片水域的观景台。刚接近水面就被某种鸥和鹡鸰吸引住，前者有时在水面绕大圈滑翔，后者则在杆子上迈着小碎步跑动。往远处看，看到一个小白点，用望远镜观察又拍了照片，脖子是雪白的，头大概是黑色的，感觉是没见过的鸟。近处一扫而过，有黑水鸡和小䴙䴘的身影。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071607508.jpg" alt="某种鸥|420"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071608440.jpg" alt="某种水鸟|420"></p>
-<p>和鸟友们汇合后，继续沿着右手边的小道走，往左是与刚才连通的水域，路边的大小树上时不时传来灰喜鹊、白头鹎、乌鸫、噪鹛等的鸣声。有成群的黑水鸡聚集在近处觅食，但在我们豪无知觉地靠近时它们便敏捷地往远处游去了。在枯萎的荷叶杆中，有一个显眼的影子，我举起望远镜发现确实是只鸟，它正在梳理自己的毛发，通体黑色夹杂一抹白（应该是小黑水鸡）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071609651.jpg" alt="小黑水鸡|420"></p>
-<p>再往深处走便开始远离水，路的两侧都是树，抬头一看发现头顶有鸟，用望远镜看尾巴是圆润的鱼尾形状，颈部有棕黄色的一圈。可能是我们的到来惊扰了燕雀，过了一会儿，我看到一群燕雀在不出声的情况下默契地飞到对面的树上去了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071611601.jpg" alt="燕雀|420"></p>
-<p>还没走几步，又在路边的一棵矮树上看到一只体型很小的鸟，它似乎闲不住，几乎一刻不停地跳动，立马举起望远镜开始找，可废了点力气。好在它很给面子地在这棵树上呆了很久，我美美地记录了它灵动的身形。遗憾的是现在还不确定它是哪位柳莺。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071612996.jpg" alt="某种柳莺|420"></p>
-<p>再往这个方向走便没有更多收获了。我听到了很多陌生的叫声，大合唱一样，一波接着一波，或是这边唱那边和地配合。其中有一个低低但规律的声音就在附近，循声而去，感觉就在眼前，但眼前只有低矮的灌木丛。我们在灌木里绕了几圈，无果。看向水域，已经被密密麻麻的枯萎荷叶覆盖了。便准备往回来时的地方去。</p>
-<p>我们原路返回，走过来时的观景台，又是一条小路，左侧是各式各样的植被，后手边靠着湖，栽着一排柳树。此时太阳已经收敛它的光辉，我挂念着来时看到的鹡鸰，再往水面看，还是能看到一个灵活的影子在活动，此时的光线正好，透过目镜便能看得很清：它通体白色的羽毛，胸前有标志性的黑色花纹，是白鹡鸰！正想拍照，等我手忙脚乱地连上望远镜，它已经迈开两只腿，不知跑到哪里去了。但我得感谢此时的停留。在右侧的柳树枝上，我又注意到一个不同寻常的身影，它正停在低垂柳树的一根枝桠上，在稀疏的树影间格外明显，我连忙举起望远镜开始观察，只见一只伯劳沉稳地站在那里，小幅度地转动脑袋，上下摇摇尾巴，像是在观察四周的情况，比如奇怪的两脚兽。过了会它飞到了附近的警告牌附近，没有了遮挡物，我得以拍到更清晰的影像，甚至和它对望了半分钟。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071612751.jpg" alt="伯劳|420"><br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071613843.jpg" alt="def383c49437a8a22554e42c6a4cd2e2.jpg|420"></p>
-<p>告别慷慨的某种伯劳，接着向前。仰着头走了一段路，在光秃秃的树枝间看到了两只小白头鹎（这个季节竟然这么多亚成鸟）。再看地面，时不时会有灰喜鹊飞离树梢，等我走近些，才意识到它们正在享用一处天然的小水洼，饮水或是洗澡（此处有小剧场，一只洗澡被另一只打跑了）。这条路本该通往更靠近湖中央的桥，或许是年久失修，便把路封了。我们只好在岸边观察开阔水域，在这里只能看到某种鸟在水中移动像是一艘迷你快艇，会留下移动的水痕，会时不时潜入水中消失不见。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071614625.jpg" alt="8ab2f2f504b1db8915845d8b7d4f2025.jpg|420"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071614286.jpg" alt="873493f87afe8831efb59c7a9972347a.jpg|420"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071614583.jpg" alt="184b1b6f441f77a879e95646e7c3ad63.jpg|420"></p>
-<p>继续沿着湖走，我们惊喜地发现这边的视野更开阔，而且可以更近观察刚刚那种鸟。这个距离我得以看清它的头顶多出尖尖的弧度，两侧对称，这时才确定刚来时看到的白点就是凤头䴙䴘（冬羽版）。在这里观察了一会它们潜水捕鱼，不知道收获如何，回来翻相册发现对岸还有两个钓鱼佬，淡淡地羡慕了一秒（等鱼上钩的时候还能看鸟捕鱼）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071617931.jpg" alt="dabc8137e497053f9954623548f916d1.jpg|420"><br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071615854.jpg" alt="8c74377b00350a8c0ca2a53e4fd026fc.jpg|420"></p>
-<p>接下来环湖小半段，拍到了更清晰的风头䴙䴘，长满鹎的树，长满某种柳莺的树，还被强脚树莺溜了两圈（就是前文在灌木丛里狂叫的鸟），还发现了白骨顶（似乎和黑水鸡各自划分了水域）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071616537.jpg" alt="a5b4212bc79c41765882234e1fc030ba.jpg|420"><br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071616933.jpg" alt="d43b5723b78c22d5a1203311ab4af9c4.jpg|420"></p>
-<p>夕阳西下，这次观鸟就此落幕。</p>
-<h2 id="图">图</h2>
-<p>很美味的鱼，虾也好吃<br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071759593.jpg" alt="f5e6895a8260dd849d0b743a23864baa.jpg|420"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071800962.jpg" alt="32c6121c791de013ef6fd7deaa19ab13.jpg|420"></p>
-<p>标准鸭子坐<br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071800920.jpg" alt="0faa6d4c7befe503250b47bdb996bd3d.jpg|420"></p>
-<p>一些植物<br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071800798.jpg" alt="300062e6f1f98e4d143f2f3335031eb5.jpg|420"><br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071800536.jpg" alt="115a431eb9dcd73436935abbbfd27e99.jpg|420"></p>
-<p>太亮了！拍出来都有光圈<br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071758687.jpg" alt="ca6153aeef1177f576777757d70d3abc.jpg|420"><br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071759939.jpg" alt="56f91e1e6d6532d09211cd51f411b76f.jpg|420"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202512071616880.jpg" alt="4916e8b2cb73272b9de661ba8dddf8ec.jpg|420"></p>
-
-      
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+  </div>
 </div>
 
-
-
-
     
 
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/11/30/2025-W48/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/11/30/2025-W48/" class="post-title-link" itemprop="url">月末|大概也是期末</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-11-30 19:28:00" itemprop="dateCreated datePublished" datetime="2025-11-30T19:28:00+08:00">2025-11-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-07 19:44:24" itemprop="dateModified" datetime="2025-12-07T19:44:24+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-11-24 </code> 到 <code> 2025-11-30</code> 这一周生活部分事件的记录。</p>
-<p>写周记后时间像开了倍速，一个月最多四篇，一年也才五十多篇。虽然颗粒度大了些，但记录总比没有强上几分，它们是我的锚点。</p>
-<p>日子经常过得一成不变，而天气难以捉摸，也算添了几分变化。上周一夜入冬，穿保暖的羽绒服，等我以为轻薄的衣服可以压箱底，这周又晴空万里仿佛是在暖秋，二十多度阳光刺的我睁不开眼。这学期的课结的差不多，本月也接近尾声，许个愿吧：下个月会发生一些好事，我的朋友们会一切顺利~</p>
-<h2 id="快速总结💭">快速总结💭</h2>
-<ul>
-<li>这两周因为考试没能能好好生活（其实也不想复习），考完就给自己放了假，出门转转，还捞发小出来吃饭</li>
-<li>对电煮锅的热度持续了三周，但本周很糊弄，下周课少应该可以自己煮东西吃</li>
-<li>两周没有正经观鸟，忏悔几秒，和鸟友两次都没约上（天杀的考试  ）。买了赛博观鸟小游戏，玩了玩觉得很容易变成无情地做任务和集邮机器。又新借了一本图画丰富的手册，补充了一点鸟类学分类的知识</li>
-<li>我很喜欢的一个博主发了织毛球的入门blog，大致看了一下有两种技法，一是棒针，另一个是钩针，狠狠心动了！但没想好学哪种</li>
-</ul>
-<h2 id="出门见个面">出门见个面</h2>
-<p>P1 是她在学校门口收到的&quot;见面礼&quot;，她问这是我们学校的特色吗，我笑了笑答这大概是每个学校的特色。本来这也没什么，不值得再说一嘴。可能是我发小性子软，一扫扫了三，被判定为好说话的人，等我出来又拦着我让我也扫，我先是拒绝，拉着她就走，中途一直明确地拒绝，但发传单的人不依不挠半天，弄得我很恼火。</p>
-<p>P2 是真正的意外收获，超级大的一颗松果，一手放不下，长得也很端正，放进我包里的时候她还嘱咐我注意点。等下次再想起它，她刚在车车上坐稳，含泪让我好好保存下次带给她。</p>
-<p>下面是对光谷步行街的吐槽，建的结构很混乱，指引基本没有。出发前我问了室友影院的大致位置，因为没有规划时间电影马上开场我们才打车到附近，挑了个电梯上了楼，在外圈转了半圈毫无头绪，最后问了几个人才找对方向。这影院在内圈的一个角落，但我先看到了走廊对面的牌子便下意识以为在对面，走到一半发现地上的指引，全程盯着地才找到它… 等我们到场时电影大概已开场半小时，边上的观众都以为我们不来默默给我们让了座。</p>
-<p>观影过程挺放松，全程没有走神。彩蛋和笑点多，她还穿插剧情给我补充了不少剧情。挺喜欢河狸这个角色（第一眼还以为是土拨鼠），热情话多也很有趣，贡献了与湿地动物互动的笑点^^ ,中间越狱那段让我很意外（当时没发现是从扫把啃出了钥匙），她被毒牙刺到的时候我还挺担心她就这样下线。欢乐的一个多小时，各种巧合的设计都刚刚好，最后为大团圆结局打上四颗星。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511302040883.jpg" alt="83c05a53724f1aa7340681bba4ec9387.jpg|320"></p>
-<h2 id="出门散步去">出门散步去</h2>
-<p>之前荷叶过于密集的池塘如今一片衰败，但枯萎的叶杆依然是完美的掩体。路过时听到响亮的叫声，定睛一看发现是黑水鸡，之前鸟影是一点都看不见的。即使没有荷叶的遮挡，想要观察它们活动也不容易，往往是眼睛看到动静，手忙脚乱半天望远镜对不上，视野里全是折了腰的叶杆（想要挑战眼力可以试试下图）</p>
-<p>银杏树好多，忍不住捡了几片回来做书签。比起红枫，银杏的叶子要更干净些，没有明显虫害，但红枫胜在颜色够亮眼，一眼过去也不会注意到它的瑕疵。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511302026234.jpg" alt="fb741fcccffd29505d967b29663f5eea.jpg|320"></p>
-<h2 id="资源">资源</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.prompt-genie.com/dashboard">prompt-genie</a> 提示词插件</li>
-<li><a target="_blank" rel="noopener" href="https://birdsoftheworld.org/bow/home">世界鸟类图鉴</a></li>
-<li><a target="_blank" rel="noopener" href="https://xeno-canto.org/">鸟鸣资源</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/11/23/2025-W47/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/11/23/2025-W47/" class="post-title-link" itemprop="url">小雪|疼痛</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-11-23 19:23:00" itemprop="dateCreated datePublished" datetime="2025-11-23T19:23:00+08:00">2025-11-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-07 19:44:24" itemprop="dateModified" datetime="2025-12-07T19:44:24+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-11-17 </code> 到 <code> 2025-11-23</code> 这一周生活部分事件的记录。</p>
-<h2 id="快速总结💭">快速总结💭</h2>
-<ul>
-<li>这周天气阴晴不定，一夜入冬，没太注意便着凉&lt;(＿　＿)&gt;</li>
-<li>一周周数着日子，大概还有六周课，上完了时间就能自由些吗？真自由了又能如我所愿地学习吗？总有点不好的预感，目前的学习进度并不顺利。学期开始之前我还想着有时间可以多打比赛，找到自己的课题写写小论文之类。前者有点进度，参加了一个比赛，但不足以作为毕业成果，后者完全没着落…</li>
-<li>下周就要考试，但偶然看到 datawhale 线下的活动，报名并录上就不想错过，去了还是有些失望，到场的大部分是男性，也没有非常开放的交流活动，和学校里举办的活动大差不差。本以为收获仅为拼手速抢到的水杯（下图 po 出），没想到在活动结束后我的好运才刚刚开始。离开场地后，我注意到和一同领奖过的一个女生，鼓起勇气和她搭讪，没想到非常投缘。聊着聊着又发现她是我大学同学的发小，世界真小，而我好幸运！如果以后有时间一定要多多去线下活动！</li>
-<li>再也不乱买耳机！头戴式我真的带不了，太紧太勒，还压眼镜腿，拆了包装就不能退，最后亏了 70 多某鱼出给一个女生，也算回了血，心疼我的钱包。</li>
-</ul>
-<h2 id="疼痛">疼痛</h2>
-<p>作为人类，我有丰富的主观感觉的体验-听味嗅感。我会会对低频或高频的声音敏感，即使在静到极致的深夜里，也能听到一些日常活动完全听不到的细微声响。食材炒出来独特气味和入口时的酸甜咸香让另外两大感官努力工作。这些感觉的存在感往往不太强，和身体里正常工作的器官一样，我很少意识到我在使用它们。而当我察觉到它们时，往往大事不妙。突然被疾病找上门，连叫苦的地方都没有，感官或器官开始罢工抗议，让我深刻地认识到它们的存在。</p>
-<p>我总感到难以忍受疼痛，却在读书的这些年里常常遭遇意料之外的病痛。疼痛，它没有实体，也不知道定义，我连描述它都有些力不从心。在无数次被疼痛打击后，我也想在事后好好了解一下这位无法摆脱的敌人。</p>
-<blockquote>
-<p>首先是定义。维基百科里说，身体的<strong>疼痛</strong>是由疾病、创伤、外在伤害性刺激，伴随现有的或潜在的组织损伤，所引起在知觉上或情绪上难受的、不愉快的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%84%9F%E8%A6%BA" title="感觉">感觉</a>。</p>
-</blockquote>
-<p>这里其实清晰地说明了起因——疼痛来自身体的损伤。而我总以为这病痛是突然来的，没有征兆。现在反省一下，最近两次的病痛都能找到一些关联因素。前者是搬到全新的环境里，天气不好还下了雨，睡眠也差，便病了。后者因天气多变，一夜大降温，我起夜没太注意加衣服，床上也没有换厚被子。终归是自己不会照顾身体，可怜了我的这副肉体跟了我这么个不讲究的主子。另外给一些新认识的人留下了“容易生病”的印象，真是郁闷。</p>
-<blockquote>
-<p>然后是对疼痛的分类，只做了解。痛觉感受器引起的疼痛可细分为三种：表面躯体疼痛（或皮肤疼痛）、深层躯体疼痛（如扭伤、断骨）、内脏疼痛（来自身体器官，内脏痛觉感受器的分布疏，产生的痛感可转化为体腔壁痛、牵涉痛）。</p>
-</blockquote>
-<p>我很难在疼痛袭击的时刻去干其它的事情，大脑都被强烈的痛占据，无法思考，痛得厉害了连行走都困难。又因为我肠胃是老毛病，时不时犯病，非常让人憋屈。内脏像是在用这种方式来控诉我不好好爱护她，我只能受着这折磨，说不准在哪，也描述不出那痛是什么滋味，但经历得多了也能猜到是哪位出了问题。也难怪文学作品里很少出现关于身体疼痛的写实描述，实在是强人所难。（题外话：健康情况下我想写点流水账都感到困难，看着空空的文档憋不出来几个字，写了几个字又觉得要么啰嗦要么没有逻辑，完全是在胡扯。好在我现在写周记也算一种能坚持的输出，也不用都给其它人看，不怕丢脸）</p>
-<h2 id="资源">资源</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/XT53_VinwQhD-ns0gGiN7A">java入门项目</a></li>
-<li>张咋了推荐的 AI 资源 zara.faces.site/ai</li>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/rZqBxTyDI9KyXod03vteCg"># Nano Banana Pro</a></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511232157554.jpg" alt="90bf339261ac25a5f02cbe211042bf2e.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511232157937.jpg" alt="57b32d944ef9c55ba87993bf6570b244.jpg|320"><br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511232158683.jpg" alt="c535122d6d8919423bc3843093e6ba4d.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511232158596.jpg" alt="e1c8bdd223c8aa090659166d9d8349af.jpg|320"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/11/16/2025-W46/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/11/16/2025-W46/" class="post-title-link" itemprop="url">2025-W46</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-11-16 20:37:00" itemprop="dateCreated datePublished" datetime="2025-11-16T20:37:00+08:00">2025-11-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-07 19:44:24" itemprop="dateModified" datetime="2025-12-07T19:44:24+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-11-10 </code> 到 <code> 2025-11-16</code> 这一周生活部分事件的记录。</p>
-<h2 id="快速总结💭">快速总结💭</h2>
-<ul>
-<li>买了锅以后吃得挺幸福，和室友一起有时间就弄吃的，逛了超市和菜场。主要买了蔬菜玉米牛肉，提前把放不住的都吃掉，有点撑了。</li>
-<li>再也不会随便买头戴式耳机了，买了试戴后就退不了，戴着夹头压眼镜纯折磨…</li>
-<li>这周办了万事达的卡，比想象容易，一开始问我为什么要办，我说为了学习就给我办了，带身份证有手机号就可。</li>
-<li>勉强把随机过程的例题看到老师讲的那章了，还是我筛过的。英语 pre 的 PPT 用 gemini 做了，还需要写逐字稿修改一下。</li>
-<li>本周用车 6 天，但没特意骑行大部分都是通勤，还有出去逛超市的忘记记录，总计才 17km。</li>
-<li>坏消息，以后工位要打卡…？</li>
-</ul>
-<h2 id="AI-生成-PPT">AI 生成 PPT</h2>
-<p>之前水群看群友说用ai帮忙生成ppt，这次试了试，需求也简单：想生成最简单的白底黑字的都没实现，预览效果也一般，生成后也不让下载。广告弹窗倒是一个接一个，这不是明着抢我吗？国产的小工具都是来收割人的，吃相是真难看。</p>
-<p>于是果断跑路，又搜到 Gemini 的 Canvas 也支持生成 PPT 了，火速尝试。个人体验很好，能听得懂提示词，而不是一直套模板，用html 写的也能直接在对话页面旁边修改。占位的图也会在末尾给出出处，版权意识也好好。生成完了还能导入自家的 Slides 在线修改，不要太省心, 但需要等待和转换  ，可以先在对话页面改好。感谢 Google 给了我等穷鬼体验好日子的机会，没有像 Perplexity 一样虚假给体验机会，没到时间就回收都没来得及体验。</p>
-<h2 id="资源">资源</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/T3YdC7s3OhW9BxoczOg8iQ">《安富莱嵌入式周报》第360期</a></li>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/n3aXfIHTZBB5hAn228V5JQ">from-words-to-worlds-spatial-intelligence</a></li>
-<li><a target="_blank" rel="noopener" href="https://tldw.us/">TLDW</a>，Too Long; Didn’t Watch。一个很初期的 AI产品，不是总结视频内容，而是选取高光片段。目前只支持 YouTube 并依赖字幕，用文本在做筛选。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511162034890.jpg" alt="42ff229b8ecaa248bcb8b0ae5b6f9b72.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511162034095.jpg" alt="f0551123fc92b9c96b924e55630ea541.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511162036800.jpg" alt="微信图片_20251116203317_208_38.jpg|320"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/11/09/2025-W45/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/11/09/2025-W45/" class="post-title-link" itemprop="url">立鸫</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-11-09 20:39:00" itemprop="dateCreated datePublished" datetime="2025-11-09T20:39:00+08:00">2025-11-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-07 19:44:24" itemprop="dateModified" datetime="2025-12-07T19:44:24+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-11-03 </code> 到 <code> 2025-11-09</code> 这一周生活部分事件的记录。封面是一只膨胀的乌鸫。</p>
-<h2 id="快速总结💭">快速总结💭</h2>
-<ul>
-<li>学习了 <a href="!--swig%EF%BF%BC2--">JSON Schema</a> 是什么，一般如何定义。</li>
-<li>好讨厌学习通这个平台… 为什么不能直接下载课件？其它鸡肋的功能倒是爱折腾，不小心更到新版本问客服还不让我退回。目前凑合用一个<a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/444744-%E8%B6%85%E6%98%9F%E5%AD%A6%E4%B9%A0%E9%80%9A%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD">脚本</a>下载课件，大致的原理可能是：通过网页的响应找到 pdf 的下载链接。缓慢地复习数学中。</li>
-<li>本周工作和学习的效率都一般，不太明白+1+2 的需求… 他们一个说东一个说西，不知道听谁的。</li>
-<li>买了电煮锅!!! 受够了难吃的食堂，调料还没买，开锅煮了泡面 (<em>^▽^</em>)。</li>
-<li>新借的两本小说进度缓慢，前两个短篇故事都不怎么喜欢，虽然名字起的好听。还有一个可能是被有声书迷住，有点不可自拔，目前也就听了 30 个 h… 6 天前我还在说要睡前看纸质书抵手机，还是被科技打败了。</li>
-<li>这周只有两天骑了回车，周末在学校转了转，拍了会小鸟的冬装。</li>
-<li>经过并不严谨的测试，下午三四点喝咖啡也不会失眠，但茶我上午都不敢喝。</li>
-</ul>
-<h2 id="提示词入门">提示词入门</h2>
-<p><a target="_blank" rel="noopener" href="https://learn.deeplearning.ai/courses/chatgpt-prompt-eng/lesson/imsux/expanding">视频介绍</a></p>
-<ul>
-<li>原则一：写清楚和具体的提示
-<ul>
-<li>可以使用分隔符</li>
-<li>要求结构化输出</li>
-<li>检查是否满足完成任务的条件</li>
-<li>给模型提供完成任务的示例</li>
-</ul>
-</li>
-<li>原则二：给模型思考的时间
-<ul>
-<li>明确完成任务的步骤</li>
-<li>让模型先自己解决问题<br>
-减少幻觉：让模型从文本中查找相关引文，然后基于这些引文回答问题，提供追根溯源的方法。</li>
-</ul>
-</li>
-</ul>
-<p>例子如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">text = f&quot;&quot;&quot;</span><br><span class="line">You should express what you want a model to do by \ </span><br><span class="line">providing instructions that are as clear and \ </span><br><span class="line">specific as you can possibly make them. \ </span><br><span class="line">This will guide the model towards the desired output, \ </span><br><span class="line">and reduce the chances of receiving irrelevant \ </span><br><span class="line">or incorrect responses. Don&#x27;t confuse writing a \ </span><br><span class="line">clear prompt with writing a short prompt. \ </span><br><span class="line">In many cases, longer prompts provide more clarity \ </span><br><span class="line">and context for the model, which can lead to \ </span><br><span class="line">more detailed and relevant outputs.</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">prompt = f&quot;&quot;&quot;</span><br><span class="line">Summarize the text delimited by triple backticks \ </span><br><span class="line">into a single sentence.</span><br><span class="line">```&#123;text&#125;```</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">response = get_completion(prompt)</span><br><span class="line">print(response)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">prompt_2 = f&quot;&quot;&quot;</span><br><span class="line">Your task is to perform the following actions: </span><br><span class="line">1 - Summarize the following text delimited by </span><br><span class="line">  &lt;&gt; with 1 sentence.</span><br><span class="line">2 - Translate the summary into French.</span><br><span class="line">3 - List each name in the French summary.</span><br><span class="line">4 - Output a json object that contains the </span><br><span class="line">  following keys: french_summary, num_names.</span><br><span class="line"></span><br><span class="line">Use the following format:</span><br><span class="line">Text: &lt;text to summarize&gt;</span><br><span class="line">Summary: &lt;summary&gt;</span><br><span class="line">Translation: &lt;summary translation&gt;</span><br><span class="line">Names: &lt;list of names in summary&gt;</span><br><span class="line">Output JSON: &lt;json with summary and num_names&gt;</span><br><span class="line"></span><br><span class="line">Text: &lt;&#123;text&#125;&gt;</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="键盘快捷键">键盘快捷键</h2>
-<h3 id="网页浏览">网页浏览</h3>
-<blockquote>
-<p>有和 windows 共用的</p>
-</blockquote>
-<p>Ctrl+R——刷新页面<br>
-Backspace——返回上一个页面<br>
-Ctrl+tab——切换到多文档界面程序的下一个子窗口<br>
-Ctrl+L——定位到地址栏并选中其中的文本<br>
-Ctrl+H——历史记录<br>
-Tab——在页面上的链接、按钮和输入框等元素之间向前切换焦点。<br>
-F6——将焦点向前移动到地址栏、书签栏和页面内容之间。<br>
-F11——全屏</p>
-<blockquote>
-<p>Chrome扩展插件：<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en">Vimium</a></p>
-</blockquote>
-<p>yt——创建当前页面的一个副本<br>
-x——关闭当前标签，X恢复最近关闭的标签<br>
-j——向下滚动页面，k 向上滚动页面, G(shilft+g)到页面底部，gg定位到页面顶部<br>
-f——显示页面所有链接的按键分配，点击相应按键后打开链接<br>
-<code>shift+/</code> ——来调出帮助菜单</p>
-<h3 id="Windows快捷键">Windows快捷键</h3>
-<p>常见的几个 Ctrl 组合就不复述了。<br>
-Win+E——打开资源管理器<br>
-Win+I——打开设置<br>
-Win+X——打开一个快捷窗口，有设备、磁盘、任务管理器，终端，还可以关机<br>
-Alt+Tab——切换窗口<br>
-Win+R——通过名字快捷打开工具 cmd、calc、dxdiag、taskmgr<br>
-Win+B——将焦点移到任务栏托盘区<br>
-Win+Tab——以时间线显示活动页面<br>
-Win+D——显示桌面<br>
-Ctrl+w——关闭当前标签<br>
-Alt+F4——关闭窗口<br>
-Shift+鼠标右键（或上下文键）——在当前文件夹打开终端</p>
-<h2 id="资源">资源</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://guangzhengli.com/blog/zh/gpt-embeddings">gpt-embeddings</a>，虽然是旧文但扫盲很好，内容深入浅出。作者写了很多 AI 相关的科普文章，除了这篇还看了<a href="!--swig%EF%BF%BC3--">向量数据库和 AI 编程工具</a>。</li>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/opus/494817843530680807">java</a> 的学习路线，卷不过科班。</li>
-<li><a href="">Quartz4</a> 静态站点生成器，可将 Markdown 内容转换为功能齐全的网站。没试过目前还是用的 gitbhub Pages。</li>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/MqXGHooJbg5bXpeowG3amQ">AI 智能体简史</a>，下周再看。</li>
-<li><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en">Vimium</a> 浏览器的快捷键工具，但不是所有页面都支持。补充了小键盘没有方便的向上下滚动的快捷键。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511092013926.jpg" alt="29af146fb0f9a4cd55530e4ed38e06eb.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511092013340.jpg" alt="6f4378950cffcce226f2afeffec32023.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511092014195.jpg" alt="c47fd0580b0c53e4ea9dc8cd47fc0747.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511092014039.jpg" alt="58ee79dc107d0e0b9b5ca45a1b961d14.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511092015463.jpg" alt="5c28b6894cdc97931b9278925186d332.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202511092015343.jpg" alt="34dbae1214b17e4394977b7d0e113a5f.jpg|320"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/11/02/2025-W44/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/11/02/2025-W44/" class="post-title-link" itemprop="url">2025-W44</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-11-02 21:49:00" itemprop="dateCreated datePublished" datetime="2025-11-02T21:49:00+08:00">2025-11-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-07 19:44:24" itemprop="dateModified" datetime="2025-12-07T19:44:24+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-10-27 </code> 到 <code> 2025-11-02</code> 这一周生活部分事件的记录。</p>
-<h2 id="快速总结💭">快速总结💭</h2>
-<ul>
-<li>退掉了最近买的挂脖耳机，毛病很多让我怀疑是不是库存或者翻新的东西，出现的问题包括不限于：单连设备的情况下突然外放（显示已连接，问客服说是我没连接好…），发出尖锐的噪声试刺穿我的耳膜。退货写的商品质量问题就不给我退，改成无理由就秒退，已拉黑华为。感觉这个价位做挂脖的不多，在思考要不要换头戴式。</li>
-<li>用了好久的 AI，但只是浅层地对话交互。有时间想要好好了解一下 AI 的发展。</li>
-<li>去学校的店剪刘海，偏贵，感觉一般。</li>
-<li>再也不乱喝含茶的东西了，一喝就失眠，明明头痛得很凌晨两点还是睡不着。</li>
-<li>启动了很久之前想过的小项目，目前仅仅能运行，效果连差强人意都算不上。不过我这个小项目能契合和+1 说的某些功能。</li>
-</ul>
-<h2 id="资源">资源</h2>
-<ul>
-<li>
-<p><a target="_blank" rel="noopener" href="https://cto.new/">cto</a><br>
-一个 2025 年 10 月正式发布的 AI 编程平台，目前免费，需要邀请码注册。</p>
-</li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://github.com/docling-project/docling">docling</a>|<br>
-这是一个由IBM开源的Python 工具，它能将 PDF、DOCX、PPTX、图片、HTML、Markdown等多种流行文档格式，导出为Markdow和JSON格式，支持多种OCR引擎、统一的文档对象，轻松集成RAG和问答应用，适用于需要将文档作为生成式 AI模型输入的场景。</p>
-</li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://guangzhengli.com/blog/zh/vibe-coding-and-context-coding">谈谈 AI 编程工具的进化与 Vibe Coding</a><br>
-具体地讲述了 AI 辅助工具的发展历程，每个产品在各阶段有了什么突破：GitHub Copilot 的代码上下文共享和补全操作；完整 AI IDE 工具 Cursor，专有的 Tab 自动补全能力、Claude 3.5 Sonnet 以及上下文工程的一个关键突破-使用 RAG 将项目整个 codebase 进行索引，并以语义 (向量) 搜索的方式给 LLM 提供整个项目的上下文。Cursor 会在创建新项目的时候，将整个代码库在本地拆分为多个小块内容后，上传到 Cursor 云服务器，使用 embedding 模型来 embeds 代码，并存储到云向量数据库中。在 Chat/Agent 中提问时，Cursor 会在推理时对 prompt 进行嵌入，让 Turbopuffer 进行最近邻搜索，将混淆后的文件路径和行范围发送回 Cursor 客户端，并在客户端本地读取这些文件代码块。Turbopuffer 是基于对象存储从头构建的无服务器向量和全文搜索。（可以先简单理解为语义搜索）终端命令行辅助编码工具 Claude Code ，选择提供足量的上下文，并基于 Unix 工具进行检索。例如用 grep, find, git, cat 等等终端命令而不是 RAG 的方案。在用户提问之后，基于提问进行关键词不断检索，直到找到项目中所有需要的上下文代码，然后再开始编程，亦或者是一轮一轮的对话、编程和检索，一直重复这个过程，直到 LLM 认为找全了上下文。</p>
-</li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://guangzhengli.com/blog/zh/vector-database">向量数据库</a></p>
-</li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11a4y1c7SW/?vd_source=d137a8f68ec67946b0fef9810258f095">【B站视频】向量数据库技术鉴赏</a><br>
-向量数据库科普。当事物被向量化，且拥有足够多的特征维度后，我们就能区分开不同的事物。向量化数据在高维的坐标空间中理应对应一个坐标，这时通过计算它们之间的距离，就能简单判断它们的相似度。后面还提到了两种优化搜索的方法：通过聚类或哈希做分类。两种方法都是在分类的基础上在更小的范围里面再搜索。这个 up 还用向量数据库做了一个开源的项目-关于正史的问答模型。</p>
-</li>
-</ul>
-<h2 id="打卡💪">打卡💪</h2>
-<ul>
-<li>本周骑行了两天，共 10.16km，耗时 48m35s，我想下周去东湖骑一骑。</li>
-<li>感觉通过 notebooklm 生成的英文语料对我来说还是太难，有可能是因为选观鸟这个话题也不算简单，短短几分钟需要很长时间才能听写。下周换个话题试试。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/10/26/2025-W43/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/26/2025-W43/" class="post-title-link" itemprop="url">霜降|找到一处自留地</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-10-26 17:48:00" itemprop="dateCreated datePublished" datetime="2025-10-26T17:48:00+08:00">2025-10-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-07 19:44:24" itemprop="dateModified" datetime="2025-12-07T19:44:24+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-10-20 </code> 到 <code> 2025-10-26</code> 这一周生活部分事件的记录。</p>
-<h2 id="快速总结💭">快速总结💭</h2>
-<ul>
-<li>第一次去学校图书馆借书，检索系统做得很烂。图书馆一楼只有两台检索的机器，而且仅触屏搜索，时不时自动返回首页，刚刚搜到还没记下位置就白搜了。在某书找了一下，还有一个办法是手机连校园网在浏览器找官网，网速很慢，但比机器要省心一点。库存不是特别足，很多不感兴趣的新书（关键字 AI），感兴趣的一搜一个无，好不容易搜到的被借走了… 最后拿了两本小说。一本韩女写的小说，很易读；一本阿加莎，还没看。</li>
-<li>暂时放弃买相机，想要轻便又能拍清楚飞鸟的相机太贵了。</li>
-<li>线上配眼镜安全下车, 确实便宜… 这个暴利的行业</li>
-<li>早上十点多面包配咖啡直接晕到下午一点多，再也不这样吃了。</li>
-<li>周五好像被诅咒了。先是爱车被一只柴犬尿了…周围一群人逗狗，根本找不到主人，无人在意我的愤怒…然后从来不点名的课点名了，而我在工位赶进度上头，勉强凑合干完了。</li>
-<li>找到一处自留地，有人在那里露营野餐，而我好想躺在草坪看天空，光是想象就令人满足。</li>
-</ul>
-<h2 id="配镜记录">配镜记录</h2>
-<p>很早就看到过网上配镜的经验贴，但一直没试过，今年验光度数突然长了很多（感觉是一年之内涨的），又要换眼镜了，索性试试。</p>
-<p>第一件事是验光，开配镜处方，我去的机器比较全的宝岛，买的 60 多的团购。得到了比较详细的严格结果，包括机器的数据，验光师手写单，以及插片度数的图片。最后插片体验且调整后的结果才是配镜处方，按配镜处方配。</p>
-<p>然后是线下挑选镜框，注意瞳距（验光单上的 PD，要加起来），再然后就是形状颜色啦。<br>
-线下选好可以在网上买同款，我比较懒试了一家别人推荐的店一起配了镜框和镜片，选了相似款参数一致的镜框。</p>
-<p>加上验光总共花费 773。另外习惯了金属鼻托把旧镜的洗洗换上了。</p>
-<p>数据如下<br>
-镜框：SP841 C1（165）<br>
-镜片：依视路膜岩 1.67（510）<br>
-R：-3.50/-1.25*25<br>
-L：-3.25/-1.00*155<br>
-PD：59</p>
-<h2 id="自留地">自留地</h2>
-<p>和一位鸟友见面，爬了一座小山，跟着鸟会的老师一起碰运气，因为时间仓促没有太多收获，只看见了一闪而过的北红尾鸲（老师她们上山看见了很近的隼），叫声短促尖细，尾音有时像敲击声。</p>
-<p>不甘心就这样结束，我又回学校四处转，运气很不错，加新了好几种小鸟! 先是环湖骑车的时候被水面的漂浮物吸引（以为是什么水鸟），停下车，然后一只鸟就从我眼前飞过，落到水面的鱼排上面，上身灰黑，下身白夹杂着黄色，尾羽很长，在鱼排上走动，头会跟着脚有规律地活动，回去查了下应该是灰鹡鸰。重新逛了一个园子，上次去不知道是时间选的不好还是其它原因，没见到过鸟的影子，连鸟的声音的听不到。这次下午去还能听到很多鸟叫，循声而去，就看到了红黑配色的一只小鸟混在红绿色的灌木丛上，不仔细看很难发现。不知道这种鸟是不是钟爱和自己配色相近的环境，后面发现这簇灌木里面藏了好多只鸟，它们躲在灌木中间，也不知道是在睡觉还是在观察。我就这样被鸟声操控着走来走去，突然一个灰褐色的身影窜到我眼前，她不声不响，理我只有几米的距离，个头小巧，只有 12 到 13 厘米左右。一开始我以为是北红尾鸲的雌鸟，问了一些懂鸟的老师才知道是鸲姬鹟，借此搜了一些它们的叫声，有一连串响亮的颤声，还有非常婉转动听的吟唱（可惜没听到）。</p>
-<p>观鸟的体验当然也有不好的。过度使用动态视力以后，本近视加散光人士看什么都晕晕的，特别是在树林子里，有什么动静我都很难捕捉到，让人有点泄气。逛了两三个小时以后，肩膀也开始不堪重负，尖锐的酸痛，当然如果不是眼睛看处于半瞎的状态，我的体力还能接着撑一撑。现在来看才发现我也没有天天低精力，做想做的事情才会让我看到自己的生命力。有时候我也会自愿加班，拖延饭点来干活。这种事情看起来吃力不讨好，但是我却在精神上感觉很愉悦。</p>
-<h2 id="资源">资源</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/ntdevlabs/tiny11builder">tiny11builder</a>, 精简win11 的脚本，可以删掉很多无用的组件，还没试。</li>
-<li><a target="_blank" rel="noopener" href="https://roadmap.sh/backend">roadmap</a>，目前学习路线进度为 0，打算下周找 python 的网课看看，补补基础，另外也想尝试自己写代码。</li>
-<li><a target="_blank" rel="noopener" href="https://my.eudic.net/Ting">每日英语听力</a>，可以把<a target="_blank" rel="noopener" href="https://notebooklm.google.com">notebooklm</a>生成的英文语料传上去，方便自己听。绝望的是我听两分钟的内容听了几节课也没听清楚…</li>
-<li><a target="_blank" rel="noopener" href="https://uuyc.163.com/">网页UU远程</a>，可以远程操控实验室的主机，主机要常亮不能锁屏…</li>
-</ul>
-<h2 id="打卡💪">打卡💪</h2>
-<ul>
-<li>终于把码表用上了。一共骑了六天车，26.93km, 大部分是在通勤路上，偶尔在四处转。</li>
-<li>上次英语打卡还是 41 周的英语话题，现在还是练练听力，12 月的考试肯定来不及准备了，打算报 3-4 月份的，预计备考时间 2-3 个月，等这学期课上完了大块的时间更多。</li>
-<li>打算下周开始上python网课，基础不扎实很难受，好想自己写简单通用的脚本。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/10/19/2025-W42/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/19/2025-W42/" class="post-title-link" itemprop="url">2025-W42</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-10-19 20:48:00" itemprop="dateCreated datePublished" datetime="2025-10-19T20:48:00+08:00">2025-10-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-07 19:44:24" itemprop="dateModified" datetime="2025-12-07T19:44:24+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-10-13 </code> 到 <code> 2025-10-19</code> 这一周生活部分事件的记录。</p>
-<h2 id="快速总结💭">快速总结💭</h2>
-<ul>
-<li>身心俱疲的一周。周一周二高强度上无意义的课，好想逃… 周三本来是没课的，被+2 拉着全组的人听某老师征用免费劳动力的交流会（把我们当人情）。周四一天都浪费再组会上。周五也在上课。</li>
-<li>这周回家拿衣服，坐公交晕车了。从来没这么严重过，我先是感到恶心，意识到自己真的晕车了，然后不知道什么失去意识，再恢复意识的时候已经躺在地上。有好心人扶我，还有人让了一个座位，手很麻且无力，浑身冒冷汗, 肚子不知道哪里在痛。这下算是加深了脆皮年轻人的印象。</li>
-<li>买了码表还没试过，目前的天还能骑骑车，再冷了可能就没法骑了。</li>
-<li>最近的购物欲突然起来了，想买相机…</li>
-</ul>
-<h2 id="资源">资源</h2>
-<ul>
-<li>一个比对 JD 和简历的<a target="_blank" rel="noopener" href="https://job.mastersgo.cc/">网站</a>，暂时没用过</li>
-<li><a target="_blank" rel="noopener" href="https://chat01.ai/zh/discover">Chat01</a> ，刷某书加了 dc ,了解了一下反代</li>
-<li><a target="_blank" rel="noopener" href="https://notebooklm.google.com">notebooklm</a>，Google 的文生成音频模型，用来生成英文语料还不错</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/10/12/2025-W41/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/12/2025-W41/" class="post-title-link" itemprop="url">2025-W41</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-10-12 21:19:00" itemprop="dateCreated datePublished" datetime="2025-10-12T21:19:00+08:00">2025-10-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-07 19:44:24" itemprop="dateModified" datetime="2025-12-07T19:44:24+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-10-06 </code> 到 <code> 2025-10-12</code> 这一周生活部分事件的记录。</p>
-<h2 id="快速总结💭">快速总结💭</h2>
-<ul>
-<li>吃了一家云南菜-云海肴，味道还行，不至于到踩雷的地步。最好吃的菜是爆炒赤松榕黑牛肝菌，比较香</li>
-<li>开了历史最长的一次组会，大概 6h 吧，感觉什么都没讲，痛苦折磨</li>
-<li>这周玩手机时间有点超标了，玩到觉得无聊，备考雅思还没开始</li>
-<li>下周会很忙碌，这周过于清闲</li>
-</ul>
-<h2 id="资源">资源</h2>
-<ul>
-<li>《how to make work not suck》有人推荐的初入职场可以看的书</li>
-<li><a target="_blank" rel="noopener" href="https://sora.chatgpt.com/explore">Sora</a>，抢到了注册码试了一下，感觉还挺智障的，可以无中生万物</li>
-</ul>
-<h2 id="打卡💪">打卡💪</h2>
-<ul>
-<li>英语话题*3，本来是想打卡七天的口语，中间断了一次，就一直提不起劲，人的惰性啊</li>
-<li>骑行等有了码表再记录</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/10/05/2025-W40/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/05/2025-W40/" class="post-title-link" itemprop="url">放假|低能量记录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-10-05 17:42:00" itemprop="dateCreated datePublished" datetime="2025-10-05T17:42:00+08:00">2025-10-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-12-07 19:44:24" itemprop="dateModified" datetime="2025-12-07T19:44:24+08:00">2025-12-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">个人记录</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本篇是对 <code>2025-09-29 </code> 到 <code> 2025-10-05</code> 这一周生活部分事件的记录。</p>
-<h2 id="快速总结💭">快速总结💭</h2>
-<ul>
-<li>放假前总是难熬的，课很多，时间很漫长。转眼已经第四周了，打算找一些事情来充实一下水课的时间。</li>
-<li>放假第一天，在家清理东西，和朋友聊天，约见面时间。</li>
-<li>大中午去逛公园，本来以为毫无收获，但是意外发现了一个好地方，有很大一片果树，还有闻起来很香甜的花，在那里坐了会，近距离看小鸟干饭。</li>
-<li>和发小天天黏在一起打游戏。我们是难姐难妹，痛苦的时刻一起抱头痛哭，一起想象我们未来的生活，多一个人总会多点希望吧。</li>
-<li>在家的精力总是很低，什么事情都没干就感到疲惫… 和我妈最好的相处方式就是保持距离吧。</li>
-<li>在小红书记录观鸟和生活碎片。发现还是评论带来的流量高，帖子里评论聊起来浏览量就不会低…</li>
-</ul>
-<h2 id="资源">资源</h2>
-<ul>
-<li><a href="soundiiz.com">soundiiz</a> 用于迁移歌单，从 spotify 赚到了 YouTube</li>
-<li>两本鸟类相关的书，封皮都是蓝色的《鸟类的天赋》、《鸟类的行为》</li>
-</ul>
-<p>我妈用电饼档烤板栗<br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202510051737920.jpg" alt="962248b63928fd09a909a82d45f81aa1.jpg|320"></p>
-<p>貌美灰灰，舌头好长<br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202510051740143.jpg" alt="e03678b7a4339f668f8f23c511818f02.jpg|320"></p>
-<p>超级给面子的白颊，近距离看它们吃果子理毛<br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202510051741912.jpg" alt="833d6b6bd41d0a6b923a9e26819af11d.jpg|320"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202510051742465.jpg" alt="659d7e3a843cfd437a6804f6ab2f6845.jpg|320"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-</div>
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2025</span>
-    <span class="with-love">
-      <i class="fa fa-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">66</span>
-  </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
+  
+    <div class="footer-content">
+       <a href="https://yohakuo.github.io/" target="_blank" rel="nofollow noopener"><span>006</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>    
     </div>
+  
+  
+  
+  
+</div>
+
   </footer>
 
+  <!-- Scripts -->
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/related-posts.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

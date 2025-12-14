@@ -1,256 +1,296 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/6.0.17/fancybox/fancybox.css" integrity="sha256-yE0aDX61mjiw8FoDuGetFttFoGJMeWsU/iYEFOfpMhA=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"yohakuo.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.24.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
-
-    <meta name="description" content="参考 本文在 简单工作流的搭建 搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先到快速启动 下载必要引擎，然后可以直接跳到 使用已有的工作流。 n8n 版本： 1.106.3 快速启动 下载 Docker Desktop 测试模式，不要关闭终端 docker run -it --rm --name n8n -p 5678:5678 -e &quot;HTTP_PROXY&#x3D;http:&#x2F;&#x2F;127">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+  <link rel="icon" href="/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#285943">
+  <meta name="author" content="新喀鸦006">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="参考 本文在 简单工作流的搭建 搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先到快速启动 下载必要引擎，然后可以直接跳到 使用已有的工作流。 n8n 版本： 1.106.3 快速启动 下载 Docker Desktop 测试模式，不要关闭终端 1docker run -it --rm --name n8n -p 5678:5678 -e &quot;HTTP_PROXY&#x3D;http:&#x2F;&#x2F;12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自动化工作流聚合信息初尝试（n8n,telegram）">
 <meta property="og:url" content="https://yohakuo.github.io/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/index.html">
-<meta property="og:site_name" content="magic world">
-<meta property="og:description" content="参考 本文在 简单工作流的搭建 搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先到快速启动 下载必要引擎，然后可以直接跳到 使用已有的工作流。 n8n 版本： 1.106.3 快速启动 下载 Docker Desktop 测试模式，不要关闭终端 docker run -it --rm --name n8n -p 5678:5678 -e &quot;HTTP_PROXY&#x3D;http:&#x2F;&#x2F;127">
+<meta property="og:site_name" content="在原始森林">
+<meta property="og:description" content="参考 本文在 简单工作流的搭建 搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先到快速启动 下载必要引擎，然后可以直接跳到 使用已有的工作流。 n8n 版本： 1.106.3 快速启动 下载 Docker Desktop 测试模式，不要关闭终端 1docker run -it --rm --name n8n -p 5678:5678 -e &quot;HTTP_PROXY&#x3D;http:&#x2F;&#x2F;12">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202508141104258.png">
 <meta property="article:published_time" content="2025-08-15T11:51:00.000Z">
 <meta property="article:modified_time" content="2025-08-17T16:00:00.000Z">
-<meta property="article:author" content="66">
+<meta property="article:author" content="新喀鸦006">
 <meta property="article:tag" content="Method">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202508141104258.png">
+  
+  
+  
+  <title>自动化工作流聚合信息初尝试（n8n,telegram） - 在原始森林</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<link rel="canonical" href="https://yohakuo.github.io/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/">
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yohakuo.github.io/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/","path":"2025/08/15/自动化工作流聚合信息初尝试（n8n,telegram）/","title":"自动化工作流聚合信息初尝试（n8n,telegram）"}</script>
 
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>自动化工作流聚合信息初尝试（n8n,telegram） | magic world</title>
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yohakuo.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/images/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
-
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/6.0.17/fancybox/fancybox.umd.js" integrity="sha256-32A/chfN6JgQkwK/QFZY8siVcOZj3LUt1vSKIcDvshM=" crossorigin="anonymous" defer></script>
-<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
-
-  
-
-
-
-  <script src="/js/third-party/fancybox.js" defer></script>
-
-
-
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
+<body>
+  
 
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">magic world</p>
-      <i class="logo-line"></i>
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>某根树枝上</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a></li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/images/fore.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">自动化工作流聚合信息初尝试（n8n,telegram）</span>
+          
+        </div>
 
-
-</header>
         
-  
-  <aside class="sidebar">
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        新喀鸦006
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-15 19:51" pubdate>
+          2025年8月15日 晚上
+        </time>
+      </span>
+    
+  </div>
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.3k 字
+        
+      </span>
+    
 
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">快速启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">简单工作流的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-Telegram-Bot-%E5%B9%B6%E8%BF%9E%E6%8E%A5%E5%88%B0-n8n"><span class="nav-number">2.1.</span> <span class="nav-text">创建 Telegram Bot 并连接到 n8n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BF%A1%E6%81%AF%E6%BA%90-RSS%EF%BC%88%E9%80%89%E5%81%9A%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">添加第一个信息源 - RSS（选做）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%B7%B2%E6%9C%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="nav-number">3.</span> <span class="nav-text">使用已有的工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E7%8E%A9%E6%B3%95-%E8%AE%A2%E9%98%85%E5%A4%9A%E4%B8%AA-RSS"><span class="nav-number">4.</span> <span class="nav-text">进阶玩法-订阅多个 RSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-%E8%8A%82%E7%82%B9%EF%BC%88%E8%AE%A2%E9%98%85%E7%AE%A1%E7%90%86%EF%BC%89"><span class="nav-number">4.0.1.</span> <span class="nav-text">Code 节点（订阅管理）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RSS-Read-%E8%8A%82%E7%82%B9"><span class="nav-number">4.0.2.</span> <span class="nav-text">RSS Read 节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-%E8%8A%82%E7%82%B9%EF%BC%88%E5%89%AA%E5%88%87%EF%BC%89"><span class="nav-number">4.0.3.</span> <span class="nav-text">Code 节点（剪切）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Edit-Fields-Set-%E8%8A%82%E7%82%B9"><span class="nav-number">4.0.4.</span> <span class="nav-text">Edit Fields (Set) 节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-%E8%8A%82%E7%82%B9%EF%BC%88%E7%B2%BE%E9%80%89%E6%9C%80%E6%96%B0%EF%BC%89"><span class="nav-number">4.0.5.</span> <span class="nav-text">Code 节点（精选最新）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remove-Duplicates-%E8%8A%82%E7%82%B9"><span class="nav-number">4.0.6.</span> <span class="nav-text">Remove Duplicates 节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Send-a-text-message%EF%BC%88Telegram%EF%BC%89"><span class="nav-number">4.0.7.</span> <span class="nav-text">Send a text message（Telegram）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">工作流问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="nav-number">5.1.</span> <span class="nav-text">本地代理设置</span></a></li></ol></li></ol></div>
-        </div>
-        <!--/noindex-->
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          20 分钟
+        
+      </span>
+    
 
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">66</p>
-  <div class="site-description" itemprop="description">睡个好觉</div>
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
 </div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">37</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
+
 </div>
 
-        </div>
-      </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
     </div>
 
-    
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner post posts-expand">
-
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yohakuo.github.io/2025/08/15/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%81%9A%E5%90%88%E4%BF%A1%E6%81%AF%E5%88%9D%E5%B0%9D%E8%AF%95%EF%BC%88n8n,telegram%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="66">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="magic world">
-      <meta itemprop="description" content="睡个好觉">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="自动化工作流聚合信息初尝试（n8n,telegram） | magic world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          自动化工作流聚合信息初尝试（n8n,telegram）
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-08-15 19:51:00" itemprop="dateCreated datePublished" datetime="2025-08-15T19:51:00+08:00">2025-08-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-18 00:00:00" itemprop="dateModified" datetime="2025-08-18T00:00:00+08:00">2025-08-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Knowledge/" itemprop="url" rel="index"><span itemprop="name">Knowledge</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://reorx.com/blog/sharing-my-footprints-automation/">参考</a></p>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">自动化工作流聚合信息初尝试（n8n,telegram）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><a target="_blank" rel="noopener" href="https://reorx.com/blog/sharing-my-footprints-automation/">参考</a></p>
 <p>本文在 <code>简单工作流的搭建</code> 搭建了最简单的工作流（存在缺陷）。如果想要动手尝试，先到<a href="#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8">快速启动</a> 下载必要引擎，然后可以直接跳到 <code>使用已有的工作流</code>。</p>
 <p>n8n 版本： <code>1.106.3</code></p>
 <h2 id="快速启动">快速启动</h2>
 <p>下载 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a></p>
 <p>测试模式，不要关闭终端</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-it</span> <span class="literal">--rm</span> <span class="literal">--name</span> n8n <span class="literal">-p</span> <span class="number">5678</span>:<span class="number">5678</span> <span class="literal">-e</span> <span class="string">&quot;HTTP_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-e</span> <span class="string">&quot;HTTPS_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-v</span> ~/.n8n:/home/node/.n8n n8nio/n8n</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">docker run <span class="hljs-literal">-it</span> <span class="hljs-literal">--rm</span> <span class="hljs-literal">--name</span> n8n <span class="hljs-literal">-p</span> <span class="hljs-number">5678</span>:<span class="hljs-number">5678</span> <span class="hljs-literal">-e</span> <span class="hljs-string">&quot;HTTP_PROXY=http://127.0.0.1:7890&quot;</span> <span class="hljs-literal">-e</span> <span class="hljs-string">&quot;HTTPS_PROXY=http://127.0.0.1:7890&quot;</span> <span class="hljs-literal">-v</span> ~/.n8n:/home/node/.n8n n8nio/n8n<br></code></pre></td></tr></table></figure>
 <p>稳定版</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> <span class="literal">--name</span> n8n <span class="literal">-p</span> <span class="number">5678</span>:<span class="number">5678</span> <span class="literal">-e</span> <span class="string">&quot;HTTP_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-e</span> <span class="string">&quot;HTTPS_PROXY=http://127.0.0.1:7890&quot;</span> <span class="literal">-v</span> ~/.n8n:/home/node/.n8n <span class="literal">-v</span> ~/.n8n_database:/database n8nio/n8n</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">docker run <span class="hljs-literal">-d</span> <span class="hljs-literal">--name</span> n8n <span class="hljs-literal">-p</span> <span class="hljs-number">5678</span>:<span class="hljs-number">5678</span> <span class="hljs-literal">-e</span> <span class="hljs-string">&quot;HTTP_PROXY=http://127.0.0.1:7890&quot;</span> <span class="hljs-literal">-e</span> <span class="hljs-string">&quot;HTTPS_PROXY=http://127.0.0.1:7890&quot;</span> <span class="hljs-literal">-v</span> ~/.n8n:/home/node/.n8n <span class="hljs-literal">-v</span> ~/.n8n_database:/database n8nio/n8n<br></code></pre></td></tr></table></figure>
 <p>如果想稳定代理的话应该考虑<a href="#%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE">在本地存储代理信息</a>，这样删容器代理不受影响。</p>
 <p><strong>然后初始化 n8n</strong> 。访问 <code>http://localhost:5678</code> 进行注册，需要邮箱验证。</p>
 <h2 id="简单工作流的搭建">简单工作流的搭建</h2>
@@ -305,11 +345,9 @@
 <li>点击 <code>+</code> 号，添加一个 <code>Schedule</code> 节点。在弹出的配置中，可以设置每小时 (Every Hour)、每天 (Every Day) 等。</li>
 <li>点击 <code>Schedule</code> 节点右侧的 <code>+</code> 号上，在弹出的搜索框里输入 <code>RSS</code>，选择 <code>RSS Read </code> 节点，配置 URL 即可。</li>
 </ul>
-<details class="note "><summary><p>note</p>
-</summary>
-<p>这里可能会遇到网站有安全设置，可以试试这个 <a target="_blank" rel="noopener" href="https://rss.app/">RSS 转换</a>，登录之后把博客主页地址输入，生成 RSS</p>
-
-</details>
+<div class="note note-note">
+            <p>这里可能会遇到网站有安全设置，可以试试这个 <a target="_blank" rel="noopener" href="https://rss.app/">RSS 转换</a>，登录之后把博客主页地址输入，生成 RSS</p>
+          </div>
 <ul>
 <li><code>RSS Read</code> 连接到我们之前创建的 <code>Telegram</code> 节点。</li>
 <li>然后需要修改 <code>Telegram</code> 节点的 <code>Text</code> 内容，让它发送 RSS 的标题和链接。
@@ -319,23 +357,21 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">标题：&#123;&#123; $json.title &#125;&#125;</span><br><span class="line"></span><br><span class="line">链接：&#123;&#123; $json.link &#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">标题：</span><span class="hljs-template-variable">&#123;&#123; <span class="hljs-name">$json.title</span> &#125;&#125;</span><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml">链接：</span><span class="hljs-template-variable">&#123;&#123; <span class="hljs-name">$json.link</span> &#125;&#125;</span><br></code></pre></td></tr></table></figure>
 <ul>
 <li>返回主界面点击右下角的 <strong>“Execute workflow”</strong> 按钮来测试整个流程。运行成功你会在 telegram 群聊看到推送的 10 条新消息（默认情况）。</li>
 </ul>
 <p>这个基础简单的工作流如下图。功能是每 5 分钟自动检查指定网站是否有新文章发布，并将所有新文章的标题和链接，逐条发送到指定 Telegram 频道。如果重复执行会发现每次都会发送 10 条信息，如果在推送前进行比对可以在 RSS 后加一个 function 模块。<br>
-<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202508141104258.png" alt="image.png|520"></p>
+<img src="https://cdn.jsdelivr.net/gh/yohakuo/CDN/img/202508141104258.png" srcset="/images/loading.gif" lazyload alt="image.png|520"></p>
 <p>可以重复这个流程来订阅其它 RSS ，但不要忘记以上步骤是在一个测试群聊里进行的，如果想要把信息送到频道，需要把上面配置的 <code>Chat ID</code> 修改为频道 id，这里使用一个简单的方法获得 id：</p>
 <ul>
 <li>在 Telegram 里，搜索并关注一个叫做 <strong><code>@userinfobot</code></strong> 的机器人，或点击<a target="_blank" rel="noopener" href="https://t.me/userinfobot">链接</a>。</li>
 <li>进入接收消息的那个频道，并<strong>转发</strong>任意一条消息，发送给刚刚那个 <code>@userinfobot</code>。</li>
 <li><code>@userinfobot</code> 会立刻回复你一条信息，找到 <strong>Id</strong> 后面跟着的那个以 <code>-100</code> 开头的数字，即你频道的<strong>唯一 ID</strong>。</li>
 </ul>
-<details class="note "><summary><p>note</p>
-</summary>
-<p>有好奇心的朋友可能会用这个机器人来试一试之前那个群聊的 id，你会发现这个得到的 id 并不是-100 开头的那个 id 了。</p>
-
-</details>
+<div class="note note-note">
+            <p>有好奇心的朋友可能会用这个机器人来试一试之前那个群聊的 id，你会发现这个得到的 id 并不是-100 开头的那个 id 了。</p>
+          </div>
 <blockquote>
 <p>这是因为 Telegram 建群时默认的类型是普通群组（功能有限），而-100 开头的是拥有更强大的功能的超级群组。为了让 n8n 就能稳定地发送消息， Chat ID 需要用 <code>-100</code> 开头的。私人频道可以满足个人信息聚合的要求。如果想把信息发到一个群里和朋友分享，可以自行搜索手动将那个群升级。</p>
 </blockquote>
@@ -351,30 +387,30 @@
 <h2 id="进阶玩法-订阅多个-RSS">进阶玩法-订阅多个 RSS</h2>
 <p><em>从头搭建一个工作流来处理多个 RSS 源。</em></p>
 <h4 id="Code-节点（订阅管理）"><code>Code</code> 节点（订阅管理）</h4>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const myRssFeeds = [</span><br><span class="line">  &#123; name: &quot;douchi&quot;, url: &quot;https://rss.app/feeds/hZVUbnIx3yBAbKMU.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;yukieyun&quot;, url: &quot;https://yukieyun.net/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;thirdshire&quot;, url: &quot;https://thirdshire.com/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;yitaoli&quot;, url: &quot;https://yitaoli2023.github.io/yitaoli/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;bamboobone9&quot;, url: &quot;https://bamboobone9.com/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;pursuitus&quot;, url: &quot;https://blog.pursuitus.com/feed&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;wraith615&quot;, url: &quot;https://blog.wraith615.xyz/rss.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;gigigatgat&quot;, url: &quot;https://www.gigigatgat.ca/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;ignativssss&quot;, url: &quot;https://ignativssss.github.io//index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;asyncx&quot;, url: &quot;https://blog.asyncx.top/zh.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;birds&quot;, url: &quot;https://moresci.sale/@birds.rss&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;shyrz&quot;, url: &quot;https://shyrz.me/rss/&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;douchiBook&quot;, url: &quot;https://bamboobone9.com/index.xml&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;ruanyifeng&quot;, url: &quot;https://feeds.feedburner.com/ruanyifeng&quot; &#125;,</span><br><span class="line">  &#123; name: &quot;decohack&quot;, url: &quot;https://decohack.com/feed/&quot; &#125;</span><br><span class="line"> </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">return myRssFeeds.map(feed =&gt; (&#123;</span><br><span class="line">  json: &#123;</span><br><span class="line">    feedName: feed.name,</span><br><span class="line">    feedUrl: feed.url</span><br><span class="line">  &#125;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">const myRssFeeds = [<br>  &#123; <span class="hljs-type">name</span>: &quot;douchi&quot;, url: &quot;https://rss.app/feeds/hZVUbnIx3yBAbKMU.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;yukieyun&quot;, url: &quot;https://yukieyun.net/index.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;thirdshire&quot;, url: &quot;https://thirdshire.com/index.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;yitaoli&quot;, url: &quot;https://yitaoli2023.github.io/yitaoli/index.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;bamboobone9&quot;, url: &quot;https://bamboobone9.com/index.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;pursuitus&quot;, url: &quot;https://blog.pursuitus.com/feed&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;wraith615&quot;, url: &quot;https://blog.wraith615.xyz/rss.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;gigigatgat&quot;, url: &quot;https://www.gigigatgat.ca/index.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;ignativssss&quot;, url: &quot;https://ignativssss.github.io//index.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;asyncx&quot;, url: &quot;https://blog.asyncx.top/zh.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;birds&quot;, url: &quot;https://moresci.sale/@birds.rss&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;shyrz&quot;, url: &quot;https://shyrz.me/rss/&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;douchiBook&quot;, url: &quot;https://bamboobone9.com/index.xml&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;ruanyifeng&quot;, url: &quot;https://feeds.feedburner.com/ruanyifeng&quot; &#125;,<br>  &#123; <span class="hljs-type">name</span>: &quot;decohack&quot;, url: &quot;https://decohack.com/feed/&quot; &#125;<br> <br>];<br><br><span class="hljs-keyword">return</span> myRssFeeds.map(feed =&gt; (&#123;<br>  <span class="hljs-type">json</span>: &#123;<br>    feedName: feed.name,<br>    feedUrl: feed.url<br>  &#125;<br>&#125;));<br></code></pre></td></tr></table></figure>
 <h4 id="RSS-Read-节点"><code>RSS Read</code> 节点</h4>
 <p><code>Feed URL</code> ： <code>&#123;&#123; $json.feedUrl &#125;&#125;</code></p>
 <h4 id="Code-节点（剪切）"><code>Code</code> 节点（剪切）</h4>
 <p>只保留最新 <code>3（n）</code> 条，不确定是否能提高效率。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const items = $input.all();</span><br><span class="line"></span><br><span class="line">items.sort((a, b) =&gt; &#123;</span><br><span class="line">  const dateA = new Date(a.json.pubDate || 0).getTime();</span><br><span class="line">  const dateB = new Date(b.json.pubDate || 0).getTime();</span><br><span class="line">  return dateB - dateA;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">return items.slice(0, 3);</span><br></pre></td></tr></table></figure>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs arcade">const items = <span class="hljs-symbol">$i</span>nput.<span class="hljs-built_in">all</span>();<br><br>items.<span class="hljs-built_in">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> &#123;<br>  const dateA = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(a.json.pubDate || <span class="hljs-number">0</span>).getTime();<br>  const dateB = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(b.json.pubDate || <span class="hljs-number">0</span>).getTime();<br>  <span class="hljs-keyword">return</span> dateB - dateA;<br>&#125;);<br><br><span class="hljs-keyword">return</span> items.<span class="hljs-built_in">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure>
 <h4 id="Edit-Fields-Set-节点"><code>Edit Fields (Set)</code> 节点</h4>
 <ul>
 <li>点击 <code>Add Value</code> (添加值)。</li>
 <li><strong><code>Name</code> (名称)</strong>: 输入 <code>feedName</code></li>
 <li><strong><code>Value</code> (值)</strong>: 输入下面的表达式。</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123; $(&#x27;list&#x27;).item.json.feedName &#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="hljs-template-variable">&#123;&#123; <span class="hljs-name">$</span>(<span class="hljs-name">&#x27;list&#x27;</span>).item.json.feedName &#125;&#125;</span><br></code></pre></td></tr></table></figure>
 <p>并打开最下面的一个开关-- <code>Include Other Input Fields。</code></p>
 <p>在 <code>RSS Read</code> 抓取完文章后，<code>Set</code> 节点会把 <code>feedName</code> 附加到每一篇文章数据上。</p>
 <h4 id="Code-节点（精选最新）"><code>Code</code> 节点（精选最新）</h4>
 <p>在所有新文章里，每个来源只挑出最新的一篇。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">const items = $input.all();</span><br><span class="line">const latestByFeed = &#123;&#125;; // 用对象保存每个源的最新文章</span><br><span class="line"></span><br><span class="line">for (const item of items) &#123;</span><br><span class="line">  const feed = item.json.feedName || &#x27;unknown&#x27;;</span><br><span class="line">  const pubDate = item.json.pubDate ? new Date(item.json.pubDate).getTime() : 0;</span><br><span class="line"></span><br><span class="line">  if (!latestByFeed[feed]) &#123;</span><br><span class="line">    latestByFeed[feed] = item;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    const existingDate = latestByFeed[feed].json.pubDate ? new Date(latestByFeed[feed].json.pubDate).getTime() : 0;</span><br><span class="line">    if (pubDate &gt; existingDate) &#123;</span><br><span class="line">      latestByFeed[feed] = item;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 把对象里的结果转成数组返回</span><br><span class="line">return Object.values(latestByFeed);</span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&#123;% raw %&#125;<br><span class="hljs-keyword">const</span> items = $input.<span class="hljs-title function_">all</span>();<br><span class="hljs-keyword">const</span> latestByFeed = &#123;&#125;; <span class="hljs-comment">// 用对象保存每个源的最新文章</span><br><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> items) &#123;<br>  <span class="hljs-keyword">const</span> feed = item.<span class="hljs-property">json</span>.<span class="hljs-property">feedName</span> || <span class="hljs-string">&#x27;unknown&#x27;</span>;<br>  <span class="hljs-keyword">const</span> pubDate = item.<span class="hljs-property">json</span>.<span class="hljs-property">pubDate</span> ? <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(item.<span class="hljs-property">json</span>.<span class="hljs-property">pubDate</span>).<span class="hljs-title function_">getTime</span>() : <span class="hljs-number">0</span>;<br><br>  <span class="hljs-keyword">if</span> (!latestByFeed[feed]) &#123;<br>    latestByFeed[feed] = item;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">const</span> existingDate = latestByFeed[feed].<span class="hljs-property">json</span>.<span class="hljs-property">pubDate</span> ? <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(latestByFeed[feed].<span class="hljs-property">json</span>.<span class="hljs-property">pubDate</span>).<span class="hljs-title function_">getTime</span>() : <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">if</span> (pubDate &gt; existingDate) &#123;<br>      latestByFeed[feed] = item;<br>    &#125;<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">// 把对象里的结果转成数组返回</span><br><span class="hljs-keyword">return</span> <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">values</span>(latestByFeed);<br>&#123;% endraw %&#125;<br></code></pre></td></tr></table></figure>
 <h4 id="Remove-Duplicates-节点"><code>Remove Duplicates</code> 节点</h4>
 <p>防止文章重复。<br>
 <code>operation</code>：<code>Remove Items Processed in Previous Executions</code><br>
 <code>value</code> ： <code>&#123;&#123; $json.guid || $json.link &#125;&#125; </code></p>
 <h4 id="Send-a-text-message（Telegram）"><code>Send a text message</code>（Telegram）</h4>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">📝&#123;&#123;$json[&quot;title&quot;]&#125;&#125; #blog </span><br><span class="line"></span><br><span class="line">&#123;&#123;$json[&quot;link&quot;]&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">📝</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">$json</span>[&quot;title&quot;]&#125;&#125;</span><span class="language-xml"> #blog </span><br><span class="language-xml"></span><br><span class="language-xml"></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">$json</span>[&quot;link&quot;]&#125;&#125;</span><br></code></pre></td></tr></table></figure>
 <p>解析模式为 <strong><code>HTML</code></strong>。</p>
 <h2 id="工作流问题">工作流问题</h2>
 <blockquote>
@@ -383,13 +419,13 @@
 <h3 id="本地代理设置">本地代理设置</h3>
 <p>报错 <code>The service refused the connection - perhaps it is offline</code></p>
 <p>检查容器代理情况</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker inspect n8n | <span class="built_in">Select-String</span> <span class="literal">-Pattern</span> <span class="string">&quot;PROXY&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">docker inspect n8n | <span class="hljs-built_in">Select-String</span> <span class="hljs-literal">-Pattern</span> <span class="hljs-string">&quot;PROXY&quot;</span><br></code></pre></td></tr></table></figure>
 <p>输出是走代理的，核心问题是 <strong><code>127.0.0.1:7890</code> 在容器里访问不到宿主机代理</strong>，最后修改了一下启动命令可以成功。</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">docker run <span class="literal">-d</span> <span class="literal">--name</span> n8n <span class="literal">-p</span> <span class="number">5678</span>:<span class="number">5678</span> <span class="literal">-e</span> <span class="string">&quot;HTTP_PROXY=http://host.docker.internal:7890&quot;</span> <span class="literal">-e</span> <span class="string">&quot;HTTPS_PROXY=http://host.docker.internal:7890&quot;</span> <span class="literal">-v</span> ~/.n8n:/home/node/.n8n <span class="literal">-v</span> ~/.n8n_database:/database n8nio/n8n</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">docker run <span class="hljs-literal">-d</span> <span class="hljs-literal">--name</span> n8n <span class="hljs-literal">-p</span> <span class="hljs-number">5678</span>:<span class="hljs-number">5678</span> <span class="hljs-literal">-e</span> <span class="hljs-string">&quot;HTTP_PROXY=http://host.docker.internal:7890&quot;</span> <span class="hljs-literal">-e</span> <span class="hljs-string">&quot;HTTPS_PROXY=http://host.docker.internal:7890&quot;</span> <span class="hljs-literal">-v</span> ~/.n8n:/home/node/.n8n <span class="hljs-literal">-v</span> ~/.n8n_database:/database n8nio/n8n<br></code></pre></td></tr></table></figure>
 <p>为了不再出这个问题，删了容器重新在本地直接存下配置，<code>&quot;C:\n8n-data\docker-compose.yml&quot;</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.8&quot; </span><br><span class="line">services:</span><br><span class="line">  n8n:</span><br><span class="line">    image: n8nio/n8n</span><br><span class="line">    container_name: n8n</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;5678:5678&quot;</span><br><span class="line">    environment:</span><br><span class="line">      # 代理配置（写死）</span><br><span class="line">      HTTP_PROXY: http://host.docker.internal:7890</span><br><span class="line">      HTTPS_PROXY: http://host.docker.internal:7890</span><br><span class="line">      NO_PROXY: localhost,127.0.0.1</span><br><span class="line">    volumes:</span><br><span class="line">      # 数据卷（写死路径，防止丢配置）</span><br><span class="line">      - ./n8n_data:/home/node/.n8n</span><br><span class="line">      - ./n8n_database:/database</span><br><span class="line">    restart: unless-stopped</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">version:</span> <span class="hljs-string">&quot;3.8&quot;</span> <br><span class="hljs-symbol">services:</span><br><span class="hljs-symbol">  n8n:</span><br><span class="hljs-symbol">    image:</span> n8nio/n8n<br><span class="hljs-symbol">    container_name:</span> n8n<br><span class="hljs-symbol">    ports:</span><br>      - <span class="hljs-string">&quot;5678:5678&quot;</span><br><span class="hljs-symbol">    environment:</span><br>      <span class="hljs-meta"># 代理配置（写死）</span><br><span class="hljs-symbol">      HTTP_PROXY:</span> http:<span class="hljs-comment">//host.docker.internal:7890</span><br><span class="hljs-symbol">      HTTPS_PROXY:</span> http:<span class="hljs-comment">//host.docker.internal:7890</span><br><span class="hljs-symbol">      NO_PROXY:</span> localhost,<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span><br><span class="hljs-symbol">    volumes:</span><br>      <span class="hljs-meta"># 数据卷（写死路径，防止丢配置）</span><br>      - ./n8n_data:<span class="hljs-keyword">/home/</span>node/.n8n<br>      - ./n8n_database:/database<br><span class="hljs-symbol">    restart:</span> unless-stopped<br></code></pre></td></tr></table></figure>
 <p>然后进入文件夹创建数据卷</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">docker compose up -d</span><br></code></pre></td></tr></table></figure>
 <ul>
 <li><strong>启动</strong><br>
 <code>docker compose up -d</code></li>
@@ -403,75 +439,361 @@
 <code>docker-compose up -d</code></li>
 </ul>
 
-    </div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
 
+<span class="category-chains">
+  
+  
     
-    
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Method/" rel="tag"># Method</a>
-          </div>
-
+      <span class="category-chain">
         
+  <a href="/categories/Knowledge/" class="category-chain-item">Knowledge</a>
+  
+  
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2025/08/09/2025-W32/" rel="prev" title="2025-W32">
-                  <i class="fa fa-angle-left"></i> 2025-W32
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2025/08/17/2025-W33/" rel="next" title="2025-W33">
-                  2025-W33 <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2025</span>
-    <span class="with-love">
-      <i class="fa fa-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">66</span>
-  </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
+      </span>
+    
+  
+</span>
 
     </div>
-  </footer>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Method/" class="print-no-link">#Method</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>自动化工作流聚合信息初尝试（n8n,telegram）</div>
+      <div>https://yohakuo.github.io/2025/08/15/自动化工作流聚合信息初尝试（n8n,telegram）/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>新喀鸦006</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/08/17/2025-W33/" title="2025-W33">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2025-W33</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/09/2025-W32/" title="2025-W32">
+                        <span class="hidden-mobile">2025-W32</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
 
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://yohakuo.github.io/" target="_blank" rel="nofollow noopener"><span>006</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>    
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/related-posts.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
