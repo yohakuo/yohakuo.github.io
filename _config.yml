@@ -1,9 +1,9 @@
 # Site
-title: magic world
+title: 在原始森林
 subtitle: ''
-description: '睡个好觉'
+description: '写下，为了记住'
 keywords:
-author: 66
+author: 新喀鸦006
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
@@ -91,7 +91,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -103,4 +103,10 @@ deploy:
 markdown:
   plugins:
     - "@traptitech/markdown-it-katex"
+
+# Related Posts
+related_posts:
+  enable: true
+  count: 5
+  algorithm: tags
 
