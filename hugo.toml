@@ -140,15 +140,14 @@ enabled = true
 
 
 ############################
-# Social links
+# menu
 ############################
 [menu]
 main = [ ]
-
   [[menu.social]]
   identifier = "github"
   name = "GitHub"
-  url = "https://github.com/whiths600"
+  url = "https://github.com/yohakuo"
 
     [menu.social.params]
     icon = "brand-github"
