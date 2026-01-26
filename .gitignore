@@ -1,0 +1,8 @@
+# 忽略生成的静态网站目录
+public/
+resources/_gen/
+
+# 忽略系统和编辑器生成的临时文件
+.hugo_build.lock
+.DS_Store
+Thumbs.db

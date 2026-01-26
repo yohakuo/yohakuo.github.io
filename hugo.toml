@@ -1,0 +1,193 @@
+baseurl = "https://yohakuo.github.io/"
+languageCode = "zh-cn"
+theme = "hugo-theme-stack"
+title = "森林游乐场"
+description = "Card-style Hugo theme designed for bloggers"
+copyright = "新喀鸦006"
+DefaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+refLinksErrorLevel = "warning"
+
+[author]
+name = "新喀鸦006"
+homepage = "https://yohakuo.github.io/"
+
+# 分页设置
+[pagination]
+pagerSize = 10
+
+[permalinks]
+post = "/p/:slug/"
+page = "/:slug/"
+
+############################
+# Stack theme params
+############################
+[params]
+# 首页和存档页面显示的内容
+mainSections = [ "post" ]
+# 获取页面的特色图片的 Front Matter 字段 
+featuredImageField = "image"
+# 将页面完整内容输出为 RSS
+rssFullContent = true
+# 网站图标路径
+favicon = "static/favicon.png" 
+
+  [params.footer]
+  since = 2026
+
+  [params.dateFormat]
+  published = "Jan 02, 2006"
+  lastUpdated = "Jan 02, 2006 15:04 MST"
+
+  [params.sidebar]
+  emoji = ""
+  subtitle = "欸啊欸啊"
+
+    [params.sidebar.avatar]
+    enabled = true
+    local = true
+    src = "img/avatar.jpg"
+
+  [params.article]
+  math = false
+  toc = true
+  readingTime = true
+
+    [params.article.license]
+    enabled = true
+    default = "Licensed under CC BY-NC-SA 4.0"
+
+  [params.comments]
+  enabled = false
+  provider = "disqus"
+
+    [params.comments.disqusjs]
+
+    [params.comments.utterances]
+    issueTerm = "pathname"
+
+    [params.comments.beaudar]
+    issueTerm = "pathname"
+
+    [params.comments.remark42]
+
+    [params.comments.vssue]
+    autoCreateIssue = false
+
+    [params.comments.waline]
+    emoji = [ "https://unpkg.com/@waline/emojis@1.0.1/weibo" ]
+    requiredMeta = [ "name", "email", "url" ]
+
+      [params.comments.waline.locale]
+      admin = "Admin"
+
+    [params.comments.twikoo]
+
+    [params.comments.cactus]
+    defaultHomeserverUrl = "https://matrix.cactus.chat:8448"
+    serverName = "cactus.chat"
+    siteName = ""
+
+    [params.comments.giscus]
+    reactionsEnabled = 1
+    emitMetadata = 0
+
+    [params.comments.gitalk]
+
+    [params.comments.cusdis]
+
+[[params.widgets.homepage]]
+type = "search"
+
+[[params.widgets.homepage]]
+type = "archives"
+
+  [params.widgets.homepage.params]
+  limit = 5
+
+[[params.widgets.homepage]]
+type = "categories"
+
+  [params.widgets.homepage.params]
+  limit = 10
+
+[[params.widgets.homepage]]
+type = "tag-cloud"
+
+  [params.widgets.homepage.params]
+  limit = 10
+
+[[params.widgets.page]]
+type = "toc"
+
+[params.opengraph.twitter]
+card = "summary_large_image"
+
+[params.defaultImage.opengraph]
+enabled = false
+local = false
+
+  [params.colorScheme]
+  toggle = true
+  default = "auto"
+
+[params.imageProcessing.cover]
+enabled = true
+
+[params.imageProcessing.content]
+enabled = true
+
+
+############################
+# Social links
+############################
+[menu]
+main = [ ]
+
+  [[menu.social]]
+  identifier = "github"
+  name = "GitHub"
+  url = "https://github.com/whiths600"
+
+    [menu.social.params]
+    icon = "brand-github"
+
+
+
+[related]
+includeNewer = true
+threshold = 60
+toLower = false
+
+  [[related.indices]]
+  name = "tags"
+  weight = 100
+
+  [[related.indices]]
+  name = "categories"
+  weight = 200
+
+[markup.goldmark.extensions.passthrough]
+enable = true
+
+  [markup.goldmark.extensions.passthrough.delimiters]
+  block = [ [ "\\[", "\\]" ], [ "$$", "$$" ] ]
+  inline = [ [ "\\(", "\\)" ] ]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.tableOfContents]
+endLevel = 4
+ordered = true
+startLevel = 2
+
+[markup.highlight]
+noClasses = false
+codeFences = true
+guessSyntax = true
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+tabWidth = 4
