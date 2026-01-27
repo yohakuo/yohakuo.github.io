@@ -1,5 +1,5 @@
 ---
-title: "书影游"
+title: "精神体大冒险"
 slug: "media"
 layout: "media"
 menu:
