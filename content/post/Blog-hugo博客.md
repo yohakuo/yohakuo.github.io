@@ -103,6 +103,17 @@ favicon = "static/favicon.png"
 ### 自定义菜单
 该主题包含两个菜单：主菜单（ `menu.main` ）和社交菜单（ `menu.social` ，仅显示图标）。它们的配置方式类似。
 
+如果该菜单是一个独立页面，建议直接在新建的 `content/media/index.md` 中添加 `menu` 字段
+```yaml
+menu: 
+    main:
+        name: title (optional)
+        weight: -90
+        params:
+            icon: icon-name
+```
+
+如果该菜单不是页面建议修改 `hugo.toml`
 ```toml
 [menu]
 main = [ ]
