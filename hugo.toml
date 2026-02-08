@@ -1,5 +1,6 @@
 baseurl = "https://yohakuo.github.io/"
 languageCode = "zh-cn"
+timeZone = "Asia/Shanghai"
 theme = "hugo-theme-stack"
 title = "森林游乐场"
 description = "Card-style Hugo theme designed for bloggers"
