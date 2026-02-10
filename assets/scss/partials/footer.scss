@@ -1,0 +1,48 @@
+// 底部距离
+main.main {
+    padding-bottom: 4rem;
+}
+
+.footer-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.running-time {
+    color: var(--card-text-color-secondary);
+    font-weight: normal;
+    font-size: 14px;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 5px;
+        background: #B0B0B0;
+        margin: 0 0 20px;
+    }
+
+    .running-days {
+        font-weight: bold;
+        color: var(--emphasize-text-color);
+    }
+}
+
+.totalcount {
+    color: var(--card-text-color-secondary);
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.copyright-notice {
+    font-weight: bold;
+    color: #8fbc8f;
+    font-size: 14px;
+}
+
+.footer-credits {
+    color: #a0a0a0;
+    font-size: 12px;
+    font-weight: normal;
+}

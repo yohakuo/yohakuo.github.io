@@ -1,0 +1,30 @@
+<div class="footer-layout">
+    <!-- Add blog running time -->
+    <section class="running-time">
+        本博客已稳定运行
+        <span id="runningdays" class="running-days"></span>
+    </section>
+
+
+    <!-- Add copyright notice -->
+    <section class="copyright-notice">
+        © 2024 - 2026 森林游乐场 All rights reserved. 禁止转载。如需引用，请注明文章链接。
+    </section>
+
+    <!-- Add total page and word count time -->
+    <section class="totalcount">
+        {{$scratch := newScratch}}
+        {{ range (where .Site.Pages "Kind" "page" )}}
+        {{$scratch.Add "total" .WordCount}}
+        {{ end }}
+        发表了{{ len (where .Site.RegularPages "Section" "post") }}篇文章 ·
+        总计{{ div ($scratch.Get "total") 1000.0 | lang.FormatNumber 2 }}k字
+    </section>
+
+    <section class="footer-credits">
+        使用 Hugo 构建
+    </section>
+    <section class="footer-credits">
+        主题 Stack 由 Jimmy 设计
+    </section>
+</div>

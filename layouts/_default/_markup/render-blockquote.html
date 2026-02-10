@@ -1,0 +1,69 @@
+{{- /* Check for GitHub-style Custom Callout Syntax (e.g., > [!NOTE]) */}}
+{{- $content := .Text }}
+{{- $isCallout := false }}
+{{- $calloutType := "note" }}
+{{- $displayTitle := "" }}
+
+{{- if .AlertType }}
+{{- /* Native Hugo Alert Support */}}
+{{- $isCallout = true }}
+{{- $calloutType = .AlertType | lower }}
+{{- $displayTitle = .AlertType | humanize }}
+
+{{- /* Native alerts don't include the [!TYPE] line in .Text */}}
+{{- else }}
+{{- /* Manual Parsing for > [!NOTE] Syntax */}}
+{{- $plainText := plainify .Text }}
+{{- $firstLine := index (split $plainText "\n") 0 | trim " \t\r" }}
+
+{{- /* Check for [!TYPE] pattern */}}
+{{- if hasPrefix $firstLine "[!" }}
+{{- $endBracket := strings.Index $firstLine "]" }}
+
+{{- /* Check if it looks like a callout header */}}
+{{- if gt $endBracket 2 }}
+{{- $typeTag := substr $firstLine 0 (add $endBracket 1) }}
+{{- $remainder := substr $firstLine (add $endBracket 1) }}
+{{- $type := substr $typeTag 2 -1 | lower }}
+
+{{- /* Validate type is alphanumeric to avoid false positives */}}
+{{- if findRE `^[a-z]+$` $type }}
+{{- $isCallout = true }}
+{{- $calloutType = $type }}
+{{- $displayTitle = $type | humanize }}
+
+{{- /* Extract Custom Title */}}
+{{- $customTitle := trim $remainder " " }}
+{{- if ne $customTitle "" }}
+{{- $displayTitle = $customTitle }}
+{{- end }}
+
+{{- /* Remove the header line from HTML content */}}
+{{- /* We remove the first paragraph that contains the definition */}}
+{{- $content = replaceRE `^\s*<p>\s*\[![a-zA-Z0-9]+\][-+]?.*?</p>\n?` "" .Text | safeHTML }}
+
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if $isCallout }}
+{{- /* Render Callout */}}
+<div class="callout" data-callout-type="{{ $calloutType }}" role="note"
+  aria-label="{{ $calloutType | humanize }} callout">
+  <div class="callout-title">
+    <div class="callout-icon" aria-hidden="true"></div>
+    <div class="callout-title-text">
+      {{ $displayTitle }}
+    </div>
+  </div>
+  <div class="callout-content">
+    {{- $content }}
+  </div>
+</div>
+{{- else }}
+{{- /* Render Standard Blockquote */}}
+<blockquote>
+  {{ .Text | safeHTML }}
+</blockquote>
+{{- end }}

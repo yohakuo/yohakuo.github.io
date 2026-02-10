@@ -32,7 +32,8 @@ featuredImageField = "image"
 # 将页面完整内容输出为 RSS
 rssFullContent = true
 # 网站图标路径
-favicon = "static/favicon.png" 
+favicon = "favicon.jpg" 
+customSCSS = ["scss/custom.scss"]
 
   [params.footer]
   since = 2026

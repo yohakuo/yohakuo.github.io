@@ -1,0 +1,861 @@
+// ============================================================================
+// Markdown Callouts Styling
+// ============================================================================
+// Obsidian-inspired callout/admonition system for Hugo blogs
+// Supports multiple callout types, icons, dark mode, and collapsible sections
+
+// ============================================================================
+// Color Palette - Obsidian Colors
+// ============================================================================
+
+// Primary callout colors from Obsidian's design system
+// Note: Some colors are adjusted for WCAG AA compliance
+$callout-color-blue: rgb(8, 109, 221); // Note, Info - WCAG AA compliant (4.95:1)
+$callout-color-cyan: rgb(0, 150, 130); // Tip, Abstract - Darkened for better contrast (was rgb(0, 191, 165))
+$callout-color-green: rgb(6, 145, 60); // Success, Done - Darkened for better contrast (was rgb(8, 185, 78))
+$callout-color-orange: rgb(190, 95, 0); // Warning, Question, Caution - Darkened for better contrast (was rgb(236, 117, 0))
+$callout-color-red: rgb(200, 40, 60); // Failure, Danger, Bug, Important - Darkened for better contrast (was rgb(233, 49, 71))
+$callout-color-grey: rgb(120, 120, 120); // Quote - Darkened for better contrast (was rgb(158, 158, 158))
+$callout-color-purple: rgb(130, 65, 200); // Example - Darkened for better contrast (was rgb(168, 85, 247))
+
+// Dark mode variants (brighter for visibility on dark backgrounds)
+$callout-color-blue-dark: rgb(8, 109, 221);
+$callout-color-cyan-dark: rgb(0, 191, 165);
+$callout-color-green-dark: rgb(8, 185, 78);
+$callout-color-orange-dark: rgb(236, 117, 0);
+$callout-color-red-dark: rgb(233, 49, 71);
+$callout-color-grey-dark: rgb(158, 158, 158);
+$callout-color-purple-dark: rgb(168, 85, 247);
+
+// ============================================================================
+// SVG Icon Data URIs - Lucide Icons
+// ============================================================================
+
+// Function to create colored SVG data URI
+// The SVG uses currentColor which inherits from the .callout-icon color property
+@function svg-icon($svg-content) {
+  @return url('data:image/svg+xml;utf8,#{$svg-content}');
+}
+
+// Lucide icon definitions with currentColor for dynamic coloring
+$icon-pencil: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>');
+
+$icon-info: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>');
+
+$icon-flame: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>');
+
+$icon-clipboard-list: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>');
+
+$icon-check: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>');
+
+$icon-alert-triangle: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>');
+
+$icon-help-circle: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>');
+
+$icon-x: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>');
+
+$icon-quote: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>');
+
+$icon-list: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>');
+
+$icon-alert-circle: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>');
+
+// ============================================================================
+// CSS Custom Properties
+// ============================================================================
+// Integrates with hugo-theme-stack theme variables for consistent design
+
+:root {
+  // Border styling
+  --callout-border-width: 4px;
+
+  // Use theme's card border radius with fallback (theme default: 10px)
+  --callout-border-radius: var(--card-border-radius, 10px);
+
+  // Spacing - use theme's card padding with fallback
+  // Theme provides responsive padding: 20px (base), 25px (md), 30px (xl)
+  --callout-padding: var(--card-padding, 20px);
+  --callout-margin: 1em 0;
+
+  // Opacity values for backgrounds
+  --callout-bg-opacity-light: 0.1;
+  --callout-bg-opacity-dark: 0.05;
+  --callout-bg-opacity: var(--callout-bg-opacity-light);
+
+  // Typography - use theme's typography system
+  // Body text color: theme default is #707070 (light) / rgba(255,255,255,0.7) (dark)
+  --callout-text-color: var(--body-text-color, #707070);
+  --callout-title-font-weight: 600;
+
+  // Font family - use theme's article font family for consistency
+  // Theme default: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+  --callout-font-family: var(--article-font-family, var(--base-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif));
+
+  // Font size - use theme's article font size for consistency
+  // Theme default: 1.6rem (base), 1.7rem (md)
+  --callout-font-size: var(--article-font-size, 1.6rem);
+
+  // Transitions - use consistent timing with theme (0.3s ease is standard)
+  --callout-transition-duration: 0.3s;
+  --callout-transition-timing: ease;
+}
+
+// ============================================================================
+// Base Callout Container Styles
+// ============================================================================
+
+.callout {
+  // Layout
+  display: block;
+  position: relative;
+
+  // Spacing - use theme variables with fallbacks
+  padding: var(--callout-padding);
+  margin: var(--callout-margin);
+
+  // Border and background
+  border-left: var(--callout-border-width) solid;
+  border-radius: var(--callout-border-radius);
+
+  // Typography - use theme's typography system
+  color: var(--callout-text-color);
+  font-family: var(--callout-font-family);
+  font-size: var(--callout-font-size);
+  line-height: var(--article-line-height, 1.6);
+
+  // Ensure proper box-sizing
+  box-sizing: border-box;
+
+  // Clear floats if needed
+  overflow: auto;
+}
+
+// ============================================================================
+// Callout Title and Icon Styles
+// ============================================================================
+
+.callout-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.callout-icon {
+  // Fixed dimensions for consistent icon sizing
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+
+  // Display as inline-block to allow sizing
+  display: inline-block;
+
+  // Flexbox alignment
+  flex-shrink: 0;
+
+  // Use ::before pseudo-element for SVG background
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.callout-title-text {
+  flex: 1;
+}
+
+// ============================================================================
+// Type-Specific Styling Mixin
+// ============================================================================
+
+// Mixin to apply type-specific colors and icons to callouts
+// Parameters:
+//   $color: The primary color for the callout (border, title, icon)
+//   $icon-svg: Optional SVG data URI for the icon
+@mixin callout-type-style($color, $icon-svg: null) {
+  border-left-color: $color;
+  background-color: rgba($color, var(--callout-bg-opacity));
+
+  .callout-title-text {
+    color: $color;
+    font-weight: var(--callout-title-font-weight);
+  }
+
+  .callout-icon {
+    color: $color;
+
+    @if $icon-svg {
+      &::before {
+        background-image: $icon-svg;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// Callout Type Definitions with Aliases
+// ============================================================================
+
+// Note (Blue) - Pencil icon
+.callout[data-callout-type="note"] {
+  @include callout-type-style($callout-color-blue, $icon-pencil);
+}
+
+// Info (Blue) - Info circle icon
+.callout[data-callout-type="info"] {
+  @include callout-type-style($callout-color-blue, $icon-info);
+}
+
+// Tip / Abstract (Cyan) - Flame icon
+.callout[data-callout-type="tip"],
+.callout[data-callout-type="abstract"] {
+  @include callout-type-style($callout-color-cyan, $icon-flame);
+}
+
+// Success / Done (Green) - Check icon
+.callout[data-callout-type="success"],
+.callout[data-callout-type="done"] {
+  @include callout-type-style($callout-color-green, $icon-check);
+}
+
+// Warning / Caution (Orange) - Alert triangle icon
+.callout[data-callout-type="warning"],
+.callout[data-callout-type="caution"] {
+  @include callout-type-style($callout-color-orange, $icon-alert-triangle);
+}
+
+// Question (Orange) - Help circle icon
+.callout[data-callout-type="question"] {
+  @include callout-type-style($callout-color-orange, $icon-help-circle);
+}
+
+// Failure / Danger / Bug (Red) - X icon
+.callout[data-callout-type="failure"],
+.callout[data-callout-type="danger"],
+.callout[data-callout-type="bug"] {
+  @include callout-type-style($callout-color-red, $icon-x);
+}
+
+// Important (Red) - Alert circle icon
+.callout[data-callout-type="important"] {
+  @include callout-type-style($callout-color-red, $icon-alert-circle);
+}
+
+// Quote / Cite (Grey) - Quote icon
+.callout[data-callout-type="quote"],
+.callout[data-callout-type="cite"] {
+  @include callout-type-style($callout-color-grey, $icon-quote);
+}
+
+// Example (Purple) - List icon
+.callout[data-callout-type="example"] {
+  @include callout-type-style($callout-color-purple, $icon-list);
+}
+
+// ============================================================================
+// Dark Mode Support
+// ============================================================================
+
+// Dark mode color overrides using theme's data-scheme attribute
+// Reduces background opacity and adjusts colors for better contrast
+:root[data-scheme="dark"] {
+  // Reduce background opacity for dark mode (5-10%)
+  --callout-bg-opacity: var(--callout-bg-opacity-dark);
+
+  // Update text color for dark mode using theme's dark mode body text color
+  // Theme default: rgba(255, 255, 255, 0.7)
+  --callout-text-color: var(--body-text-color, rgba(255, 255, 255, 0.7));
+
+  .callout {
+    // Ensure callout content text maintains sufficient contrast (≥4.5:1 ratio)
+    // Use theme's dark mode text color with fallback to light grey
+    color: var(--callout-text-color);
+
+    // Border colors remain vibrant and visible against dark backgrounds
+    // The original Obsidian colors (blue, cyan, green, orange, red, grey, purple)
+    // all have sufficient luminance to be visible on dark backgrounds
+  }
+
+  .callout-content {
+    // Ensure nested content maintains proper contrast
+    // Inherits from parent callout or theme's body text color
+    color: inherit;
+
+    // Ensure nested elements maintain readability
+    p,
+    li,
+    code,
+    pre,
+    blockquote,
+    a {
+      color: inherit;
+    }
+  }
+
+
+
+  // Use brighter colors in dark mode for better visibility
+  .callout[data-callout-type="note"] {
+    border-left-color: $callout-color-blue-dark;
+    background-color: rgba($callout-color-blue-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-blue-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-blue-dark;
+    }
+  }
+
+  .callout[data-callout-type="info"] {
+    border-left-color: $callout-color-blue-dark;
+    background-color: rgba($callout-color-blue-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-blue-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-blue-dark;
+    }
+  }
+
+  .callout[data-callout-type="tip"],
+  .callout[data-callout-type="abstract"] {
+    border-left-color: $callout-color-cyan-dark;
+    background-color: rgba($callout-color-cyan-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-cyan-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-cyan-dark;
+    }
+  }
+
+  .callout[data-callout-type="success"],
+  .callout[data-callout-type="done"] {
+    border-left-color: $callout-color-green-dark;
+    background-color: rgba($callout-color-green-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-green-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-green-dark;
+    }
+  }
+
+  .callout[data-callout-type="warning"],
+  .callout[data-callout-type="caution"] {
+    border-left-color: $callout-color-orange-dark;
+    background-color: rgba($callout-color-orange-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-orange-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-orange-dark;
+    }
+  }
+
+  .callout[data-callout-type="question"] {
+    border-left-color: $callout-color-orange-dark;
+    background-color: rgba($callout-color-orange-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-orange-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-orange-dark;
+    }
+  }
+
+  .callout[data-callout-type="failure"],
+  .callout[data-callout-type="danger"],
+  .callout[data-callout-type="bug"] {
+    border-left-color: $callout-color-red-dark;
+    background-color: rgba($callout-color-red-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-red-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-red-dark;
+    }
+  }
+
+  .callout[data-callout-type="important"] {
+    border-left-color: $callout-color-red-dark;
+    background-color: rgba($callout-color-red-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-red-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-red-dark;
+    }
+  }
+
+  .callout[data-callout-type="quote"],
+  .callout[data-callout-type="cite"] {
+    border-left-color: $callout-color-grey-dark;
+    background-color: rgba($callout-color-grey-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-grey-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-grey-dark;
+    }
+  }
+
+  .callout[data-callout-type="example"] {
+    border-left-color: $callout-color-purple-dark;
+    background-color: rgba($callout-color-purple-dark, var(--callout-bg-opacity));
+
+    .callout-title-text {
+      color: $callout-color-purple-dark;
+    }
+
+    .callout-icon {
+      color: $callout-color-purple-dark;
+    }
+  }
+}
+
+// ============================================================================
+// Smooth Transitions for Color Scheme Changes
+// ============================================================================
+// Uses theme's standard transition timing (0.3s ease) for consistency
+
+.callout {
+  // Apply smooth transitions to background-color, color, and border-color
+  // Uses theme-consistent transition duration and timing
+  transition:
+    background-color var(--callout-transition-duration, 0.3s) var(--callout-transition-timing, ease),
+    border-color var(--callout-transition-duration, 0.3s) var(--callout-transition-timing, ease),
+    color var(--callout-transition-duration, 0.3s) var(--callout-transition-timing, ease);
+}
+
+.callout-title-text,
+.callout-icon {
+  // Smooth color transitions for title and icon
+  transition: color var(--callout-transition-duration, 0.3s) var(--callout-transition-timing, ease);
+}
+
+.callout-content {
+  // Smooth color transitions for content
+  transition: color var(--callout-transition-duration, 0.3s) var(--callout-transition-timing, ease);
+}
+
+
+
+// ============================================================================
+// Nested Content Support
+// ============================================================================
+
+.callout-content {
+  // Ensure proper spacing for nested elements
+  line-height: 1.6;
+
+  // Paragraphs within callouts
+  p {
+    margin: 0.5em 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Lists within callouts (ordered and unordered)
+  ul,
+  ol {
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li {
+    margin: 0.25em 0;
+
+    // Nested lists
+    ul,
+    ol {
+      margin: 0.25em 0;
+    }
+  }
+
+  // Code blocks within callouts
+  pre {
+    margin: 0.75em 0;
+    padding: 0.75em;
+    border-radius: var(--tag-border-radius, 4px);
+    background-color: var(--pre-background-color, rgba(0, 0, 0, 0.05));
+    overflow-x: auto;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // Preserve syntax highlighting
+    code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+      color: var(--pre-text-color, inherit);
+      font-family: var(--code-font-family, 'Courier New', monospace);
+    }
+  }
+
+  // Inline code within callouts
+  code {
+    padding: 0.2em 0.4em;
+    border-radius: var(--tag-border-radius, 3px);
+    background-color: var(--code-background-color, rgba(0, 0, 0, 0.08));
+    font-family: var(--code-font-family, 'Courier New', monospace);
+    font-size: 0.9em;
+  }
+
+  // Nested blockquotes within callouts
+  blockquote {
+    margin: 0.75em 0;
+    padding-left: 1em;
+    border-left: 3px solid var(--blockquote-border-color, rgba(0, 0, 0, 0.2));
+    color: var(--blockquote-text-color, inherit);
+    font-style: italic;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Images within callouts
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.75em 0;
+    border-radius: var(--tag-border-radius, 4px);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Links within callouts
+  a {
+    color: var(--link-color, var(--accent-color, inherit));
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  // Tables within callouts
+  table {
+    width: 100%;
+    margin: 0.75em 0;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  th,
+  td {
+    padding: 0.5em;
+    border: 1px solid var(--table-border-color, rgba(0, 0, 0, 0.1));
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+    background-color: var(--table-header-background, rgba(0, 0, 0, 0.05));
+  }
+
+  // Headings within callouts (if any)
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.75em 0 0.5em 0;
+    font-weight: 600;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  // Horizontal rules within callouts
+  hr {
+    margin: 0.75em 0;
+    border: none;
+    border-top: 1px solid var(--hr-color, rgba(0, 0, 0, 0.1));
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Dark mode adjustments for nested content
+:root[data-scheme="dark"] {
+  .callout-content {
+    pre {
+      background-color: var(--pre-background-color, rgba(255, 255, 255, 0.05));
+    }
+
+    code {
+      background-color: var(--code-background-color, rgba(255, 255, 255, 0.08));
+    }
+
+    blockquote {
+      border-left-color: var(--blockquote-border-color, rgba(255, 255, 255, 0.2));
+    }
+
+    th,
+    td {
+      border-color: var(--table-border-color, rgba(255, 255, 255, 0.1));
+    }
+
+    th {
+      background-color: var(--table-header-background, rgba(255, 255, 255, 0.05));
+    }
+
+    hr {
+      border-top-color: var(--hr-color, rgba(255, 255, 255, 0.1));
+    }
+  }
+}
+
+// ============================================================================
+// Responsive Design
+// ============================================================================
+
+// Import theme breakpoints if available
+// Theme breakpoints: sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px
+// We'll use these breakpoints to ensure consistency with the theme
+
+// Base styles (mobile-first approach)
+// Default styles above are optimized for mobile devices
+
+// Very small screens (up to 640px / sm breakpoint)
+@media screen and (max-width: 639px) {
+  .callout {
+    // Adjust font size for better readability on mobile
+    font-size: 0.95em;
+
+    // Reduce margin
+    margin: 0.75em 0;
+  }
+
+  .callout-title {
+    // Slightly smaller gap on mobile
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .callout-icon {
+    // Slightly smaller icons on mobile
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+  }
+
+  .callout-content {
+    // Enable horizontal scrolling for wide content (code blocks, images)
+    overflow-x: auto;
+
+    // Adjust nested element spacing
+    pre,
+    code {
+      font-size: 0.85em;
+    }
+
+    // Ensure tables scroll horizontally
+    table {
+      min-width: 100%;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    // Ensure images don't overflow
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    // Ensure code blocks scroll horizontally
+    pre {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+  }
+}
+
+// Additional responsive adjustments for very small screens (mobile portrait, up to 480px)
+@media screen and (max-width: 480px) {
+  .callout {
+    // Smaller font size
+    font-size: 0.9em;
+
+    // Reduce border width slightly
+    --callout-border-width: 3px;
+  }
+
+  .callout-title {
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+
+  .callout-icon {
+    // Smaller icons on very small screens
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+  }
+
+  .callout-fold-indicator {
+    // Smaller fold indicator
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    min-height: 14px;
+  }
+}
+
+// Small screens and above (640px+ / sm breakpoint)
+@media screen and (min-width: 640px) {
+  .callout {
+    // Standard font size
+    font-size: 0.98em;
+  }
+
+  .callout-content {
+    // Enable horizontal scrolling for wide content
+    overflow-x: auto;
+
+    // Ensure tables scroll horizontally if needed
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+
+    // Ensure code blocks scroll horizontally
+    pre {
+      overflow-x: auto;
+    }
+  }
+}
+
+// Medium screens and above (768px+ / md breakpoint - tablets)
+@media screen and (min-width: 768px) {
+  .callout {
+    // Standard font size
+    font-size: 1em;
+  }
+
+  .callout-icon {
+    // Standard icon size
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+  }
+
+  .callout-title {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .callout-content {
+    // Enable horizontal scrolling for wide content
+    overflow-x: auto;
+
+    // Ensure tables scroll horizontally if needed
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+}
+
+// Large screens and above (1024px+ / lg breakpoint - desktop)
+@media screen and (min-width: 1024px) {
+  .callout {
+    // Standard font size
+    font-size: 1em;
+  }
+
+  .callout-content {
+    // Enable horizontal scrolling for very wide content
+    overflow-x: auto;
+
+    // Ensure tables scroll horizontally if needed
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+}
+
+// Extra large screens (1280px+ / xl breakpoint)
+// No additional overrides needed - theme's card-padding handles this
+
+// 2XL screens (1536px+ / 2xl breakpoint)
+// No additional overrides needed - theme's card-padding handles this
