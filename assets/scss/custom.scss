@@ -3,3 +3,51 @@
 
 // Import callouts styling system
 @import "callouts";
+
+/* 简单的 details 美化 */
+details {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid var(--card-border);
+    /* 适配 Stack 主题的边框颜色 */
+    background-color: var(--card-background);
+    /* 适配 Stack 主题的背景 */
+    border-radius: var(--card-border-radius);
+
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        outline: none;
+    }
+
+    .details-content {
+        margin-top: 1rem;
+    }
+}
+
+// 为代码块顶部添加 macos 样式
+.article-content {
+    .highlight:before {
+        content: "";
+        display: block;
+        background: url(/img/code-header.svg);
+        height: 25px;
+        width: 100%;
+        background-size: 52px;
+        background-repeat: no-repeat;
+        margin-top: -10px;
+        margin-bottom: 0;
+    }
+}
+
+/* 右侧标签云计数样式 */
+.tagCloud .tagCloud-tags a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .count {
+        color: var(--card-text-color-tertiary);
+        margin-left: 0.5rem;
+    }
+}

@@ -1,0 +1,7 @@
+<!-- Add details shortcode -->
+<details {{ if .Get "open" }}open{{ end }}>
+    <summary>{{ .Get "title" | default "点击展开" }}</summary>
+    <div class="details-content">
+        {{ .Inner | markdownify }}
+    </div>
+</details>

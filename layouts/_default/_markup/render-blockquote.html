@@ -1,69 +1,49 @@
-{{- /* Check for GitHub-style Custom Callout Syntax (e.g., > [!NOTE]) */}}
-{{- $content := .Text }}
-{{- $isCallout := false }}
-{{- $calloutType := "note" }}
-{{- $displayTitle := "" }}
+{{- /* Check if this is a Hugo native alert */ -}}
+{{- if .AlertType -}}
+{{- /* This is a native alert - check for fold marker in title */ -}}
+{{- $alertType := .AlertType | lower -}}
+{{- $alertTitle := .AlertTitle -}}
+{{- $isCollapsible := false -}}
+{{- $defaultOpen := false -}}
 
-{{- if .AlertType }}
-{{- /* Native Hugo Alert Support */}}
-{{- $isCallout = true }}
-{{- $calloutType = .AlertType | lower }}
-{{- $displayTitle = .AlertType | humanize }}
+{{- /* Check if title ends with + or - */ -}}
+{{- if hasSuffix $alertTitle "+" -}}
+{{- $isCollapsible = true -}}
+{{- $defaultOpen = true -}}
+{{- $alertTitle = strings.TrimSuffix $alertTitle "+" | strings.TrimRight " " -}}
+{{- else if hasSuffix $alertTitle "-" -}}
+{{- $isCollapsible = true -}}
+{{- $defaultOpen = false -}}
+{{- $alertTitle = strings.TrimSuffix $alertTitle "-" | strings.TrimRight " " -}}
+{{- end -}}
 
-{{- /* Native alerts don't include the [!TYPE] line in .Text */}}
-{{- else }}
-{{- /* Manual Parsing for > [!NOTE] Syntax */}}
-{{- $plainText := plainify .Text }}
-{{- $firstLine := index (split $plainText "\n") 0 | trim " \t\r" }}
-
-{{- /* Check for [!TYPE] pattern */}}
-{{- if hasPrefix $firstLine "[!" }}
-{{- $endBracket := strings.Index $firstLine "]" }}
-
-{{- /* Check if it looks like a callout header */}}
-{{- if gt $endBracket 2 }}
-{{- $typeTag := substr $firstLine 0 (add $endBracket 1) }}
-{{- $remainder := substr $firstLine (add $endBracket 1) }}
-{{- $type := substr $typeTag 2 -1 | lower }}
-
-{{- /* Validate type is alphanumeric to avoid false positives */}}
-{{- if findRE `^[a-z]+$` $type }}
-{{- $isCallout = true }}
-{{- $calloutType = $type }}
-{{- $displayTitle = $type | humanize }}
-
-{{- /* Extract Custom Title */}}
-{{- $customTitle := trim $remainder " " }}
-{{- if ne $customTitle "" }}
-{{- $displayTitle = $customTitle }}
-{{- end }}
-
-{{- /* Remove the header line from HTML content */}}
-{{- /* We remove the first paragraph that contains the definition */}}
-{{- $content = replaceRE `^\s*<p>\s*\[![a-zA-Z0-9]+\][-+]?.*?</p>\n?` "" .Text | safeHTML }}
-
-{{- end }}
-{{- end }}
-{{- end }}
-{{- end }}
-
-{{- if $isCallout }}
-{{- /* Render Callout */}}
-<div class="callout" data-callout-type="{{ $calloutType }}" role="note"
-  aria-label="{{ $calloutType | humanize }} callout">
+{{- if $isCollapsible -}}
+<details class="callout is-collapsible" data-callout-type="{{ $alertType }}" {{- if $defaultOpen }} open{{- end }}>
+  <summary class="callout-title">
+    <div class="callout-icon" aria-hidden="true"></div>
+    <div class="callout-title-text">{{ if $alertTitle }}{{ $alertTitle }}{{ else }}{{ .AlertType | humanize }}{{ end
+      }}</div>
+    <div class="callout-fold-indicator"></div>
+  </summary>
+  <div class="callout-content">
+    {{ .Text | safeHTML }}
+  </div>
+</details>
+{{- else -}}
+<div class="callout" data-callout-type="{{ $alertType }}" role="note" aria-label="{{ .AlertType | humanize }} callout">
   <div class="callout-title">
     <div class="callout-icon" aria-hidden="true"></div>
-    <div class="callout-title-text">
-      {{ $displayTitle }}
-    </div>
+    <div class="callout-title-text">{{ if $alertTitle }}{{ $alertTitle }}{{ else }}{{ .AlertType | humanize }}{{ end
+      }}</div>
   </div>
   <div class="callout-content">
-    {{- $content }}
+    {{ .Text | safeHTML }}
   </div>
 </div>
-{{- else }}
-{{- /* Render Standard Blockquote */}}
+{{- end -}}
+{{- else -}}
+{{- /* Not an alert, render as regular blockquote */ -}}
 <blockquote>
   {{ .Text | safeHTML }}
 </blockquote>
-{{- end }}
+{{- end -}}

@@ -5,12 +5,28 @@
     let s1 = '2024-3-24'; //website start date
     s1 = new Date(s1.replace(/-/g, "/"));
     let s2 = new Date();
-    let timeDifference = s2.getTime() - s1.getTime();
 
-    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    // Calculate the difference
+    let diffInMilliseconds = s2.getTime() - s1.getTime();
+    let totalDays = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
 
-    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    // Create a new date object starting from the initial date
+    let years = s2.getFullYear() - s1.getFullYear();
+    let months = s2.getMonth() - s1.getMonth();
+    let days = s2.getDate() - s1.getDate();
+
+    // Adjust months and years if necessary
+    if (days < 0) {
+        months -= 1;
+        let prevMonth = new Date(s2.getFullYear(), s2.getMonth(), 0); // Get the last day of the previous month
+        days += prevMonth.getDate();
+    }
+    if (months < 0) {
+        years -= 1;
+        months += 12;
+    }
+
+    // Format the result
+    let result = `${years}年${months}月${days}天`;
     document.getElementById('runningdays').innerHTML = result;
 </script>

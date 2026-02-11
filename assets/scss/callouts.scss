@@ -859,3 +859,135 @@ $icon-alert-circle: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24"
 
 // 2XL screens (1536px+ / 2xl breakpoint)
 // No additional overrides needed - theme's card-padding handles this
+
+// ============================================================================
+// Collapsible Callout Styles (Details/Summary)
+// ============================================================================
+
+// SVG icon for fold indicator (chevron/arrow)
+$icon-chevron-right: svg-icon('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>');
+
+// Collapsible callout (using <details> element)
+.callout.is-collapsible {
+  // Remove default details marker
+  summary.callout-title {
+    // Remove default disclosure triangle
+    list-style: none;
+    
+    // Remove webkit default marker
+    &::-webkit-details-marker {
+      display: none;
+    }
+    
+    // Interactive cursor
+    cursor: pointer;
+    user-select: none;
+    
+    // Hover state
+    &:hover {
+      opacity: 0.8;
+    }
+    
+    // Focus state for accessibility
+    &:focus {
+      outline: 2px solid var(--accent-color, rgba(0, 0, 0, 0.2));
+      outline-offset: 2px;
+    }
+    
+    // Active state
+    &:active {
+      opacity: 0.6;
+    }
+  }
+  
+  // Fold indicator (chevron icon)
+  .callout-fold-indicator {
+    // Icon sizing
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    
+    // Display as inline-block
+    display: inline-block;
+    flex-shrink: 0;
+    
+    // Margin for spacing
+    margin-left: auto;
+    
+    // Smooth rotation transition
+    transition: transform var(--callout-transition-duration, 0.3s) var(--callout-transition-timing, ease);
+    
+    // Use ::before pseudo-element for SVG background
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: $icon-chevron-right;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    // Inherit color from parent title
+    color: inherit;
+  }
+  
+  // Rotate chevron when open
+  &[open] .callout-fold-indicator {
+    transform: rotate(90deg);
+  }
+  
+  // Content wrapper in collapsible callout
+  .callout-content {
+    // Add top margin when content is visible
+    margin-top: 8px;
+    
+    // Smooth content appearance (optional animation)
+    animation: callout-content-fadein var(--callout-transition-duration, 0.3s) var(--callout-transition-timing, ease);
+  }
+}
+
+// Fade-in animation for collapsible content
+@keyframes callout-content-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Non-collapsible callouts (regular div)
+.callout:not(.is-collapsible) {
+  .callout-content {
+    margin-top: 8px;
+  }
+}
+
+// Dark mode adjustments for fold indicator
+:root[data-scheme="dark"] {
+  .callout.is-collapsible {
+    summary.callout-title {
+      &:focus {
+        outline-color: var(--accent-color, rgba(255, 255, 255, 0.3));
+      }
+    }
+  }
+}
+
+// Responsive adjustments for fold indicator
+@media screen and (max-width: 480px) {
+  .callout.is-collapsible {
+    .callout-fold-indicator {
+      // Smaller fold indicator on very small screens
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      min-height: 14px;
+    }
+  }
+}
