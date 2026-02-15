@@ -16,13 +16,15 @@ title: Blog装修其一
 ### callout 样式与折叠
 主要靠 vibe，参考 obsidian 的色系，并支持嵌套列表之类的功能。折腾半天最后通过下面的代码块加 quickadd 的捕获功能来同时兼容 obsidian-callout 折叠和博客折叠。
 
-```
-> [!note]- 
-> {{< details title = "{{value:请输入标题}}" >}}
-> {{value:输入内容}}
-> {{< /details >}}
+```text
+>[!note]- 
+>{{</* details title = "{{value:请输入标题}}" */>}}
+>{{value:输入内容}}
+>{{</* /details */>}}
 ```
 
+> [!note] 
+> hugo 官方提供展示短代码的方式，在两层大括号里使用 `</* */>` 包裹代码，被包裹的部分不会执行。
 
 > [!note]- 样式清单
 > {{< details >}}
@@ -465,7 +467,7 @@ hugo 版本为 `v0.154.3`, 参考[这里]([https://thirdshire.com/hugo-stack-ren
 
 使用方法
 ```
-{{< neodb-review "https://neodb.social/tv/season/3AURM90zPEjYdvGjfsQOGR" >}}
+{{< neodb-review "https://neodb.social/..." >}}
 ```
 
 `layouts/shortcodes/neodb-review.html`。注意获取的 token 只给可读权限。
