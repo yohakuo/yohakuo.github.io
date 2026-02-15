@@ -34,6 +34,7 @@ rssFullContent = true
 # 网站图标路径
 favicon = "favicon.jpg" 
 customSCSS = ["scss/custom.scss"]
+neodb_token = "cdhFIJefDcGYA3CK9tblI_aBZ_iy-nGcdDOxIsPhSQ5HrbX4D8iYMukHCw"
 
   [params.footer]
   since = 2026

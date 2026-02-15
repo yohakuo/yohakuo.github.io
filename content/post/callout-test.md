@@ -1,6 +1,6 @@
 ---
-title: "Callout 功能测试"
-description: "测试 Obsidian 风格的可折叠 Callout"
+title: "折叠面板功能测试"
+description: "包括简单折叠块和嵌套obsidian-callout"
 slug: callout-test
 date: 2026-02-11
 categories:
@@ -12,14 +12,11 @@ tags:
 draft: true
 ---
 
-> [!example]- 使用方法
-> {{< details "点击展开查看代码" >}}
-> 这里是隐藏的内容。
-> 可以包含代码块、图片等。
->  {{< /details >}}
+{{< neodb-review "https://neodb.social/tv/season/3AURM90zPEjYdvGjfsQOGR" >}}
 
-<details>
-<summary>代码</summary>
+
+<details> 折叠块测试
+<summary>点击查看代码</summary>
 
 ```
 .highlight {
@@ -32,24 +29,136 @@ draft: true
     box-shadow: var (--shadow-l1) !important;
 
 ```
-
 </details>
 
 
-> [!example]- 代码
-> ```html
-> <a class="link" href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}
->     {{- if strings.HasPrefix .Destination "http" }}
->     <span style="white-space: nowrap;"><svg width=".7em"
->         height=".7em" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
->         <path d="m13 3l3.293 3.293l-7 7l1.414 1.414l7-7L21 11V3z" fill="currentColor" />
->         <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
->             fill="currentColor" />
->     </svg></span>
->     {{- end -}}
-> </a>
+
+> [!note]- 列表测试
+> {{< details >}}
+> - `[!NOTE]` / `[!INFO]` — 蓝色注释 / 信息 
+> - `[!TIP]` / `[!ABSTRACT]` — 青色提示 / 摘要 
+> - `[!SUCCESS]` / `[!DONE]` — 绿色成功 / 完成 
+> - `[!WARNING]` / `[!CAUTION]` — 橙色警告 / 注意 
+> - `[!QUESTION]` — 橙色问题 
+> - `[!FAILURE]` / `[!DANGER]` / `[!BUG]` — 红色失败 / 危险 / 错误 
+> - `[!IMPORTANT]` — 红色重要 
+> - `[!EXAMPLE]` — 紫色示例
+> - `[!QUOTE]` — 灰色引用
+> {{< /details >}}
+
+> [!note]- 代码测试
+> {{< details title = "点击查看代码" >}}
 > ```
-
-
+> {{ $dbUrl := .Get 0 }} {{ $apiUrl := "https://neodb.social/api/me/shelf/item/"
+> }} {{ $itemUuid := "" }}
+> {{ $authToken := "neodb_personal_token" }} <!-- Replace with your actual API token -->
+> 
+> <!-- Extract item_uuid from the URL -->
+> {{ if (findRE `.*neodb\.social\/.*\/(.*)` $dbUrl) }} {{ $itemUuid = replaceRE
+> `.*neodb\.social\/.*\/(.*)` "$1" $dbUrl }} {{ else }}
+> <p style="text-align: center"><small>Invalid URL format.</small></p>
+> {{ return }} {{ end }}
+> 
+> <!-- Construct the API URL -->
+> {{ $dbApiUrl := print $apiUrl $itemUuid }}
+> 
+> <!-- Set up the Authorization header -->
+> {{ $opts := dict "headers" (dict "Authorization" (print "Bearer " $authToken))
+> }}
+> 
+> <!-- Fetch JSON from the API using resources.GetRemote -->
+> {{ $dbFetch := resources.GetRemote $dbApiUrl $opts | transform.Unmarshal }}
+> 
+> <!-- Determine shelf status -->
+> {{ $shelfType := $dbFetch.shelf_type }} {{ $category := $dbFetch.item.category
+> }} {{ $action := "" }} {{ $prefix := "" }} {{ $suffix := "" }} {{ $displayText
+> := "" }}
+> 
+> <!-- Determine the action based on category -->
+> {{ if eq $category "book" }} {{ $action = "读" }} {{ else if or (eq $category
+> "tv") (eq $category "movie") }} {{ $action = "看" }} {{ else if or (eq $category
+> "podcast") (eq $category "album") }} {{ $action = "听" }} {{ else if eq
+> $category "game" }} {{ $action = "玩" }} {{ end }}
+> 
+> <!-- Determine the prefix and suffix based on shelf type -->
+> {{ if eq $shelfType "wishlist" }} {{ $prefix = "想" }} {{ else if eq $shelfType
+> "complete" }} {{ $suffix = "过" }} {{ else if eq $shelfType "progress" }} {{
+> $prefix = "在" }} {{ else if eq $shelfType "dropped" }} {{ $prefix = "不" }} {{
+> $suffix = "了" }} {{ end }}
+> 
+> <!-- Combine prefix, action, and suffix -->
+> {{ $displayText = print $prefix $action $suffix }}
+> 
+> <!-- Prep for star rating -->
+> {{ $fullStars := 0 }} {{ $starCount := 0 }} {{ $halfStar := 0 }} {{ $emptyStars
+> := 5 }}
+> <!-- Calc star rating -->
+> {{ $rating := $dbFetch.rating_grade }}
+> <!-- Get the rating -->
+> {{ if $rating }} {{ $starCount = div (mul $rating 5) 10 }} {{ $fullStars = int
+> $starCount }}
+> <!-- Full stars count -->
+> 
+> <!-- Determine if there is a half star -->
+> {{ if (mod $rating 2) }} {{ $halfStar = 1 }} {{ end }}
+> 
+> <!-- Calculate empty stars -->
+> {{ $emptyStars = sub 5 (add $fullStars $halfStar) }}
+> <!-- Empty stars count -->
+> {{ end }}
+> 
+> <!-- Check if data is retrieved -->
+> {{ if $dbFetch }}
+> <div class="db-card">
+>   <div class="db-card-subject">
+>     <div class="db-card-post">
+>       <img
+>         src="{{ $dbFetch.item.cover_image_url }}"
+>         alt="Cover Image"
+>         style="max-width: 100%; height: auto"
+>       />
+>     </div>
+>     <div class="db-card-content">
+>       <div class="db-card-title">
+>         <a href="{{ $dbUrl }}" class="cute" target="_blank" rel="noreferrer"
+>           >{{ $dbFetch.item.title }}</a
+>         >
+>       </div>
+>       <div class="db-card-rating">
+>         {{ $dbFetch.created_time | time.Format "2006-01-02T15:04:05Z" |
+>         time.Format "2006 年 01 月 02 日" }} {{ $displayText }}
+>         <!-- Add the rating as stars -->
+>         <div class="db-card-rating-stars">
+>           <!-- Full stars -->
+>           {{ if $fullStars }} {{ range $i := (seq 1 $fullStars) }}
+>           <i class="fa-solid fa-star"></i>
+>           {{ end }} {{ end }}
+> 
+>           <!-- Half star -->
+>           {{ if $halfStar }}
+>           <i class="fa-regular fa-star-half-stroke"></i>
+>           {{ end }}
+> 
+>           <!-- Empty stars -->
+>           {{ if $emptyStars }} {{ range $i := (seq 1 $emptyStars) }}
+>           <i class="fa-regular fa-star"></i>
+>           {{ end }} {{ end }}
+>         </div>
+>       </div>
+>       <div class="db-card-comment">
+>         {{ $dbFetch.comment_text | markdownify }}
+>       </div>
+>     </div>
+>     <div class="db-card-cate">{{ $dbFetch.item.category }}</div>
+>   </div>
+> </div>
+> {{ else }}
+> <p style="text-align: center">
+>   <small>Failed to fetch content, please check the API validity.</small>
+> </p>
+> {{ end }}
+> 
+> ```
+> {{< /details >}}
 
 
