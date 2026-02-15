@@ -1,5 +1,31 @@
-<!-- 外部链接图标 -->
-<a class="link" href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}" {{ end }}{{ if strings.HasPrefix
+{{- $dest := .Destination -}}
+{{- $isRemote := or (strings.HasPrefix $dest "http") (strings.HasPrefix $dest "mailto") -}}
+{{- if not $isRemote -}}
+{{- $urlParts := split $dest "#" -}}
+{{- $path := index $urlParts 0 -}}
+{{- $anchor := "" -}}
+{{- if gt (len $urlParts) 1 -}}
+{{- $anchor = printf "#%s" (delimit (after 1 $urlParts) "#") -}}
+{{- end -}}
+
+{{- $page := .Page.GetPage $path -}}
+{{- if $page -}}
+{{- $dest = printf "%s%s" $page.RelPermalink $anchor -}}
+{{- else -}}
+{{- /* Attempt to find by filename (Obsidian style) */ -}}
+{{- $filename := path.Base $path -}}
+{{- $name := $filename | strings.TrimSuffix (path.Ext $filename) -}}
+
+{{- range site.RegularPages -}}
+{{- if or (eq .File.LogicalName $filename) (eq .File.ContentBaseName $name) -}}
+{{- $dest = printf "%s%s" .RelPermalink $anchor -}}
+{{- break -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+<a class="link" href="{{ $dest | safeURL }}" {{ with .Title}} title="{{ . }}" {{ end }}{{ if strings.HasPrefix
     .Destination "http" }} target="_blank" rel="noopener" {{ end }}>{{ .Text | safeHTML }}
     {{- if strings.HasPrefix .Destination "http" }}
     <span style="white-space: nowrap;"><svg width=".7em" height=".7em" viewBox="0 0 21 21"
