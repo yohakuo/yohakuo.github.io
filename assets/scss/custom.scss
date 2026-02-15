@@ -147,3 +147,48 @@ details {
         font-size: calc(var(--article-font-size) * 0.7);
     }
 }
+
+/* 调整博文中引用图片的样式 */
+/* Increased specificity to override theme's .article-page .main-article .article-content img */
+.article-page .main-article .article-content {
+
+    /* Target images that are direct children or within paragraphs */
+    >p>img,
+    >img {
+        display: block !important;
+        margin: 2rem auto !important;
+        max-width: 75% !important;
+        height: auto !important;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Handle figures which have negative margins in the theme */
+    figure {
+        margin: 2rem auto !important;
+        /* Override negative margins */
+        text-align: center;
+        width: 85% !important;
+        /* Override calc(100% + padding) */
+
+        img {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        figcaption {
+            margin-top: 0.5rem;
+        }
+    }
+
+    /* Exclude Neodb card images specifically */
+    .db-card img {
+        margin: 0 !important;
+        box-shadow: none !important;
+        display: inline-block !important;
+        width: 100px !important;
+        /* Restore original width */
+    }
+}
