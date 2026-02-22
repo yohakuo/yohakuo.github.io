@@ -465,13 +465,12 @@ title: Blog装修其一
 ## Neodb 短评卡片
 hugo 版本为 `v0.154.3`, 参考[这里]([https://thirdshire.com/hugo-stack-renovation-part-three/#neodb-%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9F%AD%E8%AF%84%E5%8D%A1%E7%89%87:~:text=%E7%94%9F%E6%88%90%E7%9A%84%20token%E3%80%82-,%E5%88%9B%E5%BB%BA%20Neodb%20%E5%8D%A1%E7%89%87,-%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%20layouts](https://thirdshire.com/hugo-stack-renovation-part-three/#neodb-%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9F%AD%E8%AF%84%E5%8D%A1%E7%89%87))中Hugo v0.123.0 及之后的版本。不知道为什么直接使用有一些问题，让 ai 修改了一下。
 
-使用方法
 ```
-{{< neodb-review "https://neodb.social/..." >}}
+{{</* neodb-review "https://neodb.social/..." */>}}
 ```
 
-`layouts/shortcodes/neodb-review.html`。注意获取的 token 只给可读权限。
-> [!note]- 
+注意获取的 token 只给可读权限。
+> [!note]- `layouts/shortcodes/neodb-review.html`
 > {{< details title = "点击展开" >}}
 > ```
 >{{ $dbUrl := .Get 0 }} {{ $apiUrl := "https://neodb.social/api/me/shelf/item/"
@@ -594,8 +593,8 @@ neodb_token = "你的token"
 <script src="https://kit.fontawesome.com/xxxxx.js" crossorigin="anonymous"></script>
 ```
 
-` assets/scss/custom.scss`
-> [!note]- 自定义样式
+
+> [!note]- ` assets/scss/custom.scss` -自定义样式
 > {{< details title = "点击展开" >}}
 > ```
 > // Neodb card style
